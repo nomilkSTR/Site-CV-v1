@@ -1,17 +1,494 @@
 ---
-
+/**
+ * One-Page — Corentin BOISSELIER
+ * Expert Pricing Automobile | IA appliquée & automatisation — Strasbourg
+ * Style : inspiré BMW Designworks — précision, lignes nettes, accent bleu
+ */
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Corentin BOISSELIER — Expert Pricing Automobile, IA & automatisation. 43 000 dossiers VO/VU par an, -40% de temps grâce à l'IA." />
+    <title>Corentin BOISSELIER — Expert Pricing Automobile & IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">Mode clair</button>
+    <a href="mailto:corentin.boisselier@gmail.com" class="btn btn-float">Écrivez-moi 🙂</a>
+    <div class="wrap">
+
+      <header class="hero animate-on-scroll" data-delay="0">
+        <h1 class="hero-title">Corentin BOISSELIER</h1>
+        <p class="hero-meta">Expertise Marchés VO | IA appliquée & automatisation</p>
+        <blockquote class="hero-desc">
+          Il n'y a rien de noble à être supérieur à son prochain ; la vraie noblesse, c'est d'être supérieur à son ancien soi.
+        </blockquote>
+      </header>
+
+      <section class="stats animate-on-scroll" aria-label="Chiffres clés" data-delay="100">
+        <div class="stat">
+          <span class="stat-value">43k</span>
+          <span class="stat-label">dossiers / an</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">−40%</span>
+          <span class="stat-label">temps de traitement</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">1,7 M€</span>
+          <span class="stat-label">revenu annuel</span>
+        </div>
+      </section>
+
+      <hr class="rule rule--heavy animate-on-scroll" data-delay="0" />
+
+      <section class="block block--accent animate-on-scroll" aria-labelledby="expertise-title" data-delay="0">
+        <h2 id="expertise-title" class="label label--bar">Expertise technique</h2>
+        <p class="body">
+          Développement d’un assistant de cotation sous Python et JavaScript, intégration LLM (Gemini 3 Flash) pour automatiser et fiabiliser les estimations.
+        </p>
+        <p class="meta">Python · JavaScript · Gemini 3 Flash · API</p>
+      </section>
+
+      <hr class="rule animate-on-scroll" data-delay="0" />
+
+      <section class="block block--accent animate-on-scroll" aria-labelledby="parcours-title" data-delay="0">
+        <h2 id="parcours-title" class="label label--bar">Parcours automobile</h2>
+        <p class="body">
+          34 voitures acquises et revendues. Membre de l’Enthusiast Club Jaguar Alsace.
+        </p>
+      </section>
+
+      <hr class="rule animate-on-scroll" data-delay="0" />
+
+      <section class="block block--accent animate-on-scroll" aria-labelledby="formation-title" data-delay="0">
+        <h2 id="formation-title" class="label label--bar">Formation & langues</h2>
+        <ul class="list">
+          <li>Licences (formations supérieures)</li>
+          <li>Français — Langue maternelle</li>
+          <li>Anglais — C1</li>
+          <li>Allemand — C1</li>
+        </ul>
+      </section>
+
+      <hr class="rule animate-on-scroll" data-delay="0" />
+
+      <footer id="contact" class="footer animate-on-scroll" data-delay="0">
+        <p class="footer-meta">Corentin BOISSELIER · Strasbourg</p>
+      </footer>
+
+    </div>
+
+    <script>
+      (function () {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const els = document.querySelectorAll('.animate-on-scroll');
+        if (prefersReducedMotion) {
+          els.forEach((el) => el.classList.add('in-view'));
+        } else {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in-view');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: '0px 0px -8% 0px', threshold: 0 }
+          );
+          els.forEach((el) => {
+            const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+            el.style.transitionDelay = delay ? delay + 'ms' : '';
+            observer.observe(el);
+          });
+        }
+
+        var theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        var toggle = document.getElementById('theme-toggle');
+        function updateLabel() {
+          var t = document.documentElement.getAttribute('data-theme');
+          toggle.textContent = t === 'dark' ? 'Mode clair' : 'Mode sombre';
+        }
+        updateLabel();
+        toggle.addEventListener('click', function () {
+          var t = document.documentElement.getAttribute('data-theme');
+          var next = t === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateLabel();
+        });
+      })();
+    </script>
+
+    <style is:global>
+      /* BMW Designworks–inspired · précision, lignes nettes, bleu accent */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #08080a;
+        color: #e8e8ea;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .wrap {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 56px 24px 72px;
+      }
+      @media (min-width: 640px) {
+        .wrap { padding: 72px 40px 96px; }
+      }
+
+      /* Scroll-in · apparition précise */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .animate-on-scroll.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero · typo serrée, premium */
+      .hero {
+        margin-bottom: 56px;
+      }
+      .hero-meta {
+        margin: 0 0 12px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #8a8a8f;
+      }
+      .hero-title {
+        margin: 0 0 20px;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+      }
+      @media (min-width: 640px) {
+        .hero-title { font-size: 2.75rem; letter-spacing: -0.05em; }
+      }
+      .hero-desc {
+        margin: 0 0 36px;
+        font-size: 1rem;
+        color: #a0a0a5;
+        line-height: 1.65;
+        max-width: 34rem;
+      }
+      .hero blockquote {
+        margin: 0 auto 36px;
+        padding: 0 1.5em;
+        border: none;
+        text-align: center;
+        max-width: 34rem;
+        position: relative;
+      }
+      .hero blockquote::before,
+      .hero blockquote::after {
+        display: inline;
+        font-size: 2.5em;
+        line-height: 1;
+        color: #a0a0a5;
+        opacity: 0.7;
+        font-family: Georgia, serif;
+        vertical-align: -0.2em;
+      }
+      .hero blockquote::before {
+        content: '\00AB';
+        margin-right: 0.12em;
+      }
+      .hero blockquote::after {
+        content: '\00BB';
+        margin-left: 0.12em;
+      }
+      /* CTA · outline puis rempli, accent bleu BMW */
+      .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 0;
+        cursor: pointer;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      }
+      .btn:hover {
+        background-color: #0066b1;
+        border-color: #0066b1;
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+      /* Bouton flottant · toujours visible en bas à droite, bleu par défaut, gris au survol */
+      .btn-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 99;
+        background-color: #0066b1;
+        border-color: #0066b1;
+        color: #ffffff;
+      }
+      .btn-float:hover {
+        background-color: #1a1a1d;
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+      }
+
+      /* Stats · dashboard, lignes nettes */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        margin: 0 0 56px;
+        padding: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: transparent;
+      }
+      @media (min-width: 640px) {
+        .stats { margin-bottom: 64px; }
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 28px 20px;
+        text-align: center;
+        background: transparent;
+        border-radius: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: none;
+        transition: background-color 0.25s ease;
+      }
+      .stat:last-child {
+        border-right: none;
+      }
+      .stat:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+      .stat-value {
+        font-size: 2.25rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+        font-variant-numeric: tabular-nums;
+      }
+      @media (min-width: 640px) {
+        .stat-value { font-size: 2.5rem; }
+      }
+      .stat-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6a6a6f;
+      }
+
+      /* Rules · fines, argent */
+      .rule {
+        margin: 0 0 48px;
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .rule--heavy {
+        margin-bottom: 56px;
+        border-top-width: 1px;
+        border-top-color: rgba(255, 255, 255, 0.12);
+      }
+
+      /* Sections · cartes précises, bords droits */
+      .block {
+        margin-bottom: 0;
+        padding: 32px 0 40px;
+        background: transparent;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: background-color 0.25s ease;
+      }
+      .block:hover {
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+      @media (min-width: 640px) {
+        .block { padding: 40px 0 48px; }
+      }
+      .label {
+        margin: 0 0 16px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #8a8a8f;
+      }
+      .label--bar {
+        padding-left: 20px;
+        border-left: 2px solid #0066b1;
+      }
+      .body {
+        margin: 0;
+        font-size: 1rem;
+        color: #c8c8cc;
+        line-height: 1.7;
+      }
+      .meta {
+        margin: 16px 0 0;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #6a6a6f;
+      }
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .list li {
+        margin-bottom: 10px;
+        padding-left: 0;
+        font-size: 1rem;
+        color: #c8c8cc;
+        line-height: 1.6;
+      }
+      .list li::before {
+        content: '— ';
+        color: #5a5a5f;
+        font-weight: 500;
+      }
+
+      /* Footer · sobre */
+      .footer {
+        margin-top: 48px;
+        padding: 40px 0 0;
+        text-align: left;
+        background: transparent;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .footer-meta {
+        margin: 0 0 24px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6a6a6f;
+      }
+
+      /* Bouton thème · fixe en haut à droite */
+      .theme-toggle {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 100;
+        padding: 10px 20px;
+        background-color: transparent;
+        color: #e8e8ea;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-family: inherit;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 0;
+        cursor: pointer;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      }
+      .theme-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* Mode clair */
+      html[data-theme="light"] body {
+        background-color: #f2f2f4;
+        color: #1a1a1a;
+      }
+      html[data-theme="light"] .hero-meta { color: #5a5a5f; }
+      html[data-theme="light"] .hero-title { color: #0a0a0a; }
+      html[data-theme="light"] .hero-desc { color: #4a4a4f; }
+      html[data-theme="light"] .hero blockquote::before,
+      html[data-theme="light"] .hero blockquote::after { color: #4a4a4f; }
+      html[data-theme="light"] .btn {
+        color: #1a1a1a;
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+      html[data-theme="light"] .btn:hover {
+        background-color: #0066b1;
+        border-color: #0066b1;
+        color: #ffffff;
+      }
+      html[data-theme="light"] .btn-float {
+        background-color: #0066b1;
+        border-color: #0066b1;
+        color: #ffffff;
+      }
+      html[data-theme="light"] .btn-float:hover {
+        background-color: #1a1a1d;
+        border-color: rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+      }
+      html[data-theme="light"] .stats {
+        border-top-color: rgba(0, 0, 0, 0.1);
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+      }
+      html[data-theme="light"] .stat {
+        border-right-color: rgba(0, 0, 0, 0.08);
+      }
+      html[data-theme="light"] .stat:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      html[data-theme="light"] .stat-value { color: #0a0a0a; }
+      html[data-theme="light"] .stat-label { color: #5a5a5f; }
+      html[data-theme="light"] .rule { border-top-color: rgba(0, 0, 0, 0.08); }
+      html[data-theme="light"] .rule--heavy { border-top-color: rgba(0, 0, 0, 0.12); }
+      html[data-theme="light"] .block {
+        border-bottom-color: rgba(0, 0, 0, 0.08);
+      }
+      html[data-theme="light"] .block:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+      html[data-theme="light"] .label { color: #5a5a5f; }
+      html[data-theme="light"] .body { color: #2a2a2a; }
+      html[data-theme="light"] .meta { color: #5a5a5f; }
+      html[data-theme="light"] .list li { color: #2a2a2a; }
+      html[data-theme="light"] .list li::before { color: #8a8a8f; }
+      html[data-theme="light"] .footer { border-top-color: rgba(0, 0, 0, 0.08); }
+      html[data-theme="light"] .footer-meta { color: #5a5a5f; }
+      html[data-theme="light"] .theme-toggle {
+        color: #1a1a1a;
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+      html[data-theme="light"] .theme-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.35);
+      }
+    </style>
+  </body>
 </html>
