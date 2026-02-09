@@ -57,16 +57,21 @@
 
       <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="exp-trigger" data-delay="0">
         <button type="button" class="exp-trigger" id="exp-trigger" aria-expanded="false" aria-controls="exp-list">
+          <span class="exp-trigger__graphic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.25 6.75v10.5A2.25 2.25 0 0118 19.5H6A2.25 2.25 0 013.75 17.25V6.75M9 6.75V6a3 3 0 013-3h0a3 3 0 013 3v.75M3.75 6.75h16.5" />
+            </svg>
+          </span>
           <span class="label label--bar">Expériences professionnelles</span>
           <span class="exp-trigger__icon" aria-hidden="true"></span>
         </button>
-        <div id="exp-list" class="exp-list" hidden>
+        <div id="exp-list" class="exp-list">
           <div class="exp-item">
             <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-1">
               <span class="exp-item__title">Analyst Pricer</span>
               <span class="exp-item__meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</span>
             </button>
-            <div id="exp-detail-1" class="exp-item__detail" hidden>
+            <div id="exp-detail-1" class="exp-item__detail">
               <ul class="list">
                 <li>Développement d'un assistant de cotation sous Python/JS intégrant l'historique interne (Supabase) et des flux de données externes scrapés par API. Articulation des données par LLM (Gemini 3 Flash) via un travail rigoureux de prompt engineering pour fiabiliser les cotations et automatiser la saisie des fiches. Résultat : optimisation du nombre de clics et suppression des temps morts.</li>
                 <li>Expertise sur l'ensemble du marché VO/VU avec un volume de 43 000 offres d'achat traitées annuellement.</li>
@@ -80,7 +85,7 @@
               <span class="exp-item__title">Négociateur immobilier</span>
               <span class="exp-item__meta">Étude de Me Philippe de GAIL · Strasbourg · Depuis 10/2021</span>
             </button>
-            <div id="exp-detail-2" class="exp-item__detail" hidden>
+            <div id="exp-detail-2" class="exp-item__detail">
               <ul class="list">
                 <li>Estimation et commercialisation de biens immobiliers.</li>
                 <li>Rédaction d’actes notariés.</li>
@@ -92,7 +97,7 @@
               <span class="exp-item__title">Directeur Général</span>
               <span class="exp-item__meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</span>
             </button>
-            <div id="exp-detail-3" class="exp-item__detail" hidden>
+            <div id="exp-detail-3" class="exp-item__detail">
               <ul class="list">
                 <li>Gestion de la supply chain et de la stratégie commerciale.</li>
                 <li>Pilotage financier.</li>
@@ -177,19 +182,17 @@
         if (expTrigger && expList) {
           expTrigger.addEventListener('click', function () {
             var block = expTrigger.closest('.block--expandable');
-            var isOpen = expList.hidden === false;
-            expList.hidden = isOpen;
-            expTrigger.setAttribute('aria-expanded', !isOpen);
+            var isOpen = block && block.classList.contains('is-open');
             if (block) block.classList.toggle('is-open', !isOpen);
+            expTrigger.setAttribute('aria-expanded', !isOpen);
           });
         }
         document.querySelectorAll('.exp-item__header').forEach(function (btn) {
-          var id = btn.getAttribute('aria-controls');
-          var detail = id ? document.getElementById(id) : null;
-          if (!detail) return;
+          var item = btn.closest('.exp-item');
+          if (!item) return;
           btn.addEventListener('click', function () {
-            var isOpen = detail.hidden === false;
-            detail.hidden = isOpen;
+            var isOpen = item.classList.contains('is-open');
+            item.classList.toggle('is-open', !isOpen);
             btn.setAttribute('aria-expanded', !isOpen);
           });
         });
@@ -445,13 +448,37 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 0;
+        padding: 10px 0;
         margin: 0;
         background: none;
         border: none;
         cursor: pointer;
         font-family: inherit;
         text-align: left;
+      }
+      .exp-trigger__graphic {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+        flex-shrink: 0;
+        color: #0066b1;
+      }
+      .exp-trigger__graphic svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .block--expandable .exp-trigger .label {
+        flex: 1;
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        color: #ffffff;
       }
       .exp-trigger__icon {
         flex-shrink: 0;
@@ -470,9 +497,14 @@
         margin-top: 20px;
         padding-top: 16px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease, opacity 0.35s ease;
       }
-      .exp-list[hidden] {
-        display: none;
+      .block--expandable.is-open .exp-list {
+        max-height: 1200px;
+        opacity: 1;
       }
       .exp-item {
         margin-bottom: 12px;
@@ -513,9 +545,13 @@
       .exp-item__detail {
         padding: 0 20px 16px;
         overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
       }
-      .exp-item__detail[hidden] {
-        display: none;
+      .exp-item.is-open .exp-item__detail {
+        max-height: 800px;
+        opacity: 1;
       }
       .exp-item__detail .body {
         margin: 0;
@@ -535,6 +571,12 @@
       }
       html[data-theme="light"] .exp-item__meta {
         color: #5a5a5f;
+      }
+      html[data-theme="light"] .block--expandable .exp-trigger .label {
+        color: #0a0a0a;
+      }
+      html[data-theme="light"] .exp-trigger__graphic {
+        color: #0066b1;
       }
       .body {
         margin: 0;
