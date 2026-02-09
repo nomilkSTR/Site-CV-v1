@@ -7,7 +7,7 @@
 ---
 
 <!doctype html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">Mode clair</button>
     <a href="mailto:corentin.boisselier@gmail.com" class="btn btn-float">Écrivez-moi 🙂</a>
     <div class="wrap">
 
@@ -160,6 +159,53 @@
                 <li>Innovation Régénératrice : Mise en place de la promesse \"1 tube vendu = 1m² de plage nettoyé\", transformant chaque achat en une action écologique concrète.</li>
                 <li>Fondation d'Octop'Us : Création d'une ONG dédiée en parallèle de la startup pour assurer l'exécution souveraine de nos engagements environnementaux sur le terrain.</li>
                 <li>Ingénierie à Impact : Structuration d'un modèle de mécénat optimisé, reversant une partie des bénéfices à l'ONG pour maximiser les ressources allouées à la protection des océans tout en optimisant la trajectoire fiscale de l'entreprise.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-4">
+              <span class="exp-item__title">Administrateur Logistique</span>
+              <span class="exp-item__meta">Scheppach France · Strasbourg · 05/2018 – 03/2020</span>
+            </button>
+            <div id="exp-detail-4" class="exp-item__detail">
+              <p class="body">Pilotage des flux logistiques (France) : Coordination du transport et suivi opérationnel des expéditions sur le territoire national.</p>
+              <p class="body">Optimisation de la performance : Audit des process internes et mise en place d'actions correctives pour améliorer la qualité de service.</p>
+              <p class="body">Gestion des litiges et SAV : Analyse des causes racines, résolution des anomalies et déploiement de solutions pour réduire le taux de sinistralité.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-5">
+              <span class="exp-item__title">Affréteur</span>
+              <span class="exp-item__meta">Transports Breger · Haguenau · 02/2016 – 09/2016 et 09/2017 – 05/2018</span>
+            </button>
+            <div id="exp-detail-5" class="exp-item__detail">
+              <p class="body">Ingénierie de flux (Groupage & Cross-docking) : Optimisation du remplissage et organisation des ruptures de charge pour garantir la fluidité des approvisionnements.</p>
+              <p class="body">Sourcing et panel fournisseurs : Identification, sélection et négociation avec les sous-traitants pour répondre aux exigences de coûts et de délais.</p>
+              <p class="body">Expertise secteur Automobile : Pilotage des flux critiques vers les usines Renault (France) et Mercedes-Benz (Allemagne), dans le respect des standards de ponctualité industriels.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-6">
+              <span class="exp-item__title">Gestionnaire de parc</span>
+              <span class="exp-item__meta">Autohaus Tabor · Kehl (Allemagne) · 09/2016 – 09/2017</span>
+            </button>
+            <div id="exp-detail-6" class="exp-item__detail">
+              <p class="body">Audit de conformité : Expertise technique rigoureuse des arrivages (neufs/occasions) pour garantir l'état standardisé des flux entrants et sortants.</p>
+              <p class="body">Gestion du cycle de reconditionnement : Évaluation des frais de remise en état (FRE), chiffrage des reprises et planification des interventions techniques.</p>
+              <p class="body">Optimisation logistique inter-sites : Pilotage du réagencement des stocks et transfert de flotte pour équilibrer l'offre selon les besoins des points de vente.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-7">
+              <span class="exp-item__title">Apprenti affréteur et exploitant transport</span>
+              <span class="exp-item__meta">Expériences complémentaires</span>
+            </button>
+            <div id="exp-detail-7" class="exp-item__detail">
+              <ul class="list">
+                <li>Alinéa Courses Express – La Wantzenau – 04/2015 à 02/2016</li>
+                <li>Mercurio France – Molsheim, 10/2014 à 04/2015</li>
+                <li>Geodis BM – Strasbourg, 10/2013 à 10/2014</li>
+                <li>DB Schenker – Strasbourg – 10/2011 à 09/2013</li>
               </ul>
             </div>
           </div>
@@ -357,21 +403,6 @@
           });
         }
 
-        var theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        var toggle = document.getElementById('theme-toggle');
-        function updateLabel() {
-          var t = document.documentElement.getAttribute('data-theme');
-          toggle.textContent = t === 'dark' ? 'Mode clair' : 'Mode sombre';
-        }
-        updateLabel();
-        toggle.addEventListener('click', function () {
-          var t = document.documentElement.getAttribute('data-theme');
-          var next = t === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('theme', next);
-          updateLabel();
-        });
 
         var expTrigger = document.getElementById('exp-trigger');
         var expList = document.getElementById('exp-list');
@@ -393,6 +424,17 @@
           expTrigger.addEventListener('click', function () {
             var block = expTrigger.closest('.block--expandable');
             var isOpen = block && block.classList.contains('is-open');
+            // Close vehicles when opening experiences
+            if (!isOpen) {
+              var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
+              if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
+                vehiclesBlock.classList.remove('is-open');
+                var vehiclesList = document.getElementById('vehicles-list');
+                if (vehiclesList) setHeight(vehiclesList, false);
+                var vehiclesTrigger = document.getElementById('vehicles-trigger');
+                if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
+              }
+            }
             if (block) block.classList.toggle('is-open', !isOpen);
             expTrigger.setAttribute('aria-expanded', !isOpen);
             setHeight(expList, !isOpen);
@@ -405,11 +447,31 @@
           vehiclesTrigger.addEventListener('click', function () {
             var block = vehiclesTrigger.closest('.block--expandable');
             var isOpen = block && block.classList.contains('is-open');
+            // Close experiences when opening vehicles
+            if (!isOpen) {
+              var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
+              if (expBlock && expBlock.classList.contains('is-open')) {
+                expBlock.classList.remove('is-open');
+                var expList = document.getElementById('exp-list');
+                if (expList) setHeight(expList, false);
+                var expTrigger = document.getElementById('exp-trigger');
+                if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
+              }
+            }
             if (block) block.classList.toggle('is-open', !isOpen);
             vehiclesTrigger.setAttribute('aria-expanded', !isOpen);
             setHeight(vehiclesList, !isOpen);
           });
         }
+
+        // Make the whole expandable area clickable (except inner buttons/links)
+        document.querySelectorAll('.block--expandable').forEach(function (block) {
+          block.addEventListener('click', function (evt) {
+            if (evt.target.closest('button') || evt.target.closest('a')) return;
+            var trigger = block.querySelector('.exp-trigger, .vehicle-trigger');
+            if (trigger) trigger.click();
+          });
+        });
         document.querySelectorAll('.exp-item__header').forEach(function (btn) {
           var item = btn.closest('.exp-item');
           var id = btn.getAttribute('aria-controls');
@@ -785,8 +847,8 @@
         left: 50px;
         top: calc(50% - 8px);
         transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
+        width: 55px;
+        height: 55px;
       }
       .vehicle-trigger__img {
         width: 100%;
@@ -1037,29 +1099,6 @@
       }
 
       /* Bouton thème · fixe en haut à droite */
-      .theme-toggle {
-        position: fixed;
-        top: 24px;
-        right: 24px;
-        z-index: 100;
-        padding: 10px 20px;
-        background-color: transparent;
-        color: #e8e8ea;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        font-family: inherit;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 0;
-        cursor: pointer;
-        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-      }
-      .theme-toggle:hover {
-        background-color: rgba(255, 255, 255, 0.06);
-        border-color: rgba(255, 255, 255, 0.4);
-      }
-
       /* Mode clair */
       html[data-theme="light"] body {
         background-color: #f2f2f4;
@@ -1118,14 +1157,6 @@
       html[data-theme="light"] .list li::before { color: #8a8a8f; }
       html[data-theme="light"] .footer { border-top-color: rgba(0, 0, 0, 0.08); }
       html[data-theme="light"] .footer-meta { color: #5a5a5f; }
-      html[data-theme="light"] .theme-toggle {
-        color: #1a1a1a;
-        border-color: rgba(0, 0, 0, 0.2);
-      }
-      html[data-theme="light"] .theme-toggle:hover {
-        background-color: rgba(0, 0, 0, 0.06);
-        border-color: rgba(0, 0, 0, 0.35);
-      }
     </style>
   </body>
 </html>
