@@ -368,15 +368,15 @@
           <span class="label label--bar">Langues maîtrisées</span>
         </div>
         <div class="languages-grid">
-          <div class="language-card">
+          <div class="language-card language-card--fr">
             <div class="language-name">Français</div>
             <div class="language-level">Maternel</div>
           </div>
-          <div class="language-card">
+          <div class="language-card language-card--uk">
             <div class="language-name">Anglais</div>
             <div class="language-level">Usage pro (C1)</div>
           </div>
-          <div class="language-card">
+          <div class="language-card language-card--de">
             <div class="language-name">Allemand</div>
             <div class="language-level">Cursus bilingue (C1)</div>
           </div>
@@ -1132,11 +1132,36 @@
         margin-top: 16px;
       }
       .language-card {
+        position: relative;
         padding: 16px 18px;
         border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: 14px;
         text-align: center;
         background: rgba(255, 255, 255, 0.02);
+        overflow: hidden;
+      }
+      .language-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0.08;
+        background-size: cover;
+        background-position: center;
+        filter: saturate(0.9) contrast(1.05);
+        z-index: 0;
+      }
+      .language-card > * {
+        position: relative;
+        z-index: 1;
+      }
+      .language-card--fr::before {
+        background-image: url('/flag-fr.png');
+      }
+      .language-card--uk::before {
+        background-image: url('/flag-uk.png');
+      }
+      .language-card--de::before {
+        background-image: url('/flag-de.png');
       }
       .language-name {
         font-weight: 700;
