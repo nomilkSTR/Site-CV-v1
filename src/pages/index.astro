@@ -383,6 +383,38 @@
         </div>
       </section>
 
+      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="interests-trigger" data-delay="0">
+        <button type="button" class="vehicle-trigger interests-trigger" id="interests-trigger" aria-expanded="false" aria-controls="interests-list">
+          <span class="vehicle-trigger__graphic interests-trigger__graphic" aria-hidden="true">
+            <img src="/interests-infographic.png" alt="" class="vehicle-trigger__img" />
+          </span>
+          <span class="label label--bar">Intérêts et passions</span>
+          <span class="vehicle-trigger__icon" aria-hidden="true"></span>
+        </button>
+        <div id="interests-list" class="interest-list">
+          <div class="interest-item">
+            <p class="meta">Passion Automobile & Restauration</p>
+            <p class="body">Depuis 2012, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré l'achat, la mécanique, le detailing et la revente de 31 voitures. Pour piloter cette activité, j'ai développé mon propre outil de suivi de rentabilité sur Airtable. Membre actif de l’Enthousiast’Club Jaguar Alsace.</p>
+          </div>
+          <div class="interest-item">
+            <p class="meta">Aviation</p>
+            <p class="body">Pilote privé en formation (PPL). Lâché solo, grande nav solo validée. C'est pour moi une véritable école de la rigueur et de la gestion du stress, où l'organisation est la clé de chaque vol.</p>
+          </div>
+          <div class="interest-item">
+            <p class="meta">Engagement Associatif - LEO Club</p>
+            <p class="body">Membre actif pendant 7 ans et ancien Président. J'ai coordonné de nombreux projets : collectes de fonds, journées de loisirs pour des personnes en situation de handicap, organisation de convetions nationales, participation au Télépthon, ... Une expérience humaine forte qui m'a appris à fédérer une équipe autour d'une cause.</p>
+          </div>
+          <div class="interest-item">
+            <p class="meta">Sports</p>
+            <ul class="list">
+              <li>Golf</li>
+              <li>Boxe thaï puis française</li>
+              <li>Handball</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <footer id="contact" class="footer animate-on-scroll" data-delay="0">
       </footer>
 
@@ -434,7 +466,7 @@
           expTrigger.addEventListener('click', function () {
             var block = expTrigger.closest('.block--expandable');
             var isOpen = block && block.classList.contains('is-open');
-            // Close vehicles when opening experiences
+            // Close vehicles and interests when opening experiences
             if (!isOpen) {
               var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
               if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
@@ -443,6 +475,14 @@
                 if (vehiclesList) setHeight(vehiclesList, false);
                 var vehiclesTrigger = document.getElementById('vehicles-trigger');
                 if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
+              }
+              var interestsBlock = document.querySelector('#interests-trigger') ? document.querySelector('#interests-trigger').closest('.block--expandable') : null;
+              if (interestsBlock && interestsBlock.classList.contains('is-open')) {
+                interestsBlock.classList.remove('is-open');
+                var interestsList = document.getElementById('interests-list');
+                if (interestsList) setHeight(interestsList, false);
+                var interestsTrigger = document.getElementById('interests-trigger');
+                if (interestsTrigger) interestsTrigger.setAttribute('aria-expanded', 'false');
               }
             }
             if (block) block.classList.toggle('is-open', !isOpen);
@@ -457,7 +497,7 @@
           vehiclesTrigger.addEventListener('click', function () {
             var block = vehiclesTrigger.closest('.block--expandable');
             var isOpen = block && block.classList.contains('is-open');
-            // Close experiences when opening vehicles
+            // Close experiences and interests when opening vehicles
             if (!isOpen) {
               var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
               if (expBlock && expBlock.classList.contains('is-open')) {
@@ -467,10 +507,49 @@
                 var expTrigger = document.getElementById('exp-trigger');
                 if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
               }
+              var interestsBlock = document.querySelector('#interests-trigger') ? document.querySelector('#interests-trigger').closest('.block--expandable') : null;
+              if (interestsBlock && interestsBlock.classList.contains('is-open')) {
+                interestsBlock.classList.remove('is-open');
+                var interestsList = document.getElementById('interests-list');
+                if (interestsList) setHeight(interestsList, false);
+                var interestsTrigger = document.getElementById('interests-trigger');
+                if (interestsTrigger) interestsTrigger.setAttribute('aria-expanded', 'false');
+              }
             }
             if (block) block.classList.toggle('is-open', !isOpen);
             vehiclesTrigger.setAttribute('aria-expanded', !isOpen);
             setHeight(vehiclesList, !isOpen);
+          });
+        }
+
+        var interestsTrigger = document.getElementById('interests-trigger');
+        var interestsList = document.getElementById('interests-list');
+        if (interestsTrigger && interestsList) {
+          interestsTrigger.addEventListener('click', function () {
+            var block = interestsTrigger.closest('.block--expandable');
+            var isOpen = block && block.classList.contains('is-open');
+            // Close experiences and vehicles when opening interests
+            if (!isOpen) {
+              var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
+              if (expBlock && expBlock.classList.contains('is-open')) {
+                expBlock.classList.remove('is-open');
+                var expList = document.getElementById('exp-list');
+                if (expList) setHeight(expList, false);
+                var expTrigger = document.getElementById('exp-trigger');
+                if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
+              }
+              var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
+              if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
+                vehiclesBlock.classList.remove('is-open');
+                var vehiclesList = document.getElementById('vehicles-list');
+                if (vehiclesList) setHeight(vehiclesList, false);
+                var vehiclesTrigger = document.getElementById('vehicles-trigger');
+                if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
+              }
+            }
+            if (block) block.classList.toggle('is-open', !isOpen);
+            interestsTrigger.setAttribute('aria-expanded', !isOpen);
+            setHeight(interestsList, !isOpen);
           });
         }
 
@@ -905,6 +984,11 @@
         object-fit: contain;
         display: block;
       }
+      .interests-trigger__graphic {
+        width: 86px;
+        height: 86px;
+        left: 35px;
+      }
       .vehicle-trigger .label {
         display: block;
         width: 100%;
@@ -942,6 +1026,16 @@
         transition: height 0.45s ease, opacity 0.35s ease;
       }
       .block--expandable.is-open .vehicle-list {
+        opacity: 1;
+      }
+      .interest-list {
+        margin-top: 20px;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: height 0.45s ease, opacity 0.35s ease;
+      }
+      .block--expandable.is-open .interest-list {
         opacity: 1;
       }
       .block--expandable.is-open .exp-trigger__icon {
@@ -1130,6 +1224,9 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
         margin-top: 16px;
+      }
+      .interest-item + .interest-item {
+        margin-top: 28px;
       }
       .language-card {
         position: relative;
