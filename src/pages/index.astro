@@ -55,12 +55,52 @@
 
       <hr class="rule rule--heavy animate-on-scroll" data-delay="0" />
 
-      <section class="block block--accent animate-on-scroll" aria-labelledby="expertise-title" data-delay="0">
-        <h2 id="expertise-title" class="label label--bar">Expertise technique</h2>
-        <p class="body">
-          Développement d’un assistant de cotation sous Python et JavaScript, intégration LLM (Gemini 3 Flash) pour automatiser et fiabiliser les estimations.
-        </p>
-        <p class="meta">Python · JavaScript · Gemini 3 Flash · API</p>
+      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="exp-trigger" data-delay="0">
+        <button type="button" class="exp-trigger" id="exp-trigger" aria-expanded="false" aria-controls="exp-list">
+          <span class="label label--bar">Expériences professionnelles</span>
+          <span class="exp-trigger__icon" aria-hidden="true"></span>
+        </button>
+        <div id="exp-list" class="exp-list" hidden>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-1">
+              <span class="exp-item__title">Analyst Pricer</span>
+              <span class="exp-item__meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</span>
+            </button>
+            <div id="exp-detail-1" class="exp-item__detail" hidden>
+              <ul class="list">
+                <li>Développement d'un assistant de cotation sous Python/JS intégrant l'historique interne (Supabase) et des flux de données externes scrapés par API. Articulation des données par LLM (Gemini 3 Flash) via un travail rigoureux de prompt engineering pour fiabiliser les cotations et automatiser la saisie des fiches. Résultat : optimisation du nombre de clics et suppression des temps morts.</li>
+                <li>Expertise sur l'ensemble du marché VO/VU avec un volume de 43 000 offres d'achat traitées annuellement.</li>
+                <li>Connaissance approfondie, analyse et suivi des gammes et du marché VO.</li>
+                <li>Négociation et validation des engagements avec les apporteurs.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-2">
+              <span class="exp-item__title">Négociateur immobilier</span>
+              <span class="exp-item__meta">Étude de Me Philippe de GAIL · Strasbourg · Depuis 10/2021</span>
+            </button>
+            <div id="exp-detail-2" class="exp-item__detail" hidden>
+              <ul class="list">
+                <li>Estimation et commercialisation de biens immobiliers.</li>
+                <li>Rédaction d’actes notariés.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="exp-item">
+            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-3">
+              <span class="exp-item__title">Directeur Général</span>
+              <span class="exp-item__meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</span>
+            </button>
+            <div id="exp-detail-3" class="exp-item__detail" hidden>
+              <ul class="list">
+                <li>Gestion de la supply chain et de la stratégie commerciale.</li>
+                <li>Pilotage financier.</li>
+                <li>Développement et animation du réseau de distribution.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <hr class="rule animate-on-scroll" data-delay="0" />
@@ -87,7 +127,6 @@
       <hr class="rule animate-on-scroll" data-delay="0" />
 
       <footer id="contact" class="footer animate-on-scroll" data-delay="0">
-        <p class="footer-meta">Corentin BOISSELIER · Strasbourg</p>
       </footer>
 
     </div>
@@ -131,6 +170,28 @@
           document.documentElement.setAttribute('data-theme', next);
           localStorage.setItem('theme', next);
           updateLabel();
+        });
+
+        var expTrigger = document.getElementById('exp-trigger');
+        var expList = document.getElementById('exp-list');
+        if (expTrigger && expList) {
+          expTrigger.addEventListener('click', function () {
+            var block = expTrigger.closest('.block--expandable');
+            var isOpen = expList.hidden === false;
+            expList.hidden = isOpen;
+            expTrigger.setAttribute('aria-expanded', !isOpen);
+            if (block) block.classList.toggle('is-open', !isOpen);
+          });
+        }
+        document.querySelectorAll('.exp-item__header').forEach(function (btn) {
+          var id = btn.getAttribute('aria-controls');
+          var detail = id ? document.getElementById(id) : null;
+          if (!detail) return;
+          btn.addEventListener('click', function () {
+            var isOpen = detail.hidden === false;
+            detail.hidden = isOpen;
+            btn.setAttribute('aria-expanded', !isOpen);
+          });
         });
       })();
     </script>
@@ -377,6 +438,103 @@
       .label--bar {
         padding-left: 20px;
         border-left: 2px solid #0066b1;
+      }
+      /* Expériences professionnelles · tuile déroulante */
+      .block--expandable .exp-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        text-align: left;
+      }
+      .exp-trigger__icon {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+        margin-left: 12px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform 0.25s ease;
+      }
+      .block--expandable.is-open .exp-trigger__icon {
+        transform: rotate(-135deg);
+      }
+      .exp-list {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .exp-list[hidden] {
+        display: none;
+      }
+      .exp-item {
+        margin-bottom: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 0;
+      }
+      .exp-item:last-child {
+        margin-bottom: 0;
+      }
+      .exp-item__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 16px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        text-align: left;
+        transition: background-color 0.2s ease;
+      }
+      .exp-item__header:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+      .exp-item__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e8e8ea;
+        margin-bottom: 4px;
+      }
+      .exp-item__meta {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #71717a;
+      }
+      .exp-item__detail {
+        padding: 0 20px 16px;
+        overflow: hidden;
+      }
+      .exp-item__detail[hidden] {
+        display: none;
+      }
+      .exp-item__detail .body {
+        margin: 0;
+        padding-top: 0;
+      }
+      html[data-theme="light"] .exp-list {
+        border-top-color: rgba(0, 0, 0, 0.08);
+      }
+      html[data-theme="light"] .exp-item {
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+      html[data-theme="light"] .exp-item__header:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+      html[data-theme="light"] .exp-item__title {
+        color: #1a1a1a;
+      }
+      html[data-theme="light"] .exp-item__meta {
+        color: #5a5a5f;
       }
       .body {
         margin: 0;
