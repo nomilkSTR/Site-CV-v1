@@ -213,8 +213,6 @@
         </div>
       </section>
 
-      <hr class="rule animate-on-scroll" data-delay="0" />
-
       <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="vehicles-trigger" data-delay="0">
         <button type="button" class="vehicle-trigger" id="vehicles-trigger" aria-expanded="false" aria-controls="vehicles-list">
           <span class="vehicle-trigger__graphic" aria-hidden="true">
@@ -394,15 +392,15 @@
         <div id="interests-list" class="interest-list">
           <div class="interest-item">
             <p class="meta">Passion Automobile & Restauration</p>
-            <p class="body">Depuis 2012, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré l'achat, la mécanique, le detailing et la revente de 31 voitures. Pour piloter cette activité, j'ai développé mon propre outil de suivi de rentabilité sur Airtable. Membre actif de l’Enthousiast’Club Jaguar Alsace.</p>
+            <p class="body"><strong>Depuis 2012</strong>, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré <strong>l'achat, la mécanique, le detailing et la revente</strong> de <strong>31 voitures</strong>. Pour piloter cette activité, j'ai développé mon propre <strong>outil de suivi de rentabilité</strong> sur <strong>Airtable</strong>. Membre actif de l’<strong>Enthousiast’Club Jaguar Alsace</strong>.</p>
           </div>
           <div class="interest-item">
             <p class="meta">Aviation</p>
-            <p class="body">Pilote privé en formation (PPL). Lâché solo, grande nav solo validée. C'est pour moi une véritable école de la rigueur et de la gestion du stress, où l'organisation est la clé de chaque vol.</p>
+            <p class="body"><strong>Pilote privé en formation (PPL)</strong>. <strong>Lâché solo</strong>, <strong>grande nav solo validée</strong>. C'est pour moi une véritable école de la <strong>rigueur</strong> et de la <strong>gestion du stress</strong>, où <strong>l'organisation</strong> est la clé de chaque vol.</p>
           </div>
           <div class="interest-item">
             <p class="meta">Engagement Associatif - LEO Club</p>
-            <p class="body">Membre actif pendant 7 ans et ancien Président. J'ai coordonné de nombreux projets : collectes de fonds, journées de loisirs pour des personnes en situation de handicap, organisation de convetions nationales, participation au Télépthon, ... Une expérience humaine forte qui m'a appris à fédérer une équipe autour d'une cause.</p>
+            <p class="body">Membre actif pendant <strong>7 ans</strong> et <strong>ancien Président</strong>. J'ai coordonné de nombreux projets : <strong>collectes de fonds</strong>, <strong>journées de loisirs</strong> pour des personnes en situation de handicap, <strong>organisation de convetions nationales</strong>, <strong>participation au Télépthon</strong>, ... Une expérience humaine forte qui m'a appris à <strong>fédérer une équipe</strong> autour d'une cause.</p>
           </div>
           <div class="interest-item">
             <p class="meta">Sports</p>
@@ -1228,6 +1226,10 @@
       .interest-item + .interest-item {
         margin-top: 28px;
       }
+      .interest-item strong {
+        font-weight: 600;
+        color: #ffffff;
+      }
       .language-card {
         position: relative;
         padding: 16px 18px;
@@ -1290,6 +1292,9 @@
       }
       html[data-theme="light"] .language-level {
         color: #4a4a4f;
+      }
+      html[data-theme="light"] .interest-item strong {
+        color: #0a0a0a;
       }
 
       /* Footer · sobre */
