@@ -119,6 +119,26 @@ const handleRequest = async (request: Request, bodyMessage?: string, bodyHistory
         headers: { 'Content-Type': 'application/json' },
       });
     }
+    if (msgLower.includes('recette') || msgLower.includes('cuisine') || msgLower.includes('cuisiner') || msgLower.includes('recettes')) {
+      return new Response(JSON.stringify({ reply: "t'as devant toi le spécialiste de la ouiche lorriane !" }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    if (msgLower.includes('rester') && (msgLower.includes('peut') || msgLower.includes('puis') || msgLower.includes('peux') || msgLower.includes('rester ?'))) {
+      return new Response(JSON.stringify({
+        reply: "J'aimerais bien que tu restes. On va manger des chips. Tu entends ? Des chips ! C'est tout ce que ça te fait quand je te dis qu'on va manger des chips ?",
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    if (msgLower.includes('yep')) {
+      return new Response(JSON.stringify({ reply: "ah, c'est pas banal ça" }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
 
     const apiKey = import.meta.env.GEMINI_API_KEY;
     // Gemini 3 Flash (test, ne pas publier) — doc: https://ai.google.dev/gemini-api/docs/models

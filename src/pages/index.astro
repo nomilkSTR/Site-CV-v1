@@ -488,16 +488,16 @@
       <footer id="contact" class="footer animate-on-scroll" data-delay="0">
         <div class="footer-tech">
           <button type="button" class="footer-tech-btn" id="footer-tech-btn" aria-expanded="false" aria-controls="footer-tech-panel">
-            Comment ce site est fait ?
+            Comment ce site est-il fait ?
           </button>
           <div id="footer-tech-panel" class="footer-tech-panel" role="dialog" aria-labelledby="footer-tech-title" aria-hidden="true">
-            <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est fait ?</h2>
+            <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est-il fait ?</h2>
             <p class="footer-tech-intro">En bref, pour les curieux qui ne sont pas à l'aise avec la technique :</p>
             <ul class="footer-tech-list">
               <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d’interaction).</li>
               <li><strong>Elle est construite</strong> avec Astro — un outil qui permet de générer des sites rapides et légers.</li>
               <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu’un ouvre le lien.</li>
-              <li><strong>Le chatbot</strong> utilise l’intelligence artificielle de Google (Gemini) pour répondre à vos questions à ma place, en s’appuyant sur les infos de mon CV.</li>
+              <li><strong>Le chatbot</strong> utilise l’intelligence artificielle de Google (Gemini) pour répondre à vos questions à ma place, en s’appuyant sur les infos de mon CV. Il peut aussi répondre aux questions sur l'automobile (marques, histoire, étymologie, etc.) en s'appuyant sur une recherche web. Les curieux y trouveront aussi quelques réponses surprises 😉</li>
             </ul>
             <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">Fermer</button>
           </div>
@@ -950,7 +950,7 @@
           });
         }
 
-        // Panneau « Comment ce site est fait ? »
+        // Panneau « Comment ce site est-il fait ? »
         var footerTechBtn = document.getElementById('footer-tech-btn');
         var footerTechPanel = document.getElementById('footer-tech-panel');
         var footerTechClose = document.getElementById('footer-tech-close');
@@ -1099,13 +1099,9 @@
         background: none;
         border: none;
         text-decoration: none;
-        opacity: 0;
-        transform: translateY(-6px);
-        transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
-      }
-      .show-sticky-name .sticky-cv-btn {
         opacity: 1;
         transform: translateY(0);
+        transition: color 0.2s ease;
       }
       .sticky-cv-btn:hover {
         color: #e0e0e2;
@@ -2207,7 +2203,7 @@
         color: #6a6a6f;
       }
 
-      /* Comment ce site est fait ? */
+      /* Comment ce site est-il fait ? */
       .footer-tech {
         margin-top: 24px;
       }
