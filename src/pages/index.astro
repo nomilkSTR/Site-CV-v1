@@ -495,6 +495,10 @@
       </button>
       <div class="chat">
         <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
+        <div class="chat-suggestions" id="chat-suggestions">
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Résume-moi ton CV</button>
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-random">Une question au hasard</button>
+        </div>
         <form id="chat-form" class="chat-form" action="#" method="post">
           <textarea
             id="chat-input"
@@ -806,6 +810,65 @@
           var welcomeMsg = 'Bonjour 👋 Je suis le Corentin virtuel. Dites-moi ce que vous voulez savoir, je suis là pour aider !';
           appendMessage('assistant', welcomeMsg);
           chatHistory.push({ role: 'assistant', content: welcomeMsg });
+          var chatSuggestions = document.getElementById('chat-suggestions');
+          var suggestionCv = document.getElementById('chat-suggestion-cv');
+          var suggestionRandom = document.getElementById('chat-suggestion-random');
+          var randomCvQuestions = [
+            'Quelle est ta plus grande réalisation professionnelle ?',
+            'Pourquoi avoir choisi le pricing automobile ?',
+            'Quelles sont tes compétences en IA ?',
+            'Tu peux me parler de ton expérience chez Alcopa ?',
+            'Quelles langues parles-tu ?',
+            'Quel est ton parcours en 3 points ?',
+            "Qu'est-ce qui te motive au quotidien ?",
+            'Comment as-tu réduit le temps de traitement de 35 à 40 % ?',
+            'Quel rôle joue l\'automatisation dans ton travail ?'
+          ];
+          function hideSuggestions() {
+            if (chatSuggestions) chatSuggestions.classList.add('is-hidden');
+          }
+          function sendMessage(text) {
+            if (!text || !text.trim()) return;
+            hideSuggestions();
+            appendMessage('user', text.trim());
+            chatInput.value = '';
+            autoResize();
+            chatInput.disabled = true;
+            chatStatus.innerHTML = '<span class="chat-status-dots" aria-hidden="true"><span></span><span></span><span></span></span>';
+            var submitBtn = chatForm.querySelector('button[type="submit"]');
+            if (submitBtn) submitBtn.disabled = true;
+            fetch('/api/chat', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20) }),
+              cache: 'no-store'
+            })
+              .then(function (res) {
+                return res.json().catch(function () { return {}; }).then(function (data) {
+                  if (!res.ok) throw new Error(data && data.error ? data.error : 'Erreur serveur');
+                  return data;
+                });
+              })
+              .then(function (data) {
+                var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
+                appendMessage('assistant', reply);
+                chatHistory.push({ role: 'user', content: text.trim() }, { role: 'assistant', content: reply });
+                chatStatus.innerHTML = '';
+              })
+              .catch(function (err) {
+                chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue. Réessayez plus tard.";
+              })
+              .finally(function () {
+                chatInput.disabled = false;
+                if (submitBtn) submitBtn.disabled = false;
+                chatInput.focus();
+              });
+          }
+          if (suggestionCv) suggestionCv.addEventListener('click', function () { sendMessage('Résume-moi ton CV'); });
+          if (suggestionRandom) suggestionRandom.addEventListener('click', function () {
+            var q = randomCvQuestions[Math.floor(Math.random() * randomCvQuestions.length)];
+            sendMessage(q);
+          });
           var autoResize = function () {
             var lineHeight = parseFloat(getComputedStyle(chatInput).lineHeight) || 20;
             var maxHeight = lineHeight * 6;
@@ -847,44 +910,7 @@
             evt.preventDefault();
             var text = chatInput.value.trim();
             if (!text) return;
-            appendMessage('user', text);
-            chatInput.value = '';
-            autoResize();
-            chatInput.disabled = true;
-            chatStatus.innerHTML = '<span class="chat-status-dots" aria-hidden="true"><span></span><span></span><span></span></span>';
-            var submitBtn = chatForm.querySelector('button[type="submit"]');
-            if (submitBtn) submitBtn.disabled = true;
-            fetch('/api/chat', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ message: text, history: chatHistory.slice(-20) }),
-              cache: 'no-store'
-            })
-              .then(function (res) {
-                return res.json().catch(function () {
-                  return {};
-                }).then(function (data) {
-                  if (!res.ok) {
-                    var err = data && data.error ? data.error : 'Erreur serveur';
-                    throw new Error(err);
-                  }
-                  return data;
-                });
-              })
-              .then(function (data) {
-                var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
-                appendMessage('assistant', reply);
-                chatHistory.push({ role: 'user', content: text }, { role: 'assistant', content: reply });
-                chatStatus.innerHTML = '';
-              })
-              .catch(function (err) {
-                chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue. Réessayez plus tard.";
-              })
-              .finally(function () {
-                chatInput.disabled = false;
-                if (submitBtn) submitBtn.disabled = false;
-                chatInput.focus();
-              });
+            sendMessage(text);
           });
         }
 
@@ -1658,7 +1684,9 @@
         position: fixed;
         right: 16px;
         bottom: 24px;
-        width: min(380px, calc(100vw - 32px));
+        width: 380px;
+        min-width: 380px;
+        max-width: 380px;
         z-index: 120;
         padding: 16px;
         border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1757,6 +1785,30 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+      }
+      .chat-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chat-suggestions.is-hidden {
+        display: none;
+      }
+      .chat-suggestion-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #0066b1;
+        background: rgba(0, 102, 177, 0.15);
+        border: 1px solid rgba(0, 102, 177, 0.35);
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+      .chat-suggestion-btn:hover {
+        background: rgba(0, 102, 177, 0.25);
+        border-color: rgba(0, 102, 177, 0.5);
       }
       .chat-messages {
         min-height: 140px;
@@ -1986,11 +2038,22 @@
         background: rgba(255, 255, 255, 1);
         box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
       }
+      html[data-theme="light"] .chat-suggestion-btn {
+        color: #0066b1;
+        background: rgba(0, 102, 177, 0.12);
+        border-color: rgba(0, 102, 177, 0.3);
+      }
+      html[data-theme="light"] .chat-suggestion-btn:hover {
+        background: rgba(0, 102, 177, 0.2);
+        border-color: rgba(0, 102, 177, 0.45);
+      }
       @media (max-width: 640px) {
         .chat-widget {
           right: 8px;
           bottom: 16px;
-          width: calc(100vw - 32px);
+          width: 380px;
+          min-width: 380px;
+          max-width: 380px;
         }
       }
       html[data-theme="light"] .interest-item strong {
