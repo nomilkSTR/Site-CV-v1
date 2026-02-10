@@ -1181,29 +1181,30 @@
         padding-left: 20px;
         border-left: 2px solid #0066b1;
       }
-      /* Expériences professionnelles · tuile déroulante */
+      /* Expériences professionnelles · tuile déroulante (flex pour icône + texte alignés) */
       .block--expandable .exp-trigger {
         position: relative;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 10px 28px 10px 16px;
         margin: 0;
         background: none;
         border: none;
         cursor: pointer;
         font-family: inherit;
         text-align: center;
+        gap: 12px;
       }
       .exp-trigger__graphic {
-        position: absolute;
-        left: 48px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-shrink: 0;
         width: 32px;
         height: 32px;
-        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: #0066b1;
       }
       .exp-trigger__graphic svg {
@@ -1217,7 +1218,8 @@
       }
       .block--expandable .exp-trigger .label {
         display: block;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
         font-size: 20px;
         letter-spacing: 0.06em;
         color: #ffffff;
@@ -1227,34 +1229,37 @@
         width: 12px;
         height: 12px;
         position: absolute;
-        right: 5px;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        transition: transform 0.25s ease;
         border-right: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
-        transform: rotate(45deg);
-        transition: transform 0.25s ease;
       }
       /* Véhicules possédés · même style que Expériences */
       .vehicle-trigger {
         position: relative;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 10px 28px 10px 16px;
         margin: 0;
         background: none;
         border: none;
         cursor: pointer;
         font-family: inherit;
         text-align: center;
+        gap: 12px;
       }
       .vehicle-trigger__graphic {
-        position: absolute;
-        left: 48px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-shrink: 0;
         width: 55px;
         height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .vehicle-trigger__img {
         width: 100%;
@@ -1265,20 +1270,23 @@
       .interests-trigger__graphic {
         width: 86px;
         height: 86px;
-        left: 48px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .formations-trigger__graphic {
         width: 86px;
         height: 86px;
-        left: 48px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .vehicle-trigger .label {
         display: block;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
         font-size: 20px;
         letter-spacing: 0.06em;
         color: #ffffff;
@@ -1288,11 +1296,12 @@
         width: 12px;
         height: 12px;
         position: absolute;
-        right: 5px;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        transition: transform 0.25s ease;
         border-right: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
-        transform: rotate(45deg);
-        transition: transform 0.25s ease;
       }
       .languages-trigger {
         cursor: default;
@@ -1300,12 +1309,13 @@
       .languages-trigger__graphic {
         width: 86px;
         height: 86px;
-        left: 48px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .block--expandable.is-open .vehicle-trigger__icon {
-        transform: rotate(-135deg);
+        transform: translateY(-50%) rotate(-135deg);
       }
       .vehicle-list {
         margin-top: 20px;
@@ -1340,7 +1350,7 @@
         opacity: 1;
       }
       .block--expandable.is-open .exp-trigger__icon {
-        transform: rotate(-135deg);
+        transform: translateY(-50%) rotate(-135deg);
       }
       .exp-list {
         margin-top: 20px;
