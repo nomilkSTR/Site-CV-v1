@@ -479,7 +479,7 @@
       </button>
       <div class="chat">
         <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
-        <form id="chat-form" class="chat-form">
+        <form id="chat-form" class="chat-form" action="#" method="post">
           <textarea
             id="chat-input"
             class="chat-input"
@@ -487,7 +487,9 @@
             rows="1"
             placeholder="Ex : Tu peux me résumer son parcours en 3 points ?"
             required
+            enterkeyhint="send"
           ></textarea>
+          <button type="submit" class="chat-submit-btn" aria-label="Envoyer" tabindex="-1">Envoyer</button>
         </form>
         <div class="chat-hint">Appuyez sur Entrée pour envoyer</div>
         <div class="chat-status" id="chat-status" aria-live="polite"></div>
@@ -795,8 +797,10 @@
           autoResize();
           chatInput.addEventListener('input', autoResize);
           chatInput.addEventListener('keydown', function (evt) {
-            if (evt.key === 'Enter' && !evt.shiftKey) {
+            var isEnter = evt.key === 'Enter' || evt.keyCode === 13;
+            if (isEnter && !evt.shiftKey) {
               evt.preventDefault();
+              evt.stopPropagation();
               chatForm.requestSubmit();
             }
           });
@@ -1181,13 +1185,13 @@
         padding-left: 20px;
         border-left: 2px solid #0066b1;
       }
-      /* Expériences professionnelles · tuile déroulante (flex pour icône + texte alignés) */
+      /* Expériences professionnelles · tuile déroulante (icône à gauche, texte aligné à gauche) */
       .block--expandable .exp-trigger {
         position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         width: 100%;
         padding: 10px 28px 10px 16px;
         margin: 0;
@@ -1195,7 +1199,7 @@
         border: none;
         cursor: pointer;
         font-family: inherit;
-        text-align: center;
+        text-align: left;
         gap: 12px;
       }
       .exp-trigger__graphic {
@@ -1223,6 +1227,7 @@
         font-size: 20px;
         letter-spacing: 0.06em;
         color: #ffffff;
+        text-align: left;
       }
       .exp-trigger__icon {
         flex-shrink: 0;
@@ -1236,13 +1241,13 @@
         border-right: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
       }
-      /* Véhicules possédés · même style que Expériences */
+      /* Véhicules possédés · même style que Expériences (icône à gauche) */
       .vehicle-trigger {
         position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         width: 100%;
         padding: 10px 28px 10px 16px;
         margin: 0;
@@ -1250,7 +1255,7 @@
         border: none;
         cursor: pointer;
         font-family: inherit;
-        text-align: center;
+        text-align: left;
         gap: 12px;
       }
       .vehicle-trigger__graphic {
@@ -1290,6 +1295,7 @@
         font-size: 20px;
         letter-spacing: 0.06em;
         color: #ffffff;
+        text-align: left;
       }
       .vehicle-trigger__icon {
         flex-shrink: 0;
@@ -1707,6 +1713,17 @@
         display: flex;
         gap: 12px;
         align-items: flex-end;
+      }
+      .chat-submit-btn {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
       }
       .chat-input {
         flex: 1;
