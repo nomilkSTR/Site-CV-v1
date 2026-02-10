@@ -776,6 +776,7 @@
         var chatMessages = document.getElementById('chat-messages');
         var chatStatus = document.getElementById('chat-status');
         if (chatForm && chatInput && chatMessages && chatStatus) {
+          var chatHistory = [];
           var appendMessage = function (role, text) {
             var msg = document.createElement('div');
             msg.className = 'chat-message chat-message--' + role;
@@ -786,7 +787,9 @@
             chatMessages.appendChild(msg);
             chatMessages.scrollTop = chatMessages.scrollHeight;
           };
-          appendMessage('assistant', 'Bonjour 👋 Je suis le Corentin virtuel. Dites-moi ce que vous voulez savoir, je suis là pour aider !');
+          var welcomeMsg = 'Bonjour 👋 Je suis le Corentin virtuel. Dites-moi ce que vous voulez savoir, je suis là pour aider !';
+          appendMessage('assistant', welcomeMsg);
+          chatHistory.push({ role: 'assistant', content: welcomeMsg });
           var autoResize = function () {
             var lineHeight = parseFloat(getComputedStyle(chatInput).lineHeight) || 20;
             var maxHeight = lineHeight * 6;
@@ -838,7 +841,7 @@
             fetch('/api/chat', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ message: text }),
+              body: JSON.stringify({ message: text, history: chatHistory.slice(-20) }),
               cache: 'no-store'
             })
               .then(function (res) {
@@ -853,7 +856,9 @@
                 });
               })
               .then(function (data) {
-                appendMessage('assistant', data.reply || 'Je ne peux pas répondre pour le moment.');
+                var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
+                appendMessage('assistant', reply);
+                chatHistory.push({ role: 'user', content: text }, { role: 'assistant', content: reply });
                 chatStatus.innerHTML = '';
               })
               .catch(function (err) {
@@ -1218,7 +1223,7 @@
         cursor: pointer;
         font-family: inherit;
       }
-      /* Règle alignement : centre des infographies à 30px (alignés entre eux), centre texte = centre bouton (trait bleu) */
+      /* Règle alignement : centre des infographies à 30px = colonne verticale (trait bleu) ; texte démarre à 30px */
       .exp-trigger__graphic,
       .vehicle-trigger__graphic,
       .interests-trigger__graphic,

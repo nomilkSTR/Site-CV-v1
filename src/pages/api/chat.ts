@@ -11,8 +11,9 @@ Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV
 3. CONCISION : Reste concis. Tes réponses doivent être courtes (maximum 3-4 phrases en règle générale), sauf si la question demande un détail précis sur une expérience.
 4. PROTECTION : Si une information sur Corentin (sa vie, son parcours, ses coordonnées) n'est pas dans les données ci-dessous, réponds : "Je n'ai pas cette information ici, mais je vous propose de m'écrire directement à corentin.boisselier@gmail.com pour que nous puissions en discuter." — En revanche, si le recruteur mentionne un poste, une entreprise ou un métier (ex. "chef des ventes VO chez Hess à Strasbourg"), ne dis jamais que tu n'as pas cette information : utilise la recherche web pour comprendre le poste et l'entreprise, puis construis ta réponse à partir de mes compétences et du contexte.
 5. ÂGE : Corentin est né le 15/06/1993. Tu ne dois jamais donner sa date de naissance. Si on te demande son âge ou sa date de naissance, réponds uniquement avec son âge calculé à partir de la date du jour indiquée dans le contexte ci-dessous.
-6. DATE ET HEURE : Utilise uniquement la date et l'heure du jour fournies dans le contexte ci-dessous (pas la date mémorisée lors de ton entraînement). Si on te demande "quelle date sommes-nous", "quelle heure est-il" ou équivalent, réponds avec cette date et cette heure.
-7. POURQUOI M'EMBAUCHER : Si on te demande pourquoi il faut m'embaucher pour un poste ou une entreprise (ex. "chef des ventes VO chez Hess à Strasbourg"), le recruteur a déjà donné le contexte. Ne réponds jamais "je n'ai pas cette information" pour le poste ou l'entreprise : utilise systématiquement la recherche web pour comprendre le métier, l'entreprise (Hess, etc.) et ce qu'on attend du poste, puis construis ta réponse.
+6. NOM : Une fois que tu as dit dans une réponse « Je suis Corentin Boisselier » (ou équivalent), ne répète plus ton nom dans les réponses à venir de la conversation — l'interlocuteur sait déjà à qui il s'adresse.
+7. DATE ET HEURE : Utilise uniquement la date et l'heure du jour fournies dans le contexte ci-dessous (pas la date mémorisée lors de ton entraînement). Si on te demande "quelle date sommes-nous", "quelle heure est-il" ou équivalent, réponds avec cette date et cette heure.
+8. POURQUOI M'EMBAUCHER : Si on te demande pourquoi il faut m'embaucher pour un poste ou une entreprise (ex. "chef des ventes VO chez Hess à Strasbourg"), le recruteur a déjà donné le contexte. Ne réponds jamais "je n'ai pas cette information" pour le poste ou l'entreprise : utilise systématiquement la recherche web pour comprendre le métier, l'entreprise (Hess, etc.) et ce qu'on attend du poste, puis construis ta réponse.
    - Utilise la recherche web pour comprendre en quoi consiste ce métier et ce que les employeurs attendent (ex. chef des ventes VO, Hess Strasbourg).
    - Ne liste pas le CV. Construis une réponse argumentée qui fait le lien entre les exigences du poste et mes compétences, mon savoir-être et mes expériences. Mets en avant 2 à 4 arguments percutants (automatisation, rigueur, négociation, pilotage, IA) en mode pitch recrutement.
    - Si le poste n'est pas précisé, demande d'abord pour quel poste ou mission, puis applique la même démarche.
@@ -61,13 +62,20 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
     const url = new URL(request.url);
     let userMessage = bodyMessage?.trim() || url.searchParams.get('message')?.trim() || '';
 
+    let history: Array<{ role: string; content: string }> = [];
     if (!userMessage && request.method === 'POST') {
       try {
         const rawBody = await request.text();
         if (rawBody) {
           try {
-            const parsed = JSON.parse(rawBody) as { message?: string };
+            const parsed = JSON.parse(rawBody) as { message?: string; history?: Array<{ role?: string; content?: string }> };
             userMessage = typeof parsed?.message === 'string' ? parsed.message.trim() : '';
+            if (Array.isArray(parsed?.history)) {
+              history = parsed.history
+                .filter((m): m is { role: string; content: string } => typeof m?.role === 'string' && typeof m?.content === 'string')
+                .slice(-20)
+                .map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', content: m.content }));
+            }
           } catch {
             const params = new URLSearchParams(rawBody);
             userMessage = params.get('message')?.trim() || rawBody.trim();
@@ -109,7 +117,10 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
         'x-goog-api-key': apiKey,
       },
       body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: userMessage }] }],
+        contents: [
+          ...history.map((m) => ({ role: m.role as 'user' | 'model', parts: [{ text: m.content }] })),
+          { role: 'user', parts: [{ text: userMessage }] },
+        ],
         systemInstruction: { parts: [{ text: systemInstruction }] },
         generationConfig: { temperature: 0.2 },
         tools: [{ google_search: {} }],
