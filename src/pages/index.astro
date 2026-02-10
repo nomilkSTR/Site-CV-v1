@@ -795,15 +795,35 @@
             chatInput.style.height = next + 'px';
           };
           autoResize();
-          chatInput.addEventListener('input', autoResize);
-          chatInput.addEventListener('keydown', function (evt) {
-            var isEnter = evt.key === 'Enter' || evt.keyCode === 13;
+          chatInput.addEventListener('input', function () {
+            autoResize();
+            if (chatInput.value.indexOf('\n') !== -1) {
+              chatInput.value = chatInput.value.replace(/\r?\n/g, ' ').trim();
+              autoResize();
+              if (chatInput.value) chatForm.requestSubmit();
+            }
+          });
+          function handleEnter(evt) {
+            var key = evt.key;
+            var code = evt.keyCode || evt.which;
+            var isEnter = key === 'Enter' || key === 'Go' || key === 'Send' || code === 13;
             if (isEnter && !evt.shiftKey) {
               evt.preventDefault();
               evt.stopPropagation();
-              chatForm.requestSubmit();
+              evt.stopImmediatePropagation();
+              setTimeout(function () { chatForm.requestSubmit(); }, 0);
             }
-          });
+          }
+          chatInput.addEventListener('keydown', handleEnter, true);
+          chatInput.addEventListener('keydown', handleEnter, false);
+          chatInput.addEventListener('keypress', function (evt) {
+            var code = evt.keyCode || evt.which;
+            if (code === 13 && !evt.shiftKey) {
+              evt.preventDefault();
+              evt.stopPropagation();
+              setTimeout(function () { chatForm.requestSubmit(); }, 0);
+            }
+          }, true);
           chatForm.addEventListener('submit', function (evt) {
             evt.preventDefault();
             var text = chatInput.value.trim();
@@ -1198,19 +1218,25 @@
         cursor: pointer;
         font-family: inherit;
       }
-      /* Infographies : bord gauche aligné (trait rouge), texte centré (trait bleu) */
-      .exp-trigger__graphic {
+      /* Règle alignement : bord gauche infographies = 10px (trait rouge), centre texte = centre bouton (trait bleu) */
+      .exp-trigger__graphic,
+      .vehicle-trigger__graphic,
+      .interests-trigger__graphic,
+      .formations-trigger__graphic,
+      .languages-trigger__graphic {
         position: absolute;
         left: 10px;
         top: 50%;
         transform: translateY(-50%);
-        width: 32px;
-        height: 32px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #0066b1;
         z-index: 1;
+      }
+      .exp-trigger__graphic {
+        width: 32px;
+        height: 32px;
+        color: #0066b1;
       }
       .exp-trigger__graphic svg {
         width: 100%;
@@ -1264,16 +1290,8 @@
         font-family: inherit;
       }
       .vehicle-trigger__graphic {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
         width: 55px;
         height: 55px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
       }
       .vehicle-trigger__img {
         width: 100%;
@@ -1284,16 +1302,8 @@
       .interests-trigger__graphic,
       .formations-trigger__graphic,
       .languages-trigger__graphic {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
         width: 86px;
         height: 86px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
       }
       .vehicle-trigger .label {
         position: absolute;
@@ -1743,6 +1753,29 @@
         clip: rect(0, 0, 0, 0);
         border: 0;
         white-space: nowrap;
+      }
+      @media (max-width: 768px) {
+        .chat-submit-btn {
+          position: static;
+          width: auto;
+          height: auto;
+          padding: 10px 16px;
+          margin: 0;
+          overflow: visible;
+          clip: auto;
+          border: 1px solid rgba(0, 102, 177, 0.5);
+          background: #0066b1;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 10px;
+          white-space: nowrap;
+          flex-shrink: 0;
+          cursor: pointer;
+        }
+        .chat-submit-btn:active {
+          opacity: 0.9;
+        }
       }
       .chat-input {
         flex: 1;
