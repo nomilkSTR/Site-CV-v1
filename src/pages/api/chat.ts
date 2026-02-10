@@ -120,7 +120,7 @@ const handleRequest = async (request: Request, bodyMessage?: string, bodyHistory
       });
     }
     if (msgLower.includes('recette') || msgLower.includes('cuisine') || msgLower.includes('cuisiner') || msgLower.includes('recettes')) {
-      return new Response(JSON.stringify({ reply: "t'as devant toi le spécialiste de la ouiche lorriane !" }), {
+      return new Response(JSON.stringify({ reply: "t'as devant toi le spécialiste de la ouiche lorraine !" }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
