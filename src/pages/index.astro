@@ -1099,9 +1099,15 @@
         background: none;
         border: none;
         text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+      }
+      .show-sticky-name .sticky-cv-btn {
         opacity: 1;
+        pointer-events: auto;
         transform: translateY(0);
-        transition: color 0.2s ease;
       }
       .sticky-cv-btn:hover {
         color: #e0e0e2;
