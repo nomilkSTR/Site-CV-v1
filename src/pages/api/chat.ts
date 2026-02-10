@@ -61,13 +61,13 @@ Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV
 - Pour "pourquoi m'embaucher pour [poste]" : consulte le web pour comprendre le métier, puis rédige un pitch basé sur mes compétences et mon savoir-être, sans lister le CV. Priorité aux arguments qui font le lien poste ↔ profil.
 `.trim();
 
-const handleRequest = async (request: Request, bodyMessage?: string) => {
+const handleRequest = async (request: Request, bodyMessage?: string, bodyHistory?: Array<{ role: string; content: string }>) => {
   try {
     const url = new URL(request.url);
     let userMessage = bodyMessage?.trim() || url.searchParams.get('message')?.trim() || '';
 
-    let history: Array<{ role: string; content: string }> = [];
-    if (!userMessage && request.method === 'POST') {
+    let history: Array<{ role: string; content: string }> = bodyHistory ?? [];
+    if (history.length === 0 && !userMessage && request.method === 'POST') {
       try {
         const rawBody = await request.text();
         if (rawBody) {
@@ -97,9 +97,31 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
       });
     }
 
+    const msgLower = userMessage.toLowerCase();
+    if (msgLower.includes('blanquette')) {
+      return new Response(JSON.stringify({ reply: "On me dit le plus grand bien des harengs pomme-à-l'huile" }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    if (msgLower.includes('dictature')) {
+      return new Response(JSON.stringify({
+        reply: "Une dictature, une dictature, comme vous y allez ! Vous êtes bien sympathique, Dolorès, mais épargnez-moi vos analyses politiques… Une dictature, c'est quand les gens sont communistes, déjà. Qu'ils ont froid, avec des chapeaux gris et des chaussures à fermeture éclair.",
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    if (msgLower.includes('oss117')) {
+      return new Response(JSON.stringify({ reply: "s'agirait d'grandir..." }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     const apiKey = import.meta.env.GEMINI_API_KEY;
-    // Gemini 2.5 Flash Lite (doc: https://ai.google.dev/gemini-api/docs/models/gemini)
-    const modelId = 'gemini-2.5-flash-lite';
+    // Gemini 3 Flash (test, ne pas publier) — doc: https://ai.google.dev/gemini-api/docs/models
+    const modelId = 'gemini-3-flash-preview';
     if (!apiKey) {
       return new Response(JSON.stringify({ error: 'Clé API manquante côté serveur. Vérifiez que .env contient GEMINI_API_KEY.' }), { status: 500 });
     }
@@ -111,8 +133,16 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
 
     const systemInstruction = dateTimeContext + '\n\n' + profileContext;
 
-    // Appel avec Google Search (grounding) pour que le modèle puisse rechercher sur le web
-    // (ex. pour "pourquoi m'embaucher pour [poste]" → comprendre le métier puis argumenter)
+    const payload = {
+      contents: [
+        ...history.map((m) => ({ role: m.role as 'user' | 'model', parts: [{ text: m.content }] })),
+        { role: 'user', parts: [{ text: userMessage }] },
+      ],
+      systemInstruction: { parts: [{ text: systemInstruction }] },
+      generationConfig: { temperature: 0.2 },
+      tools: [{ google_search: {} }],
+    };
+
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent`;
     const res = await fetch(apiUrl, {
       method: 'POST',
@@ -120,15 +150,7 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
         'Content-Type': 'application/json',
         'x-goog-api-key': apiKey,
       },
-      body: JSON.stringify({
-        contents: [
-          ...history.map((m) => ({ role: m.role as 'user' | 'model', parts: [{ text: m.content }] })),
-          { role: 'user', parts: [{ text: userMessage }] },
-        ],
-        systemInstruction: { parts: [{ text: systemInstruction }] },
-        generationConfig: { temperature: 0.2 },
-        tools: [{ google_search: {} }],
-      }),
+      body: JSON.stringify(payload),
     });
 
     if (!res.ok) {
@@ -160,14 +182,21 @@ export const GET: APIRoute = async ({ request }) => handleRequest(request);
 
 export const POST: APIRoute = async ({ request }) => {
   let bodyMessage = '';
+  let bodyHistory: Array<{ role: string; content: string }> = [];
   try {
     const raw = await request.text();
     if (raw) {
-      const parsed = JSON.parse(raw) as { message?: string };
-      bodyMessage = typeof parsed?.message === 'string' ? parsed.message : '';
+      const parsed = JSON.parse(raw) as { message?: string; history?: Array<{ role?: string; content?: string }> };
+      bodyMessage = typeof parsed?.message === 'string' ? parsed.message.trim() : '';
+      if (Array.isArray(parsed?.history)) {
+        bodyHistory = parsed.history
+          .filter((m): m is { role: string; content: string } => typeof m?.role === 'string' && typeof m?.content === 'string')
+          .slice(-20)
+          .map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', content: m.content }));
+      }
     }
   } catch {
     // ignorer
   }
-  return handleRequest(request, bodyMessage);
+  return handleRequest(request, bodyMessage, bodyHistory);
 };
