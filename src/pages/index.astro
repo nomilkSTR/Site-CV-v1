@@ -1218,16 +1218,16 @@
         cursor: pointer;
         font-family: inherit;
       }
-      /* Règle alignement : bord gauche infographies = 10px (trait rouge), centre texte = centre bouton (trait bleu) */
+      /* Règle alignement : centre des infographies à 30px (alignés entre eux), centre texte = centre bouton (trait bleu) */
       .exp-trigger__graphic,
       .vehicle-trigger__graphic,
       .interests-trigger__graphic,
       .formations-trigger__graphic,
       .languages-trigger__graphic {
         position: absolute;
-        left: 10px;
+        left: 30px;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1324,6 +1324,14 @@
       }
       /* Mobile portrait : texte à droite de l’infographie, passage sur 2 lignes si besoin */
       @media (max-width: 768px) {
+        .exp-trigger__graphic,
+        .vehicle-trigger__graphic,
+        .interests-trigger__graphic,
+        .formations-trigger__graphic,
+        .languages-trigger__graphic {
+          left: 30px;
+          transform: translate(-50%, -50%);
+        }
         .block--expandable .exp-trigger .label,
         .vehicle-trigger .label {
           left: 96px;
