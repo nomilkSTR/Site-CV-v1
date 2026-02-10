@@ -1235,6 +1235,7 @@
         text-align: center;
         padding: 0 10px;
         box-sizing: border-box;
+        min-width: 0;
       }
       .exp-trigger__icon {
         width: 12px;
@@ -1308,6 +1309,19 @@
         text-align: center;
         padding: 0 10px;
         box-sizing: border-box;
+        min-width: 0;
+      }
+      /* Mobile portrait : texte à droite de l’infographie, passage sur 2 lignes si besoin */
+      @media (max-width: 768px) {
+        .block--expandable .exp-trigger .label,
+        .vehicle-trigger .label {
+          left: 96px;
+          padding-left: 0;
+          text-align: center;
+          flex-wrap: wrap;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+        }
       }
       .vehicle-trigger__icon {
         width: 12px;
