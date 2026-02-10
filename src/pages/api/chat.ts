@@ -83,8 +83,8 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
     }
 
     const apiKey = import.meta.env.GEMINI_API_KEY;
-    // Gemini 3 Flash uniquement (doc: https://ai.google.dev/gemini-api/docs/models/gemini)
-    const modelId = 'gemini-3-flash-preview';
+    // Gemini 2.5 Flash Lite (doc: https://ai.google.dev/gemini-api/docs/models/gemini)
+    const modelId = 'gemini-2.5-flash-lite';
     if (!apiKey) {
       return new Response(JSON.stringify({ error: 'Clé API manquante côté serveur. Vérifiez que .env contient GEMINI_API_KEY.' }), { status: 500 });
     }
