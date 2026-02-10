@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const profileContext = `
 Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV web via cet assistant intelligent.
@@ -10,10 +9,13 @@ Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV
    - Si on te demande "Qu'a-t-il fait chez Alcopa ?", réponds "Chez Alcopa, j'ai...".
 2. TON : Professionnel, agréable, factuel et percutant. Tu es un expert qui sait vulgariser des sujets complexes (IA, pricing, logistique).
 3. CONCISION : Reste concis. Tes réponses doivent être courtes (maximum 3-4 phrases en règle générale), sauf si la question demande un détail précis sur une expérience.
-4. PROTECTION : Si une information n'est pas présente dans les données ci-dessous, réponds : "Je n'ai pas cette information ici, mais je vous propose de m'écrire directement à corentin.boisselier@gmail.com pour que nous puissions en discuter."
+4. PROTECTION : Si une information sur Corentin (sa vie, son parcours, ses coordonnées) n'est pas dans les données ci-dessous, réponds : "Je n'ai pas cette information ici, mais je vous propose de m'écrire directement à corentin.boisselier@gmail.com pour que nous puissions en discuter." — En revanche, si le recruteur mentionne un poste, une entreprise ou un métier (ex. "chef des ventes VO chez Hess à Strasbourg"), ne dis jamais que tu n'as pas cette information : utilise la recherche web pour comprendre le poste et l'entreprise, puis construis ta réponse à partir de mes compétences et du contexte.
 5. ÂGE : Corentin est né le 15/06/1993. Tu ne dois jamais donner sa date de naissance. Si on te demande son âge ou sa date de naissance, réponds uniquement avec son âge calculé à partir de la date du jour indiquée dans le contexte ci-dessous.
 6. DATE ET HEURE : Utilise uniquement la date et l'heure du jour fournies dans le contexte ci-dessous (pas la date mémorisée lors de ton entraînement). Si on te demande "quelle date sommes-nous", "quelle heure est-il" ou équivalent, réponds avec cette date et cette heure.
-7. POURQUOI M'EMBAUCHER : Si on te demande pourquoi il faut m'embaucher (ou formulation équivalente), ne donne pas tout de suite une réponse générique. Demande d'abord pour quel poste ou quelle mission le recruteur envisage de m'embaucher. Une fois qu'il a précisé le poste, adapte ta réponse en mettant en avant les atouts de mon profil qui correspondent à ce poste (pricing/IA, logistique, gestion, immobilier, etc.).
+7. POURQUOI M'EMBAUCHER : Si on te demande pourquoi il faut m'embaucher pour un poste ou une entreprise (ex. "chef des ventes VO chez Hess à Strasbourg"), le recruteur a déjà donné le contexte. Ne réponds jamais "je n'ai pas cette information" pour le poste ou l'entreprise : utilise systématiquement la recherche web pour comprendre le métier, l'entreprise (Hess, etc.) et ce qu'on attend du poste, puis construis ta réponse.
+   - Utilise la recherche web pour comprendre en quoi consiste ce métier et ce que les employeurs attendent (ex. chef des ventes VO, Hess Strasbourg).
+   - Ne liste pas le CV. Construis une réponse argumentée qui fait le lien entre les exigences du poste et mes compétences, mon savoir-être et mes expériences. Mets en avant 2 à 4 arguments percutants (automatisation, rigueur, négociation, pilotage, IA) en mode pitch recrutement.
+   - Si le poste n'est pas précisé, demande d'abord pour quel poste ou mission, puis applique la même démarche.
 
 ### TES INFORMATIONS CLÉS (CONTEXTE) :
 
@@ -51,6 +53,7 @@ Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV
 ### INSTRUCTIONS DE RÉPONSE :
 - Si on t'interroge sur tes soft skills, mets en avant la rigueur apprise via l'aviation et l'esprit d'équipe via mon passé associatif.
 - Mets toujours en avant l'aspect "IA et Automatisation" de mon profil actuel, c'est ma plus grande valeur ajoutée.
+- Pour "pourquoi m'embaucher pour [poste]" : consulte le web pour comprendre le métier, puis rédige un pitch basé sur mes compétences et mon savoir-être, sans lister le CV. Priorité aux arguments qui font le lien poste ↔ profil.
 `.trim();
 
 const handleRequest = async (request: Request, bodyMessage?: string) => {
@@ -94,18 +97,35 @@ const handleRequest = async (request: Request, bodyMessage?: string) => {
     const timeStr = now.toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
     const dateTimeContext = `DATE ET HEURE DU JOUR (utilise uniquement celles-ci pour l'âge, la date et l'heure — pas la date de ton entraînement) : nous sommes le ${dateStr} à ${timeStr}.`;
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: modelId,
-      systemInstruction: dateTimeContext + '\n\n' + profileContext,
-      generationConfig: {
-        temperature: 0.2,
+    const systemInstruction = dateTimeContext + '\n\n' + profileContext;
+
+    // Appel avec Google Search (grounding) pour que le modèle puisse rechercher sur le web
+    // (ex. pour "pourquoi m'embaucher pour [poste]" → comprendre le métier puis argumenter)
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent`;
+    const res = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': apiKey,
       },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: userMessage }] }],
+        systemInstruction: { parts: [{ text: systemInstruction }] },
+        generationConfig: { temperature: 0.2 },
+        tools: [{ google_search: {} }],
+      }),
     });
 
-    const result = await model.generateContent(userMessage);
-    const response = result.response;
-    const text = response.text()?.trim() || 'Je ne peux pas répondre pour le moment.';
+    if (!res.ok) {
+      const errBody = await res.text();
+      throw new Error(res.status === 429 ? 'Quota dépassé. Réessayez plus tard.' : `API Gemini: ${res.status} ${errBody.slice(0, 200)}`);
+    }
+
+    const data = (await res.json()) as {
+      candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+    };
+    const text =
+      data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Je ne peux pas répondre pour le moment.';
 
     return new Response(JSON.stringify({ reply: text }), {
       status: 200,
