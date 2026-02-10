@@ -466,6 +466,22 @@
       </section>
 
       <footer id="contact" class="footer animate-on-scroll" data-delay="0">
+        <div class="footer-tech">
+          <button type="button" class="footer-tech-btn" id="footer-tech-btn" aria-expanded="false" aria-controls="footer-tech-panel">
+            Comment ce site est fait ?
+          </button>
+          <div id="footer-tech-panel" class="footer-tech-panel" role="dialog" aria-labelledby="footer-tech-title" aria-hidden="true">
+            <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est fait ?</h2>
+            <p class="footer-tech-intro">En bref, pour les curieux qui ne sont pas à l'aise avec la technique :</p>
+            <ul class="footer-tech-list">
+              <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d’interaction).</li>
+              <li><strong>Elle est construite</strong> avec Astro — un outil qui permet de générer des sites rapides et légers.</li>
+              <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu’un ouvre le lien.</li>
+              <li><strong>Le chatbot</strong> utilise l’intelligence artificielle de Google (Gemini) pour répondre à vos questions à ma place, en s’appuyant sur les infos de mon CV.</li>
+            </ul>
+            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">Fermer</button>
+          </div>
+        </div>
       </footer>
 
     </div>
@@ -870,6 +886,28 @@
                 chatInput.focus();
               });
           });
+        }
+
+        // Panneau « Comment ce site est fait ? »
+        var footerTechBtn = document.getElementById('footer-tech-btn');
+        var footerTechPanel = document.getElementById('footer-tech-panel');
+        var footerTechClose = document.getElementById('footer-tech-close');
+        if (footerTechBtn && footerTechPanel) {
+          function openTechPanel() {
+            footerTechPanel.classList.add('is-open');
+            footerTechPanel.setAttribute('aria-hidden', 'false');
+            if (footerTechBtn) footerTechBtn.setAttribute('aria-expanded', 'true');
+          }
+          function closeTechPanel() {
+            footerTechPanel.classList.remove('is-open');
+            footerTechPanel.setAttribute('aria-hidden', 'true');
+            if (footerTechBtn) footerTechBtn.setAttribute('aria-expanded', 'false');
+          }
+          footerTechBtn.addEventListener('click', function () {
+            if (footerTechPanel.classList.contains('is-open')) closeTechPanel();
+            else openTechPanel();
+          });
+          if (footerTechClose) footerTechClose.addEventListener('click', closeTechPanel);
         }
 
         // Brand list toggles
@@ -1968,7 +2006,7 @@
       /* Footer · sobre */
       .footer {
         margin-top: 48px;
-        padding: 40px 0 0;
+        padding: 40px 0 56px;
         text-align: left;
         background: transparent;
         border-radius: 0;
@@ -1982,6 +2020,106 @@
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: #6a6a6f;
+      }
+
+      /* Comment ce site est fait ? */
+      .footer-tech {
+        margin-top: 24px;
+      }
+      .footer-tech-btn {
+        display: inline-block;
+        padding: 8px 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: #8a8a8f;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s ease;
+      }
+      .footer-tech-btn:hover {
+        color: #0066b1;
+      }
+      .footer-tech-panel {
+        margin-top: 20px;
+        padding: 24px;
+        max-width: 520px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+      }
+      .footer-tech-panel.is-open {
+        max-height: 70vh;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+      .footer-tech-title {
+        margin: 0 0 12px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .footer-tech-intro {
+        margin: 0 0 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #a0a0a5;
+      }
+      .footer-tech-list {
+        margin: 0 0 20px;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #c0c0c5;
+      }
+      .footer-tech-list li {
+        margin-bottom: 10px;
+      }
+      .footer-tech-list li:last-child {
+        margin-bottom: 0;
+      }
+      .footer-tech-close {
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #ffffff;
+        background: #0066b1;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s ease;
+      }
+      .footer-tech-close:hover {
+        background: #005a9e;
+      }
+      html[data-theme="light"] .footer-tech-btn {
+        color: #5a5a5f;
+      }
+      html[data-theme="light"] .footer-tech-btn:hover {
+        color: #0066b1;
+      }
+      html[data-theme="light"] .footer-tech-panel {
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+      html[data-theme="light"] .footer-tech-title {
+        color: #0a0a0a;
+      }
+      html[data-theme="light"] .footer-tech-intro {
+        color: #5a5a5f;
+      }
+      html[data-theme="light"] .footer-tech-list {
+        color: #2a2a2a;
       }
 
       /* Bouton thème · fixe en haut à droite */
