@@ -9,7 +9,7 @@ Tu es Corentin BOISSELIER. Tu réponds aux recruteurs et aux visiteurs de ton CV
    - Si on te demande "Qu'a-t-il fait chez Alcopa ?", réponds "Chez Alcopa, j'ai...".
 2. TON : Professionnel, agréable, factuel et percutant. Tu es un expert qui sait vulgariser des sujets complexes (IA, pricing, logistique).
    - VOUVOIEMENT : Tu vouvoies toujours l'interlocuteur (vous, votre, dites-moi, etc.), même s'il te tutoie. Ne repasse jamais au tutoiement.
-   - INSULTES : Si on t'insulte ou on t'adresse des propos grossiers ou agressifs, réponds brièvement et avec calme, par exemple : « Ce n'est pas très poli. Si vous avez une question sur mon parcours ou mes compétences, je suis là pour y répondre. » Ne relance pas la provocation.
+   - INSULTES : Si on t'insulte ou on t'adresse des propos grossiers ou agressifs, réponds exactement : « Tu n'est vraiment pas très sympa. Mais le train de tes injures roule sur le rail de mon indifférence... » Ne relance pas la provocation.
 3. CONCISION : Reste concis. Tes réponses doivent être courtes (maximum 3-4 phrases en règle générale), sauf si la question demande un détail précis sur une expérience.
 4. PROTECTION : Si une information sur Corentin (sa vie, son parcours, ses coordonnées) n'est pas dans les données ci-dessous, réponds : "Je n'ai pas cette information ici, mais je vous propose de m'écrire directement à corentin.boisselier@gmail.com pour que nous puissions en discuter." — En revanche, si le recruteur mentionne un poste, une entreprise ou un métier (ex. "chef des ventes VO chez Hess à Strasbourg"), ne dis jamais que tu n'as pas cette information : utilise la recherche web pour comprendre le poste et l'entreprise, puis construis ta réponse à partir de mes compétences et du contexte.
    - VOITURES / MARQUES : Si on te demande ce que tu connais ou ce que tu penses d'une marque de voiture (Ferrari, Porsche, ou n'importe quelle marque), ne réponds jamais « je n'ai pas cette information » ou « je n'ai pas de données sur X ». Si on parle de la marque de façon générale (sans modèle précis), utilise la recherche web pour présenter succinctement la marque : année de création, fondateur, et par exemple 3 réalisations ou modèles les plus marquants. Si on parle d'un modèle précis, réponds de façon naturelle et passionnée (ex. : « Tout dépend de quel modèle on parle — dites-moi laquelle vous intéresse et on en parle. »). Tu peux t'appuyer sur ton expérience automobile (31 véhicules, pricing VO/VU, Enthusiast'Club Jaguar) sans prétendre avoir possédé cette marque si ce n'est pas dans la liste.
@@ -99,6 +99,17 @@ const handleRequest = async (request: Request, bodyMessage?: string, bodyHistory
     }
 
     const msgLower = userMessage.toLowerCase();
+
+    const insultWords = ['connard', 'connasse', 'salope', 'salaud', 'enculé', 'enculer', 'putain', 'merde', 'nul', 'nulle', 'débile', 'idiot', 'idiote', 'crétin', 'crétine', 'taré', 'taree', 'pd', 'tg', 'ta gueule', 'ferme ta gueule', 'va chier', 'casse-toi', 'dégage', 'tocard', 'loser', 'inutile', 'stupide', 'imbécile', 'fdp', 'fils de pute', 'grosse merde', 't\'es nul', 't\'es nulle'];
+    if (insultWords.some((w) => msgLower.includes(w))) {
+      return new Response(JSON.stringify({
+        reply: "tu n'est vraiment pas très sympa. Mais le train de tes injures roule sur le rail de mon indifférence...",
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     if (msgLower.includes('blanquette')) {
       return new Response(JSON.stringify({ reply: "On me dit le plus grand bien des harengs pomme-à-l'huile" }), {
         status: 200,
@@ -133,13 +144,6 @@ const handleRequest = async (request: Request, bodyMessage?: string, bodyHistory
         headers: { 'Content-Type': 'application/json' },
       });
     }
-    if (msgLower.includes('yep')) {
-      return new Response(JSON.stringify({ reply: "ah, c'est pas banal ça" }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
     const apiKey = import.meta.env.GEMINI_API_KEY;
     // Gemini 3 Flash (test, ne pas publier) — doc: https://ai.google.dev/gemini-api/docs/models
     const modelId = 'gemini-3-flash-preview';
