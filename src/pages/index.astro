@@ -20,16 +20,6 @@
   <body>
     <a href="mailto:corentin.boisselier@gmail.com" class="btn btn-float">Contactez-moi 🙂</a>
     <div class="sticky-name" aria-hidden="true">Corentin BOISSELIER</div>
-    <a href="/CV-Corentin-Boisselier.pdf" download class="sticky-cv-btn" aria-label="Télécharger mon CV (PDF)">
-      <span class="sticky-cv-btn__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <path d="M9 13h6M9 17h4M9 9h1"/>
-        </svg>
-      </span>
-      <span class="sticky-cv-btn__label">Téléchargez mon CV</span>
-    </a>
     <div class="wrap">
 
       <header class="hero animate-on-scroll" data-delay="0">
@@ -38,16 +28,6 @@
         <div class="hero-tags">
           <span class="hero-tag">Permis B</span>
           <span class="hero-tag">Strasbourg (France)</span>
-          <a href="/CV-Corentin-Boisselier.pdf" download class="hero-cv-btn" aria-label="Télécharger mon CV (PDF)">
-            <span class="hero-cv-btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <path d="M9 13h6M9 17h4M9 9h1"/>
-              </svg>
-            </span>
-            <span class="hero-cv-btn__label">Téléchargez mon CV</span>
-          </a>
         </div>
         <blockquote class="hero-desc">
           Il n'y a rien de noble à être supérieur à son prochain ; la vraie noblesse, c'est d'être supérieur à son ancien&nbsp;soi.
@@ -1081,62 +1061,11 @@
         opacity: 1;
         transform: translateY(0);
       }
-      .sticky-cv-btn {
-        position: fixed;
-        top: 24px;
-        right: 24px;
-        z-index: 60;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        padding: 8px 12px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #c8c8cc;
-        background: none;
-        border: none;
-        text-decoration: none;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-6px);
-        transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
-      }
-      .show-sticky-name .sticky-cv-btn {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-      .sticky-cv-btn:hover {
-        color: #e0e0e2;
-      }
-      .sticky-cv-btn__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        color: #0066b1;
-      }
-      .sticky-cv-btn__icon svg {
-        width: 100%;
-        height: 100%;
-      }
-      .sticky-cv-btn__label {
-        line-height: 1.2;
-        text-align: center;
-      }
       @media (max-width: 900px) {
         .sticky-name {
           font-size: 1.1rem;
           top: 16px;
           left: 16px;
-        }
-        .sticky-cv-btn {
-          top: 16px;
-          right: 16px;
         }
       }
       .hero-meta {
@@ -1149,7 +1078,7 @@
       }
       .hero-tags {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
         margin: 0 0 18px;
       }
@@ -1163,43 +1092,6 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #c8c8cc;
-      }
-      .hero-cv-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        padding: 10px 12px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #c8c8cc;
-        background: none;
-        border: none;
-        border-radius: 0;
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-      .hero-cv-btn:hover {
-        color: #e0e0e2;
-      }
-      .hero-cv-btn__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 28px;
-        height: 28px;
-        color: #0066b1;
-      }
-      .hero-cv-btn__icon svg {
-        width: 100%;
-        height: 100%;
-      }
-      .hero-cv-btn__label {
-        line-height: 1.2;
-        text-align: center;
       }
       @media (max-width: 520px) {
         .hero-tags {
@@ -2322,24 +2214,6 @@
       html[data-theme="light"] .hero-intro p { color: #4a4a4f; }
       html[data-theme="light"] .hero-tag {
         color: #1a1a1a;
-      }
-      html[data-theme="light"] .hero-cv-btn {
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .hero-cv-btn:hover {
-        color: #0066b1;
-      }
-      html[data-theme="light"] .hero-cv-btn__icon {
-        color: #0066b1;
-      }
-      html[data-theme="light"] .sticky-cv-btn {
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .sticky-cv-btn:hover {
-        color: #0066b1;
-      }
-      html[data-theme="light"] .sticky-cv-btn__icon {
-        color: #0066b1;
       }
       html[data-theme="light"] .hero blockquote::before,
       html[data-theme="light"] .hero blockquote::after { color: #38383d; }
