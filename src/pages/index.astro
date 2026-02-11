@@ -42,21 +42,6 @@
         </div>
       </header>
 
-      <section class="stats animate-on-scroll" aria-label="Chiffres clés" data-delay="100">
-        <div class="stat">
-          <span class="stat-value">43k</span>
-          <span class="stat-label">dossiers / an</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">−40%</span>
-          <span class="stat-label">temps de traitement</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">1,7 M€</span>
-          <span class="stat-label">revenu annuel</span>
-        </div>
-      </section>
-
       <hr class="rule rule--heavy animate-on-scroll" data-delay="0" />
 
       <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="exp-trigger" data-delay="0">
@@ -1330,57 +1315,6 @@
         border-color: rgba(0, 0, 0, 0.35);
       }
 
-      /* Stats · dashboard, lignes nettes */
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        margin: 0 0 56px;
-        padding: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        background: transparent;
-      }
-      @media (min-width: 640px) {
-        .stats { margin-bottom: 64px; }
-      }
-      .stat {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 8px;
-        padding: 28px 20px;
-        text-align: center;
-        background: transparent;
-        border-radius: 0;
-        border-right: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: none;
-        transition: background-color 0.25s ease;
-      }
-      .stat:last-child {
-        border-right: none;
-      }
-      .stat:hover {
-        background-color: rgba(255, 255, 255, 0.03);
-      }
-      .stat-value {
-        font-size: 2.25rem;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        color: #ffffff;
-        font-variant-numeric: tabular-nums;
-      }
-      @media (min-width: 640px) {
-        .stat-value { font-size: 2.5rem; }
-      }
-      .stat-label {
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: #6a6a6f;
-      }
-
       /* Rules · fines, argent */
       .rule {
         margin: 0 0 48px;
@@ -2366,18 +2300,6 @@
         border-color: rgba(0, 0, 0, 0.2);
         color: #ffffff;
       }
-      html[data-theme="light"] .stats {
-        border-top-color: rgba(0, 0, 0, 0.1);
-        border-bottom-color: rgba(0, 0, 0, 0.1);
-      }
-      html[data-theme="light"] .stat {
-        border-right-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .stat:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      html[data-theme="light"] .stat-value { color: #0a0a0a; }
-      html[data-theme="light"] .stat-label { color: #5a5a5f; }
       html[data-theme="light"] .rule { border-top-color: rgba(0, 0, 0, 0.08); }
       html[data-theme="light"] .rule--heavy { border-top-color: rgba(0, 0, 0, 0.12); }
       html[data-theme="light"] .block {
