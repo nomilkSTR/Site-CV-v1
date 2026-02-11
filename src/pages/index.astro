@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <a href="mailto:corentin.boisselier@gmail.com" class="btn btn-float">Contactez-moi 🙂</a>
+    <button type="button" class="btn btn-float" id="contact-btn" aria-haspopup="dialog" aria-controls="contact-modal">Contactez-moi 🙂</button>
     <div class="sticky-name" aria-hidden="true">Corentin BOISSELIER</div>
     <div class="wrap">
 
@@ -513,6 +513,22 @@
         </form>
         <div class="chat-hint">Appuyez sur Entrée pour envoyer</div>
         <div class="chat-status" id="chat-status" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Formulaire de contact">
+      <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="contact-modal-title" aria-modal="true">
+        <h2 id="contact-modal-title" class="contact-modal-title">Écrivez-moi</h2>
+        <form id="contact-form" class="contact-form">
+          <label class="contact-label">Votre nom <input type="text" name="name" class="contact-input" required autocomplete="name"></label>
+          <label class="contact-label">Votre email <input type="email" name="email" class="contact-input" required autocomplete="email"></label>
+          <label class="contact-label">Message <textarea name="message" class="contact-textarea" rows="4" required></textarea></label>
+          <div class="contact-actions">
+            <button type="submit" class="btn contact-submit">Envoyer</button>
+            <button type="button" class="contact-close" id="contact-close" aria-label="Fermer">Fermer</button>
+          </div>
+        </form>
+        <p id="contact-feedback" class="contact-feedback" aria-live="polite" hidden></p>
       </div>
     </div>
 
@@ -1198,6 +1214,120 @@
         background-color: #1a1a1d;
         border-color: rgba(255, 255, 255, 0.25);
         color: #ffffff;
+      }
+
+      /* Modal contact · ton adresse n'apparaît jamais dans la page */
+      .contact-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+      }
+      .contact-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .contact-modal {
+        width: 100%;
+        max-width: 420px;
+        padding: 24px;
+        background: #1a1a1d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      }
+      .contact-modal-title {
+        margin: 0 0 16px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #e0e0e2;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .contact-label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #c8c8cc;
+      }
+      .contact-input,
+      .contact-textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+        font-family: inherit;
+        color: #e0e0e2;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+      }
+      .contact-input::placeholder,
+      .contact-textarea::placeholder {
+        color: #8a8a8f;
+      }
+      .contact-textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .contact-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .contact-submit {
+        flex: 1;
+      }
+      .contact-close {
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #c8c8cc;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .contact-close:hover {
+        color: #e0e0e2;
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+      .contact-feedback {
+        margin: 12px 0 0;
+        font-size: 14px;
+      }
+      .contact-feedback.is-success { color: #6bcf7f; }
+      .contact-feedback.is-error { color: #e07c7c; }
+      html[data-theme="light"] .contact-modal {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+      html[data-theme="light"] .contact-modal-title { color: #1a1a1a; }
+      html[data-theme="light"] .contact-label { color: #4a4a4f; }
+      html[data-theme="light"] .contact-input,
+      html[data-theme="light"] .contact-textarea {
+        color: #1a1a1a;
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.15);
+      }
+      html[data-theme="light"] .contact-close {
+        color: #4a4a4f;
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+      html[data-theme="light"] .contact-close:hover {
+        color: #1a1a1a;
+        border-color: rgba(0, 0, 0, 0.35);
       }
 
       /* Stats · dashboard, lignes nettes */
@@ -2264,5 +2394,68 @@
       html[data-theme="light"] .footer { border-top-color: rgba(0, 0, 0, 0.08); }
       html[data-theme="light"] .footer-meta { color: #5a5a5f; }
     </style>
+
+    <script>
+      (function () {
+        var contactBtn = document.getElementById('contact-btn');
+        var contactOverlay = document.getElementById('contact-overlay');
+        var contactClose = document.getElementById('contact-close');
+        var contactForm = document.getElementById('contact-form');
+        var contactFeedback = document.getElementById('contact-feedback');
+        if (contactBtn && contactOverlay) {
+          contactBtn.addEventListener('click', function () {
+            contactOverlay.classList.add('is-open');
+            contactOverlay.setAttribute('aria-hidden', 'false');
+          });
+        }
+        function closeContact() {
+          if (contactOverlay) {
+            contactOverlay.classList.remove('is-open');
+            contactOverlay.setAttribute('aria-hidden', 'true');
+          }
+        }
+        if (contactClose) contactClose.addEventListener('click', closeContact);
+        if (contactOverlay) {
+          contactOverlay.addEventListener('click', function (e) {
+            if (e.target === contactOverlay) closeContact();
+          });
+        }
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && contactOverlay && contactOverlay.classList.contains('is-open')) closeContact();
+        });
+        if (contactForm && contactFeedback) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var fd = new FormData(contactForm);
+            var name = fd.get('name') || '';
+            var email = fd.get('email') || '';
+            var message = fd.get('message') || '';
+            contactFeedback.hidden = false;
+            contactFeedback.className = 'contact-feedback';
+            contactFeedback.textContent = 'Envoi en cours…';
+            fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: name, email: email, message: message }),
+            })
+              .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+              .then(function (r) {
+                if (r.ok) {
+                  contactFeedback.textContent = 'Message envoyé. Je vous répondrai rapidement.';
+                  contactFeedback.classList.add('is-success');
+                  contactForm.reset();
+                } else {
+                  contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Une erreur est survenue.';
+                  contactFeedback.classList.add('is-error');
+                }
+              })
+              .catch(function () {
+                contactFeedback.textContent = 'Une erreur est survenue.';
+                contactFeedback.classList.add('is-error');
+              });
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

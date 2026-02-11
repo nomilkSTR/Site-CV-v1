@@ -23,8 +23,9 @@
    - **Add New Project** → importe ton dépôt GitHub.  
    - Vercel détecte Astro automatiquement. Ne change rien au build.  
    - **Environment Variables** : ajoute  
-     - Nom : `GEMINI_API_KEY`  
-     - Valeur : ta clé API Gemini (celle de ton `.env`).  
+     - `GEMINI_API_KEY` : ta clé API Gemini (celle de ton `.env`).  
+     - `CONTACT_EMAIL` : ton adresse email (pour recevoir les messages du formulaire de contact ; elle n’apparaît jamais sur la page).  
+     - `RESEND_API_KEY` : ta clé API Resend ([resend.com](https://resend.com) → Create API Key) pour l’envoi des emails du formulaire.  
    - Clique sur **Deploy**.
 
 4. **Résultat**  
@@ -55,5 +56,5 @@
 
 1. `npm install`  
 2. Push du projet sur GitHub  
-3. Vercel → Import repo → ajouter `GEMINI_API_KEY` → Deploy  
+3. Vercel → Import repo → ajouter `GEMINI_API_KEY`, `CONTACT_EMAIL`, `RESEND_API_KEY` → Deploy  
 4. Partager l’URL aux recruteurs  
