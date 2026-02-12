@@ -467,39 +467,58 @@
         <p class="section-label anim-on-scroll">COMMUNICATION</p>
         <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Langues maîtrisées</h2>
         <div class="lang-grid anim-on-scroll" style="transition-delay:.2s">
+
           <div class="lang-card">
-            <svg class="lang-card-flag" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <rect width="300" height="600" fill="#002395"/>
-              <rect x="300" width="300" height="600" fill="#ffffff"/>
-              <rect x="600" width="300" height="600" fill="#ED2939"/>
-            </svg>
-            <h3 class="lang-card-name">Français</h3>
-            <p class="lang-card-level">Maternel</p>
+            <div class="lang-card-flag-wrap">
+              <svg viewBox="0 0 900 600" aria-hidden="true">
+                <rect width="300" height="600" fill="#002395"/>
+                <rect x="300" width="300" height="600" fill="#ffffff"/>
+                <rect x="600" width="300" height="600" fill="#ED2939"/>
+              </svg>
+            </div>
+            <div class="lang-card-info">
+              <h3 class="lang-card-name">Français</h3>
+              <span class="lang-card-level">Langue maternelle</span>
+            </div>
+            <span class="lang-badge">Natif</span>
           </div>
+
           <div class="lang-card">
-            <svg class="lang-card-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-              <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-              <g clip-path="url(#s)">
-                <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-              </g>
-            </svg>
-            <h3 class="lang-card-name">Anglais</h3>
-            <p class="lang-card-level">Usage pro (C1)</p>
+            <div class="lang-card-flag-wrap">
+              <svg viewBox="0 0 60 30" aria-hidden="true">
+                <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                <g clip-path="url(#s)">
+                  <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                  <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                  <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                  <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                  <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                </g>
+              </svg>
+            </div>
+            <div class="lang-card-info">
+              <h3 class="lang-card-name">Anglais</h3>
+              <span class="lang-card-level">Courant</span>
+            </div>
+            <span class="lang-badge">C1</span>
           </div>
+
           <div class="lang-card">
-            <svg class="lang-card-flag" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <rect width="5" height="1" fill="#000000"/>
-              <rect y="1" width="5" height="1" fill="#DD0000"/>
-              <rect y="2" width="5" height="1" fill="#FFCE00"/>
-            </svg>
-            <h3 class="lang-card-name">Allemand</h3>
-            <p class="lang-card-level">Cursus bilingue (C1)</p>
+            <div class="lang-card-flag-wrap">
+              <svg viewBox="0 0 5 3" aria-hidden="true">
+                <rect width="5" height="1" fill="#000000"/>
+                <rect y="1" width="5" height="1" fill="#DD0000"/>
+                <rect y="2" width="5" height="1" fill="#FFCE00"/>
+              </svg>
+            </div>
+            <div class="lang-card-info">
+              <h3 class="lang-card-name">Allemand</h3>
+              <span class="lang-card-level">Cursus bilingue</span>
+            </div>
+            <span class="lang-badge">C1</span>
           </div>
+
         </div>
       </div>
     </section>
@@ -700,15 +719,6 @@
           </div>
         </form>
         <p id="contact-feedback" class="contact-feedback" aria-live="polite" hidden></p>
-      </div>
-    </div>
-
-    <!-- ========== FLOATING CTA (bottom-right, Bugatti-style) ========== -->
-    <div class="floating-cta" id="floating-cta">
-      <div class="floating-cta-content">
-        <p class="floating-cta-title">Prêt pour une nouvelle aventure ?</p>
-        <p class="floating-cta-sub">Prenez part à l'incomparable</p>
-        <button type="button" class="floating-cta-btn" id="floating-cta-btn">ACCÉDER AU CONTACT</button>
       </div>
     </div>
 
@@ -991,7 +1001,7 @@
       var contactForm = document.getElementById('contact-form');
       var contactFeedback = document.getElementById('contact-feedback');
       var navContactBtn = document.getElementById('nav-contact-btn');
-      var floatingCtaBtn = document.getElementById('floating-cta-btn');
+      
 
       function openContact() {
         if (contactOverlay) {
@@ -1008,7 +1018,7 @@
         }
       }
       if (navContactBtn) navContactBtn.addEventListener('click', openContact);
-      if (floatingCtaBtn) floatingCtaBtn.addEventListener('click', openContact);
+      
       if (contactClose) contactClose.addEventListener('click', closeContact);
       if (contactOverlay) {
         contactOverlay.addEventListener('click', function(e) {
@@ -1070,18 +1080,7 @@
         });
       }
 
-      /* ---- Floating CTA visibility ---- */
-      var floatingCta = document.getElementById('floating-cta');
-      if (floatingCta) {
-        var ctaObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (!entry.isIntersecting) {
-              floatingCta.classList.add('is-visible');
-            }
-          });
-        }, { threshold: 0 });
-        if (heroEl) ctaObserver.observe(heroEl);
-      }
+      
     })();
     </script>
 
@@ -1704,66 +1703,70 @@
 
       /* ===== LANGUAGES ===== */
       .lang-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-      @media (max-width: 640px) {
-        .lang-grid { grid-template-columns: 1fr; }
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 540px;
+        margin: 0 auto;
       }
       .lang-card {
-        text-align: center;
-        padding: 0;
-        border: 1px solid var(--color-border);
-        position: relative;
-        overflow: hidden;
-        transition: border-color 0.3s ease;
-        aspect-ratio: 3 / 2;
         display: flex;
         align-items: center;
-        justify-content: center;
+        gap: 20px;
+        padding: 20px 24px;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.03);
+        transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
         cursor: default;
       }
-      .lang-card:hover { border-color: var(--color-border-hover); }
-      .lang-card-flag {
-        position: absolute;
-        inset: 0;
+      .lang-card:hover {
+        border-color: var(--color-border-hover);
+        background: rgba(255,255,255,0.06);
+        transform: translateY(-2px);
+      }
+      .lang-card-flag-wrap {
+        flex-shrink: 0;
+        width: 56px;
+        height: 38px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      .lang-card-flag-wrap svg {
+        display: block;
         width: 100%;
         height: 100%;
-        z-index: 0;
-        opacity: 1;
-        transition: opacity 0.4s ease;
-        object-fit: cover;
       }
-      .lang-card > * { position: relative; z-index: 1; }
+      .lang-card-info {
+        flex: 1;
+        min-width: 0;
+      }
       .lang-card-name {
         font-family: var(--font-display);
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         color: var(--color-white);
-        margin-bottom: 0;
-        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-        transition: opacity 0.4s ease, transform 0.4s ease;
+        margin: 0 0 2px;
+        line-height: 1.3;
       }
       .lang-card-level {
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--color-white);
-        text-shadow: 0 2px 16px rgba(0,0,0,0.8);
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 0.4s ease;
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        letter-spacing: 0.03em;
+        display: block;
       }
-      /* Hover : flag plus visible, nom disparait, niveau apparait */
-      .lang-card:hover .lang-card-flag { opacity: 0.55; }
-      .lang-card:hover .lang-card-name { opacity: 0; transform: translateY(-8px); }
-      .lang-card:hover .lang-card-level { opacity: 1; }
+      .lang-badge {
+        flex-shrink: 0;
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        padding: 6px 16px;
+        border-radius: 99px;
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
+        background: rgba(191,163,107,0.12);
+      }
 
       /* ===== INTERESTS ===== */
       .interests-grid {
@@ -2220,59 +2223,6 @@
       }
       .contact-feedback.is-success { color: #4ade80; }
       .contact-feedback.is-error { color: #f87171; }
-
-      /* ===== FLOATING CTA ===== */
-      .floating-cta {
-        position: fixed;
-        bottom: 24px;
-        right: 96px;
-        z-index: 110;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
-        pointer-events: none;
-      }
-      .floating-cta.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-      .floating-cta-content {
-        background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
-        padding: 20px 24px;
-        max-width: 280px;
-      }
-      .floating-cta-title {
-        font-family: var(--font-display);
-        font-size: 1rem;
-        color: var(--color-white);
-        margin-bottom: 4px;
-      }
-      .floating-cta-sub {
-        font-size: 13px;
-        color: var(--color-text-muted);
-        margin-bottom: 16px;
-      }
-      .floating-cta-btn {
-        display: block;
-        width: 100%;
-        padding: 12px 16px;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        text-align: center;
-        color: #000;
-        background: var(--color-white);
-        border: none;
-        transition: background 0.2s ease;
-      }
-      .floating-cta-btn:hover { background: var(--color-accent); }
-
-      @media (max-width: 768px) {
-        .floating-cta { display: none; }
-      }
 
       /* ===== SCROLLBAR ===== */
       ::-webkit-scrollbar { width: 6px; }
