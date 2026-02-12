@@ -1695,22 +1695,26 @@
       }
       .lang-card {
         text-align: center;
-        padding: 40px 24px;
+        padding: 0;
         border: 1px solid var(--color-border);
         position: relative;
         overflow: hidden;
         transition: border-color 0.3s ease;
+        aspect-ratio: 3 / 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
       }
       .lang-card:hover { border-color: var(--color-border-hover); }
       .lang-card-flag {
-        width: 100%;
-        height: 100%;
         position: absolute;
         inset: 0;
-        opacity: 0.06;
         background-size: cover;
         background-position: center;
         z-index: 0;
+        opacity: 1;
+        transition: opacity 0.4s ease;
       }
       .lang-card-flag--fr { background-image: url('/flag-fr.png'); }
       .lang-card-flag--uk { background-image: url('/flag-uk.png'); }
@@ -1720,13 +1724,30 @@
         font-family: var(--font-display);
         font-size: 1.4rem;
         color: var(--color-white);
-        margin-bottom: 8px;
+        margin-bottom: 0;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+        transition: opacity 0.4s ease, transform 0.4s ease;
       }
       .lang-card-level {
-        font-size: 13px;
-        color: var(--color-text-muted);
-        letter-spacing: 0.05em;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.4s ease;
       }
+      /* Hover : flag plus visible, nom disparait, niveau apparait */
+      .lang-card:hover .lang-card-flag { opacity: 0.55; }
+      .lang-card:hover .lang-card-name { opacity: 0; transform: translateY(-8px); }
+      .lang-card:hover .lang-card-level { opacity: 1; }
 
       /* ===== INTERESTS ===== */
       .interests-grid {
