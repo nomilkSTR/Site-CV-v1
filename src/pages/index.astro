@@ -468,17 +468,35 @@
         <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Langues maîtrisées</h2>
         <div class="lang-grid anim-on-scroll" style="transition-delay:.2s">
           <div class="lang-card">
-            <div class="lang-card-flag lang-card-flag--fr"></div>
+            <svg class="lang-card-flag" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="300" height="600" fill="#002395"/>
+              <rect x="300" width="300" height="600" fill="#ffffff"/>
+              <rect x="600" width="300" height="600" fill="#ED2939"/>
+            </svg>
             <h3 class="lang-card-name">Français</h3>
             <p class="lang-card-level">Maternel</p>
           </div>
           <div class="lang-card">
-            <div class="lang-card-flag lang-card-flag--uk"></div>
+            <svg class="lang-card-flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+              <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+              <g clip-path="url(#s)">
+                <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+              </g>
+            </svg>
             <h3 class="lang-card-name">Anglais</h3>
             <p class="lang-card-level">Usage pro (C1)</p>
           </div>
           <div class="lang-card">
-            <div class="lang-card-flag lang-card-flag--de"></div>
+            <svg class="lang-card-flag" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="5" height="1" fill="#000000"/>
+              <rect y="1" width="5" height="1" fill="#DD0000"/>
+              <rect y="2" width="5" height="1" fill="#FFCE00"/>
+            </svg>
             <h3 class="lang-card-name">Allemand</h3>
             <p class="lang-card-level">Cursus bilingue (C1)</p>
           </div>
@@ -1710,15 +1728,13 @@
       .lang-card-flag {
         position: absolute;
         inset: 0;
-        background-size: cover;
-        background-position: center;
+        width: 100%;
+        height: 100%;
         z-index: 0;
         opacity: 1;
         transition: opacity 0.4s ease;
+        object-fit: cover;
       }
-      .lang-card-flag--fr { background-image: url('/flag-fr.png'); }
-      .lang-card-flag--uk { background-image: url('/flag-uk.png'); }
-      .lang-card-flag--de { background-image: url('/flag-de.png'); }
       .lang-card > * { position: relative; z-index: 1; }
       .lang-card-name {
         font-family: var(--font-display);
