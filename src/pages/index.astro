@@ -2,12 +2,12 @@
 /**
  * One-Page — Corentin BOISSELIER
  * Expert Pricing Automobile | IA appliquée & automatisation — Strasbourg
- * Style : inspiré BMW Designworks — précision, lignes nettes, accent bleu
+ * Style : inspiré Bugatti — luxe, plein écran, typographie forte, animations fluides
  */
 ---
 
 <!doctype html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,214 +15,328 @@
     <title>Corentin BOISSELIER — Expert Pricing Automobile & IA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <button type="button" class="btn btn-float" id="contact-btn" aria-haspopup="dialog" aria-controls="contact-modal">Contactez-moi 🙂</button>
-    <div class="sticky-name" aria-hidden="true">Corentin BOISSELIER</div>
-    <div class="wrap">
 
-      <header class="hero animate-on-scroll" data-delay="0">
-        <div class="hero-content">
-          <h1 class="hero-title">Corentin BOISSELIER</h1>
-            <p class="hero-meta">Expertise Marchés VO | IA appliquée & automatisation</p>
-            <div class="hero-tags">
-              <span class="hero-tag">Permis B</span>
-              <span class="hero-tag">Strasbourg (France)</span>
-            </div>
-            <blockquote class="hero-desc">
-              Il n'y a rien de noble à être supérieur à son prochain ; la vraie noblesse, c'est d'être supérieur à son ancien&nbsp;soi.
-            </blockquote>
-            <div class="hero-intro">
-              <p>
-                Expert Pricing Automobile traitant 43 000 dossiers VO/VU par an (1,7 M€ de revenu demi-net annuel).
-              </p>
-              <p>
-                Passionné par l'optimisation, je décuple ma productivité en pilotant des solutions d'IA et d'automatisation (Python/JS, API, Airtable, Cursor) pour fiabiliser les cotations et optimiser ma productivité. Temps de traitement diminué de 35 à 40%.
-              </p>
-            </div>
+    <!-- ========== NAVIGATION FIXE ========== -->
+    <nav class="nav" id="main-nav">
+      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="nav-hamburger" aria-hidden="true">
+          <span></span><span></span>
+        </span>
+        <span class="nav-menu-text">MENU</span>
+      </button>
+      <a href="#hero" class="nav-logo">CORENTIN BOISSELIER</a>
+      <button type="button" class="nav-contact-btn" id="nav-contact-btn">CONTACT</button>
+    </nav>
+
+    <!-- ========== MENU OVERLAY PLEIN ÉCRAN ========== -->
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+      <div class="menu-overlay-inner">
+        <nav class="menu-nav">
+          <a href="#about" class="menu-link" data-index="01">À propos</a>
+          <a href="#experience" class="menu-link" data-index="02">Expériences</a>
+          <a href="#vehicles" class="menu-link" data-index="03">Véhicules</a>
+          <a href="#languages" class="menu-link" data-index="04">Langues</a>
+          <a href="#interests" class="menu-link" data-index="05">Intérêts</a>
+          <a href="#formations" class="menu-link" data-index="06">Formations</a>
+        </nav>
+        <div class="menu-footer">
+          <p class="menu-footer-text">Strasbourg, France</p>
+          <p class="menu-footer-text">Expert Pricing Automobile</p>
         </div>
-      </header>
+      </div>
+    </div>
 
-      <hr class="rule rule--heavy animate-on-scroll" data-delay="0" />
+    <!-- ========== HERO 100vh ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow anim-fade-up">EXPERT PRICING AUTOMOBILE</p>
+        <h1 class="hero-title anim-fade-up" style="animation-delay:.15s">CORENTIN<br>BOISSELIER</h1>
+        <p class="hero-subtitle anim-fade-up" style="animation-delay:.3s">IA appliquée & automatisation — Strasbourg</p>
+        <a href="#about" class="hero-cta anim-fade-up" style="animation-delay:.5s">DÉCOUVRIR MON PARCOURS</a>
+      </div>
+      <div class="hero-scroll-indicator anim-fade-up" style="animation-delay:.7s" aria-hidden="true">
+        <span class="hero-scroll-line"></span>
+      </div>
+    </section>
 
-      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="exp-trigger" data-delay="0">
-        <button type="button" class="exp-trigger" id="exp-trigger" aria-expanded="false" aria-controls="exp-list">
-          <span class="exp-trigger__graphic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.25 6.75v10.5A2.25 2.25 0 0118 19.5H6A2.25 2.25 0 013.75 17.25V6.75M9 6.75V6a3 3 0 013-3h0a3 3 0 013 3v.75M3.75 6.75h16.5" />
-            </svg>
-          </span>
-          <span class="label label--bar">Expériences professionnelles</span>
-          <span class="exp-trigger__icon" aria-hidden="true"></span>
-        </button>
-        <div id="exp-list" class="exp-list">
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-1">
-              <span class="exp-item__title">Analyst Pricer</span>
-              <span class="exp-item__meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</span>
+    <!-- ========== À PROPOS / INTRO ========== -->
+    <section class="section section--about" id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-left anim-on-scroll">
+            <p class="section-label">L'EXCELLENCE AU SERVICE DE L'AUTOMOBILE</p>
+            <h2 class="section-heading">L'expertise,<br>l'innovation<br>et le savoir-faire</h2>
+          </div>
+          <div class="about-right anim-on-scroll" style="transition-delay:.15s">
+            <blockquote class="about-quote">
+              <span class="about-quote-mark">&laquo;</span>
+              Il n'y a rien de noble à être supérieur à son prochain&nbsp;; la vraie noblesse, c'est d'être supérieur à son ancien&nbsp;soi.
+              <span class="about-quote-mark">&raquo;</span>
+            </blockquote>
+            <p class="about-text">
+              Expert Pricing Automobile traitant <strong>43 000 dossiers VO/VU</strong> par an (<strong>1,7 M&euro;</strong> de revenu demi-net annuel).
+            </p>
+            <p class="about-text">
+              Passionné par l'optimisation, je décuple ma productivité en pilotant des solutions d'IA et d'automatisation (Python/JS, API, Airtable, Cursor) pour fiabiliser les cotations. <strong>Temps de traitement diminué de 35 à 40%</strong>.
+            </p>
+          </div>
+        </div>
+        <div class="stats-row anim-on-scroll" style="transition-delay:.25s">
+          <div class="stat">
+            <span class="stat-number">43 000</span>
+            <span class="stat-label">DOSSIERS / AN</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">1,7 M&euro;</span>
+            <span class="stat-label">REVENU DEMI-NET</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">-40%</span>
+            <span class="stat-label">TEMPS DE TRAITEMENT</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">31</span>
+            <span class="stat-label">VÉHICULES POSSÉDÉS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPÉRIENCES ========== -->
+    <section class="section section--dark" id="experience">
+      <div class="section-inner">
+        <p class="section-label anim-on-scroll">PARCOURS PROFESSIONNEL</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Expériences</h2>
+        <div class="exp-container anim-on-scroll" style="transition-delay:.2s">
+
+          <div class="exp-card" data-exp="1">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">01</span>
+                <div>
+                  <h3 class="exp-card-title">Analyst Pricer</h3>
+                  <p class="exp-card-meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="exp-detail-1" class="exp-item__detail">
-              <p class="body">🛠️ <strong>Assistant de Cotation Intelligent</strong> | <strong>Fullstack & IA</strong></p>
-              <p class="body"><strong>Optimisation</strong> de la chaîne de valeur <strong>VO/VU</strong> par l'<strong>automatisation</strong></p>
-
-              <p class="meta">Le Défi</p>
-              <p class="body">Améliorer l'<strong>expérience utilisateur</strong> et réduire le <strong>temps de traitement</strong> des fiches au quotidien en éliminant les tâches répétitives et à faible valeur ajoutée.</p>
-
-              <p class="meta">Ma Solution Technique</p>
-              <p class="body">J'ai conçu et déployé un <strong>assistant de cotation hybride</strong> articulant <strong>données internes</strong> et <strong>intelligence artificielle</strong> :</p>
-              <ul class="list">
+            <div class="exp-card-body">
+              <p class="exp-body-text"><strong>Assistant de Cotation Intelligent</strong> | Fullstack & IA</p>
+              <p class="exp-body-text">Optimisation de la chaîne de valeur VO/VU par l'automatisation</p>
+              <h4 class="exp-body-label">Le Défi</h4>
+              <p class="exp-body-text">Améliorer l'expérience utilisateur et réduire le temps de traitement des fiches au quotidien en éliminant les tâches répétitives et à faible valeur ajoutée.</p>
+              <h4 class="exp-body-label">Ma Solution Technique</h4>
+              <p class="exp-body-text">J'ai conçu et déployé un assistant de cotation hybride articulant données internes et intelligence artificielle :</p>
+              <ul class="exp-body-list">
                 <li><strong>Architecture de Données</strong> : Développement assisté par IA sous Python & JavaScript avec centralisation de l'historique transactionnel via Supabase.</li>
                 <li><strong>Intelligence Artificielle</strong> : Intégration de Gemini 3 Flash pour lecture des fiches et analyse contextuelle.</li>
                 <li><strong>Prompt Engineering</strong> : Conception de structures de prompts rigoureuses pour garantir la fiabilité des données extraites.</li>
                 <li><strong>Automatisation</strong> : Capture automatique des fiches.</li>
               </ul>
-
-              <p class="meta">Résultats & Impact</p>
-              <ul class="list">
+              <h4 class="exp-body-label">Résultats & Impact</h4>
+              <ul class="exp-body-list">
                 <li><strong>Productivité</strong> : Suppression totale des temps morts liés à la capture manuelle.</li>
                 <li><strong>Expérience Utilisateur</strong> : Optimisation drastique du parcours utilisateur (réduction du nombre de clics).</li>
                 <li><strong>Fiabilité</strong> : Sécurisation des engagements d'achat grâce à une analyse comparative instantanée.</li>
               </ul>
-
-              <p class="meta">📈 Expertise Marché & Négociation</p>
-              <p class="body">Au-delà de l'outil, mon rôle s'appuie sur une connaissance métier profonde :</p>
-              <ul class="list">
+              <h4 class="exp-body-label">Expertise Marché & Négociation</h4>
+              <ul class="exp-body-list">
                 <li><strong>Analyse de Marché</strong> : Suivi permanent des gammes et des tendances de prix sur le segment VO.</li>
                 <li><strong>Négociation Stratégique</strong> : Validation et réévaluation des engagements et gestion de la relation avec les apporteurs.</li>
-                <li><strong>Volume</strong> : Pilotage et traitement d'un flux de <strong>43 000 dossiers</strong> par an, garantissant une réactivité maximale sur un marché en évolution permanente.</li>
+                <li><strong>Volume</strong> : Pilotage et traitement d'un flux de <strong>43 000 dossiers</strong> par an.</li>
               </ul>
             </div>
           </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-2">
-              <span class="exp-item__title">Négociateur immobilier</span>
-              <span class="exp-item__meta">Étude de Me Philippe de GAIL · Strasbourg · 10/2021 - 05/2023</span>
+
+          <div class="exp-card" data-exp="2">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">02</span>
+                <div>
+                  <h3 class="exp-card-title">Négociateur immobilier</h3>
+                  <p class="exp-card-meta">Étude de Me Philippe de GAIL · Strasbourg · 10/2021 – 05/2023</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="exp-detail-2" class="exp-item__detail">
-              <p class="body">📊 <strong>Estimation</strong> & <strong>Stratégie de Commercialisation</strong></p>
-              <p class="body">L'estimation n'est pas une simple évaluation, c'est une <strong>lecture stratégique</strong> du marché.</p>
-              <ul class="list">
+            <div class="exp-card-body">
+              <p class="exp-body-text"><strong>Estimation & Stratégie de Commercialisation</strong></p>
+              <p class="exp-body-text">L'estimation n'est pas une simple évaluation, c'est une lecture stratégique du marché.</p>
+              <ul class="exp-body-list">
                 <li><strong>Expertise Métier</strong> : Analyse comparative de marché et évaluation précise de la valeur des biens, intégrant les caractéristiques et le contexte local.</li>
-                <li><strong>Mise en Valeur</strong> : Etablissement de la stratégie de commercialisation en synergie avec les vendeurs. Choix des canaux de diffusion et gestion de l'image de marque du bien pour susciter l'intérêt des acquéreurs potentiels.</li>
+                <li><strong>Mise en Valeur</strong> : Établissement de la stratégie de commercialisation en synergie avec les vendeurs.</li>
               </ul>
+              <h4 class="exp-body-label">Négociation</h4>
+              <ul class="exp-body-list">
+                <li><strong>Négociation Tripartite</strong> : Arbitrage des intérêts divergents pour aboutir à un accord mutuel.</li>
+                <li><strong>Accompagnement Client</strong> : Suivi personnalisé depuis la première visite jusqu'à la signature finale.</li>
+              </ul>
+              <h4 class="exp-body-label">Rédaction d'Actes & Sécurité Juridique</h4>
+              <ul class="exp-body-list">
+                <li><strong>Formalisme Rigoureux</strong> : Rédaction de mandats, d'avant-contrats et d'actes authentiques.</li>
+                <li><strong>Ingénierie Documentaire</strong> : Analyse et collecte des pièces d'urbanisme, des diagnostics et des titres de propriété.</li>
+              </ul>
+            </div>
+          </div>
 
-              <p class="body">🤝 <strong>Négociation</strong></p>
-              <p class="body">Au cœur de la transaction, j'agis comme le <strong>pivot</strong> entre les attentes des vendeurs et des acheteurs.</p>
-              <ul class="list">
-                <li><strong>Négociation Tripartite</strong> : Arbitrage des intérêts divergents pour aboutir à un accord mutuel. Gestion des objections et levée des freins psychologiques ou financiers.</li>
-                <li><strong>Accompagnement Client</strong> : Suivi personnalisé depuis la première visite jusqu'à la signature finale, assurant un rôle de conseil continu et rassurant pour les deux parties.</li>
+          <div class="exp-card" data-exp="3">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">03</span>
+                <div>
+                  <h3 class="exp-card-title">Directeur Général</h3>
+                  <p class="exp-card-meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="exp-card-body">
+              <p class="exp-body-text"><strong>Entrepreneuriat : Direction Générale & Modèle à Impact</strong> (Les Sunneliers SAS)</p>
+              <p class="exp-body-text">De l'innovation cosmétique à la préservation des océans.</p>
+              <h4 class="exp-body-label">Vision Stratégique & Leadership</h4>
+              <p class="exp-body-text">Co-fondateur et dirigeant de la startup strasbourgeoise Niu & You, j'ai piloté l'entreprise avec une autonomie décisionnelle totale.</p>
+              <ul class="exp-body-list">
+                <li><strong>Gouvernance Indépendante</strong> : Capacité à décider et à arbitrer les choix critiques sans supervision.</li>
+                <li><strong>Vision à 360°</strong> : Pilotage d'une structure où chaque décision sert une stratégie globale de croissance durable.</li>
               </ul>
+              <h4 class="exp-body-label">Maîtrise Opérationnelle & Commerciale</h4>
+              <ul class="exp-body-list">
+                <li><strong>Pilotage des Flux & Logistique</strong> : Conception et gestion intégrale de la supply chain.</li>
+                <li><strong>Animation du Réseau</strong> : Développement et fidélisation d'un réseau de distribution.</li>
+                <li><strong>Gestion de la Rentabilité</strong> : Suivi rigoureux de la performance financière.</li>
+              </ul>
+              <h4 class="exp-body-label">Le Modèle Octop'Us</h4>
+              <ul class="exp-body-list">
+                <li><strong>Innovation Régénératrice</strong> : "1 tube vendu = 1m² de plage nettoyé".</li>
+                <li><strong>Fondation d'Octop'Us</strong> : Création d'une ONG dédiée à la protection des océans.</li>
+                <li><strong>Ingénierie à Impact</strong> : Modèle de mécénat optimisé reversant une partie des bénéfices à l'ONG.</li>
+              </ul>
+            </div>
+          </div>
 
-              <p class="body">⚖️ <strong>Rédaction d'Actes</strong> & <strong>Sécurité Juridique</strong></p>
-              <p class="body">La maîtrise de l'acte notarié est le <strong>socle</strong> de ma crédibilité. Ma capacité rédactionnelle se définit par une <strong>rigueur indispensable</strong> pour sécuriser les transactions complexes et garantir les intérêts de chaque partie.</p>
-              <ul class="list">
-                <li><strong>Formalisme Rigoureux</strong> : Rédaction de mandats, d'avant-contrats et d'actes authentiques avec une précision terminologique garantissant la validité juridique des engagements.</li>
-                <li><strong>Ingénierie Documentaire</strong> : Analyse et collecte des pièces d'urbanisme, des diagnostics et des titres de propriété pour une constitution de dossier sans faille.</li>
+          <div class="exp-card" data-exp="4">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">04</span>
+                <div>
+                  <h3 class="exp-card-title">Administrateur Logistique</h3>
+                  <p class="exp-card-meta">Scheppach France · Strasbourg · 05/2018 – 03/2020</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="exp-card-body">
+              <ul class="exp-body-list">
+                <li><strong>Pilotage des flux logistiques (France)</strong> : Coordination du transport et suivi opérationnel des expéditions.</li>
+                <li><strong>Optimisation de la performance</strong> : Audit des process internes et actions correctives.</li>
+                <li><strong>Gestion des litiges et SAV</strong> : Analyse des causes racines et déploiement de solutions.</li>
               </ul>
             </div>
           </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-3">
-              <span class="exp-item__title">Directeur Général</span>
-              <span class="exp-item__meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</span>
-            </button>
-            <div id="exp-detail-3" class="exp-item__detail">
-              <p class="body">🚀 <strong>Entrepreneuriat</strong> : <strong>Direction Générale</strong> & <strong>Modèle à Impact</strong> (Les Sunneliers SAS)</p>
-              <p class="body">De l'innovation cosmétique à la préservation des océans</p>
-              <p class="body"><strong>Vision Stratégique</strong> & <strong>Leadership</strong></p>
-              <p class="body"><strong>Co-fondateur</strong> et dirigeant de la startup strasbourgeoise Niu & You, j'ai piloté l'entreprise avec une <strong>autonomie décisionnelle totale</strong>, transformant une <strong>vision engagée</strong> en une <strong>réalité commerciale</strong> concrète.</p>
-              <ul class="list">
-                <li><strong>Gouvernance Indépendante</strong> : Capacité à décider et à arbitrer les choix critiques sans supervision, tout en accordant les visions et envies de mon associé avec les miennes.</li>
-                <li><strong>Vision à 360°</strong> : Pilotage d'une structure où chaque décision (produit, finance, éthique) sert et influence une stratégie globale de croissance durable.</li>
-              </ul>
 
-              <p class="body"><strong>Maîtrise Opérationnelle</strong> & <strong>Commerciale</strong></p>
-              <p class="body">Déploiement d'une infrastructure flexible et fiable pour porter un produit innovant sur un marché exigeant.</p>
-              <ul class="list">
-                <li><strong>Pilotage des Flux & Logistique</strong> : Conception et gestion intégrale de la supply chain, garantissant fluidité et rapidité de l'approvisionnement à la distribution.</li>
-                <li><strong>Animation du Réseau</strong> : Développement et fidélisation d'un réseau de distribution dynamique pour assurer le rayonnement de la marque.</li>
-                <li><strong>Gestion de la Rentabilité</strong> : Suivi rigoureux de la performance financière pour garantir la pérennité de la structure et sa capacité d'investissement.</li>
+          <div class="exp-card" data-exp="5">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">05</span>
+                <div>
+                  <h3 class="exp-card-title">Affréteur</h3>
+                  <p class="exp-card-meta">Transports Breger · Haguenau · 02/2016 – 09/2016 et 09/2017 – 05/2018</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="exp-card-body">
+              <ul class="exp-body-list">
+                <li><strong>Ingénierie de flux</strong> : Optimisation du remplissage et organisation des ruptures de charge.</li>
+                <li><strong>Sourcing fournisseurs</strong> : Identification, sélection et négociation avec les sous-traitants.</li>
+                <li><strong>Expertise secteur Automobile</strong> : Pilotage des flux vers les usines Renault (France) et Mercedes-Benz (Allemagne).</li>
               </ul>
+            </div>
+          </div>
 
-              <p class="body"><strong>Engagement total</strong> : <strong>Le Modèle Octop’Us</strong></p>
-              <p class="body">Parce qu'une entreprise moderne doit être un levier de changement, nous avons placé l'impact environnemental au cœur de notre modèle économique.</p>
-              <ul class="list">
-                <li><strong>Innovation Régénératrice</strong> : Mise en place de la promesse <strong>"1 tube vendu = 1m² de plage nettoyé"</strong>, transformant chaque achat en une action écologique concrète.</li>
-                <li><strong>Fondation d'Octop'Us</strong> : Création d'une ONG dédiée en parallèle de la startup pour assurer l'exécution souveraine de nos engagements environnementaux sur le terrain.</li>
-                <li><strong>Ingénierie à Impact</strong> : Structuration d'un modèle de mécénat optimisé, reversant une partie des bénéfices à l'ONG pour maximiser les ressources allouées à la protection des océans tout en optimisant la trajectoire fiscale de l'entreprise.</li>
+          <div class="exp-card" data-exp="6">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">06</span>
+                <div>
+                  <h3 class="exp-card-title">Gestionnaire de parc</h3>
+                  <p class="exp-card-meta">Autohaus Tabor · Kehl (Allemagne) · 09/2016 – 09/2017</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="exp-card-body">
+              <ul class="exp-body-list">
+                <li><strong>Audit de conformité</strong> : Expertise technique rigoureuse des arrivages (neufs/occasions).</li>
+                <li><strong>Gestion du cycle de reconditionnement</strong> : Évaluation des frais de remise en état et planification des interventions.</li>
+                <li><strong>Optimisation logistique inter-sites</strong> : Pilotage du réagencement des stocks et transfert de flotte.</li>
               </ul>
             </div>
           </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-4">
-              <span class="exp-item__title">Administrateur Logistique</span>
-              <span class="exp-item__meta">Scheppach France · Strasbourg · 05/2018 – 03/2020</span>
+
+          <div class="exp-card" data-exp="7">
+            <button type="button" class="exp-card-header" aria-expanded="false">
+              <div class="exp-card-left">
+                <span class="exp-card-index">07</span>
+                <div>
+                  <h3 class="exp-card-title">Apprenti affréteur et exploitant transport</h3>
+                  <p class="exp-card-meta">Expériences complémentaires</p>
+                </div>
+              </div>
+              <span class="exp-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="exp-detail-4" class="exp-item__detail">
-              <p class="body"><strong>Pilotage des flux logistiques (France)</strong> : Coordination du transport et suivi opérationnel des expéditions sur le territoire national.</p>
-              <p class="body"><strong>Optimisation de la performance</strong> : Audit des process internes et mise en place d'actions correctives pour améliorer la qualité de service.</p>
-              <p class="body"><strong>Gestion des litiges et SAV</strong> : Analyse des causes racines, résolution des anomalies et déploiement de solutions pour réduire le taux de sinistralité.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-5">
-              <span class="exp-item__title">Affréteur</span>
-              <span class="exp-item__meta">Transports Breger · Haguenau · 02/2016 – 09/2016 et 09/2017 – 05/2018</span>
-            </button>
-            <div id="exp-detail-5" class="exp-item__detail">
-              <p class="body"><strong>Ingénierie de flux (Groupage & Cross-docking)</strong> : Optimisation du remplissage et organisation des ruptures de charge pour garantir la fluidité des approvisionnements.</p>
-              <p class="body"><strong>Sourcing et panel fournisseurs</strong> : Identification, sélection et négociation avec les sous-traitants pour répondre aux exigences de coûts et de délais.</p>
-              <p class="body"><strong>Expertise secteur Automobile</strong> : Pilotage des flux critiques vers les usines Renault (France) et Mercedes-Benz (Allemagne), dans le respect des standards de ponctualité industriels.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-6">
-              <span class="exp-item__title">Gestionnaire de parc</span>
-              <span class="exp-item__meta">Autohaus Tabor · Kehl (Allemagne) · 09/2016 – 09/2017</span>
-            </button>
-            <div id="exp-detail-6" class="exp-item__detail">
-              <p class="body"><strong>Audit de conformité</strong> : Expertise technique rigoureuse des arrivages (neufs/occasions) pour garantir l'état standardisé des flux entrants et sortants.</p>
-              <p class="body"><strong>Gestion du cycle de reconditionnement</strong> : Évaluation des frais de remise en état (FRE), chiffrage des reprises et planification des interventions techniques.</p>
-              <p class="body"><strong>Optimisation logistique inter-sites</strong> : Pilotage du réagencement des stocks et transfert de flotte pour équilibrer l'offre selon les besoins des points de vente.</p>
-            </div>
-          </div>
-          <div class="exp-item">
-            <button type="button" class="exp-item__header" aria-expanded="false" aria-controls="exp-detail-7">
-              <span class="exp-item__title">Apprenti affréteur et exploitant transport</span>
-              <span class="exp-item__meta">Expériences complémentaires</span>
-            </button>
-            <div id="exp-detail-7" class="exp-item__detail">
-              <ul class="list">
+            <div class="exp-card-body">
+              <ul class="exp-body-list">
                 <li>Alinéa Courses Express – La Wantzenau – 04/2015 à 02/2016</li>
-                <li>Mercurio France – Molsheim, 10/2014 à 04/2015</li>
-                <li>Geodis BM – Strasbourg, 10/2013 à 10/2014</li>
+                <li>Mercurio France – Molsheim – 10/2014 à 04/2015</li>
+                <li>Geodis BM – Strasbourg – 10/2013 à 10/2014</li>
                 <li>DB Schenker – Strasbourg – 10/2011 à 09/2013</li>
               </ul>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="vehicles-trigger" data-delay="0">
-        <button type="button" class="vehicle-trigger" id="vehicles-trigger" aria-expanded="false" aria-controls="vehicles-list">
-          <span class="vehicle-trigger__graphic" aria-hidden="true">
-            <img src="/vehicles-infographic.png" alt="" class="vehicle-trigger__img" />
-          </span>
-          <span class="label label--bar">Véhicules possédés</span>
-          <span class="vehicle-trigger__icon" aria-hidden="true"></span>
-        </button>
-        <div id="vehicles-list" class="vehicle-list">
-          <p class="body">
-            Au-delà des chiffres, mon parcours est porté par une passion authentique pour l'automobile. Depuis 2012, j'ai possédé 31 véhicules sur lesquels j'ai pu découvrir la mécanique (réparations et entretien courant) aussi bien que la mise en valeur esthétique (detailing intérieur et extérieur).
-          </p>
-          <div class="brand-grid">
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="jaguar" aria-expanded="false">
-              <img class="brand-logo" src="/Jaguar.png" alt="Jaguar" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VÉHICULES ========== -->
+    <section class="section section--vehicles" id="vehicles">
+      <div class="section-inner">
+        <p class="section-label anim-on-scroll">LA PASSION</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Véhicules possédés</h2>
+        <p class="section-intro anim-on-scroll" style="transition-delay:.2s">
+          Au-delà des chiffres, mon parcours est porté par une passion authentique pour l'automobile. Depuis 2012, j'ai possédé <strong>31 véhicules</strong> sur lesquels j'ai pu découvrir la mécanique aussi bien que la mise en valeur esthétique.
+        </p>
+        <div class="brand-grid anim-on-scroll" style="transition-delay:.3s">
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="jaguar" aria-expanded="false">
+              <img class="brand-card-logo" src="/Jaguar.png" alt="Jaguar" />
+              <span class="brand-card-name">Jaguar</span>
             </button>
-            <div class="brand-list" data-brand-list="jaguar">
-              <ul class="list">
+            <div class="brand-card-list" data-brand-list="jaguar">
+              <ul>
                 <li>XJ8 X308 3.2 (x2)</li>
                 <li>S-Type R (x2)</li>
                 <li>S-Type 3.0</li>
@@ -231,12 +345,13 @@
               </ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="bmw" aria-expanded="false">
-              <img class="brand-logo" src="/BMW.png" alt="BMW" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="bmw" aria-expanded="false">
+              <img class="brand-card-logo" src="/BMW.png" alt="BMW" />
+              <span class="brand-card-name">BMW</span>
             </button>
-            <div class="brand-list" data-brand-list="bmw">
-              <ul class="list">
+            <div class="brand-card-list" data-brand-list="bmw">
+              <ul>
                 <li>523i e39</li>
                 <li>530i e39</li>
                 <li>535i e34</li>
@@ -246,12 +361,13 @@
               </ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="renault" aria-expanded="false">
-              <img class="brand-logo" src="/Renault.png" alt="Renault" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="renault" aria-expanded="false">
+              <img class="brand-card-logo" src="/Renault.png" alt="Renault" />
+              <span class="brand-card-name">Renault</span>
             </button>
-            <div class="brand-list" data-brand-list="renault">
-              <ul class="list">
+            <div class="brand-card-list" data-brand-list="renault">
+              <ul>
                 <li>Laguna 1 1.9 dTi</li>
                 <li>Laguna 2 2.0 Initiale</li>
                 <li>Grand Espace 4 2.0t</li>
@@ -263,197 +379,228 @@
               </ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="saab" aria-expanded="false">
-              <img class="brand-logo" src="/Saab.png" alt="Saab" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="saab" aria-expanded="false">
+              <img class="brand-card-logo" src="/Saab.png" alt="Saab" />
+              <span class="brand-card-name">Saab</span>
             </button>
-            <div class="brand-list" data-brand-list="saab">
-              <ul class="list">
-                <li>9-5 Aero</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="saab">
+              <ul><li>9-5 Aero</li></ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="audi" aria-expanded="false">
-              <img class="brand-logo" src="/Audi.png" alt="Audi" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="audi" aria-expanded="false">
+              <img class="brand-card-logo" src="/Audi.png" alt="Audi" />
+              <span class="brand-card-name">Audi</span>
             </button>
-            <div class="brand-list" data-brand-list="audi">
-              <ul class="list">
+            <div class="brand-card-list" data-brand-list="audi">
+              <ul>
                 <li>RS6 C5</li>
                 <li>A8 D3 W12</li>
               </ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="vw" aria-expanded="false">
-              <img class="brand-logo" src="/VW.png" alt="Volkswagen" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="vw" aria-expanded="false">
+              <img class="brand-card-logo" src="/VW.png" alt="Volkswagen" />
+              <span class="brand-card-name">Volkswagen</span>
             </button>
-            <div class="brand-list" data-brand-list="vw">
-              <ul class="list">
-                <li>Phaeton 3.0 TDI</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="vw">
+              <ul><li>Phaeton 3.0 TDI</li></ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="lexus" aria-expanded="false">
-              <img class="brand-logo" src="/Lexus.png" alt="Lexus" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="lexus" aria-expanded="false">
+              <img class="brand-card-logo" src="/Lexus.png" alt="Lexus" />
+              <span class="brand-card-name">Lexus</span>
             </button>
-            <div class="brand-list" data-brand-list="lexus">
-              <ul class="list">
-                <li>GS300</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="lexus">
+              <ul><li>GS300</li></ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="citroen" aria-expanded="false">
-              <img class="brand-logo" src="/Citroen.png" alt="Citroën" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="citroen" aria-expanded="false">
+              <img class="brand-card-logo" src="/Citroen.png" alt="Citroën" />
+              <span class="brand-card-name">Citroën</span>
             </button>
-            <div class="brand-list" data-brand-list="citroen">
-              <ul class="list">
-                <li>C6 3.0i</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="citroen">
+              <ul><li>C6 3.0i</li></ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="mercedes" aria-expanded="false">
-              <img class="brand-logo" src="/Mercedes-Benz.png" alt="Mercedes-Benz" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="mercedes" aria-expanded="false">
+              <img class="brand-card-logo" src="/Mercedes-Benz.png" alt="Mercedes-Benz" />
+              <span class="brand-card-name">Mercedes-Benz</span>
             </button>
-            <div class="brand-list" data-brand-list="mercedes">
-              <ul class="list">
-                <li>190d</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="mercedes">
+              <ul><li>190d</li></ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="peugeot" aria-expanded="false">
-              <img class="brand-logo" src="/Peugeot.png" alt="Peugeot" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="peugeot" aria-expanded="false">
+              <img class="brand-card-logo" src="/Peugeot.png" alt="Peugeot" />
+              <span class="brand-card-name">Peugeot</span>
             </button>
-            <div class="brand-list" data-brand-list="peugeot">
-              <ul class="list">
+            <div class="brand-card-list" data-brand-list="peugeot">
+              <ul>
                 <li>205 1.6 CTI</li>
                 <li>309 SX</li>
               </ul>
             </div>
           </div>
-          <div class="brand-item">
-            <button type="button" class="brand-btn" data-brand="simca" aria-expanded="false">
-              <img class="brand-logo" src="/SIMCA.png" alt="SIMCA" />
+          <div class="brand-card">
+            <button type="button" class="brand-card-btn" data-brand="simca" aria-expanded="false">
+              <img class="brand-card-logo brand-card-logo--lg" src="/SIMCA.png" alt="SIMCA" />
+              <span class="brand-card-name">SIMCA</span>
             </button>
-            <div class="brand-list" data-brand-list="simca">
-              <ul class="list">
-                <li>1100 VF1</li>
-              </ul>
+            <div class="brand-card-list" data-brand-list="simca">
+              <ul><li>1100 VF1</li></ul>
             </div>
           </div>
         </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block block--accent animate-on-scroll" aria-labelledby="languages-title" data-delay="0">
-        <div class="vehicle-trigger languages-trigger" id="languages-title" role="heading" aria-level="2">
-          <span class="vehicle-trigger__graphic languages-trigger__graphic" aria-hidden="true">
-            <img src="/languages-infographic.png" alt="" class="vehicle-trigger__img" />
-          </span>
-          <span class="label label--bar">Langues maîtrisées</span>
+    <!-- ========== LANGUES ========== -->
+    <section class="section section--dark" id="languages">
+      <div class="section-inner section-inner--narrow">
+        <p class="section-label anim-on-scroll">COMMUNICATION</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Langues maîtrisées</h2>
+        <div class="lang-grid anim-on-scroll" style="transition-delay:.2s">
+          <div class="lang-card">
+            <div class="lang-card-flag lang-card-flag--fr"></div>
+            <h3 class="lang-card-name">Français</h3>
+            <p class="lang-card-level">Maternel</p>
+          </div>
+          <div class="lang-card">
+            <div class="lang-card-flag lang-card-flag--uk"></div>
+            <h3 class="lang-card-name">Anglais</h3>
+            <p class="lang-card-level">Usage pro (C1)</p>
+          </div>
+          <div class="lang-card">
+            <div class="lang-card-flag lang-card-flag--de"></div>
+            <h3 class="lang-card-name">Allemand</h3>
+            <p class="lang-card-level">Cursus bilingue (C1)</p>
+          </div>
         </div>
-        <div class="languages-grid">
-          <div class="language-card language-card--fr">
-            <div class="language-name">Français</div>
-            <div class="language-level">Maternel</div>
-          </div>
-          <div class="language-card language-card--uk">
-            <div class="language-name">Anglais</div>
-            <div class="language-level">Usage pro (C1)</div>
-          </div>
-          <div class="language-card language-card--de">
-            <div class="language-name">Allemand</div>
-            <div class="language-level">Cursus bilingue (C1)</div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="interests-trigger" data-delay="0">
-        <button type="button" class="vehicle-trigger interests-trigger" id="interests-trigger" aria-expanded="false" aria-controls="interests-list">
-          <span class="vehicle-trigger__graphic interests-trigger__graphic" aria-hidden="true">
-            <img src="/interests-infographic.png" alt="" class="vehicle-trigger__img" />
-          </span>
-          <span class="label label--bar">Intérêts et passions</span>
-          <span class="vehicle-trigger__icon" aria-hidden="true"></span>
-        </button>
-        <div id="interests-list" class="interest-list">
-          <div class="interest-item">
-            <p class="meta">Passion Automobile & Restauration</p>
-            <p class="body"><strong>Depuis 2012</strong>, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré <strong>l'achat, la mécanique, le detailing et la revente</strong> de <strong>31 voitures</strong>. Pour piloter cette activité, j'ai développé mon propre <strong>outil de suivi de rentabilité</strong> sur <strong>Airtable</strong>. Membre actif de l’<strong>Enthousiast’Club Jaguar Alsace</strong>.</p>
+    <!-- ========== INTÉRÊTS ========== -->
+    <section class="section" id="interests">
+      <div class="section-inner">
+        <p class="section-label anim-on-scroll">AU-DELÀ DU MÉTIER</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Intérêts & Passions</h2>
+        <div class="interests-grid anim-on-scroll" style="transition-delay:.2s">
+          <div class="interest-card">
+            <span class="interest-card-index">01</span>
+            <h3 class="interest-card-title">Passion Automobile & Restauration</h3>
+            <p class="interest-card-text">Depuis 2012, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré l'achat, la mécanique, le detailing et la revente de <strong>31 voitures</strong>. Membre actif de l'<strong>Enthousiast'Club Jaguar Alsace</strong>.</p>
           </div>
-          <div class="interest-item">
-            <p class="meta">Aviation</p>
-            <p class="body"><strong>Pilote privé en formation (PPL)</strong>. <strong>Lâché solo</strong>, <strong>grande nav solo validée</strong>. C'est pour moi une véritable école de la <strong>rigueur</strong> et de la <strong>gestion du stress</strong>, où <strong>l'organisation</strong> est la clé de chaque vol.</p>
+          <div class="interest-card">
+            <span class="interest-card-index">02</span>
+            <h3 class="interest-card-title">Aviation</h3>
+            <p class="interest-card-text"><strong>Pilote privé en formation (PPL)</strong>. Lâché solo, grande nav solo validée. Une véritable école de la rigueur et de la gestion du stress.</p>
           </div>
-          <div class="interest-item">
-            <p class="meta">Engagement Associatif - LEO Club</p>
-            <p class="body">Membre actif pendant <strong>7 ans</strong> et <strong>ancien Président</strong>. J'ai coordonné de nombreux projets : <strong>collectes de fonds</strong>, <strong>journées de loisirs</strong> pour des personnes en situation de handicap, <strong>organisation de convetions nationales</strong>, <strong>participation au Téléthon</strong>, ... Une expérience humaine forte qui m'a appris à <strong>fédérer une équipe</strong> autour d'une cause.</p>
+          <div class="interest-card">
+            <span class="interest-card-index">03</span>
+            <h3 class="interest-card-title">Engagement Associatif</h3>
+            <p class="interest-card-text">Membre actif du LEO Club pendant <strong>7 ans</strong> et ancien Président. Collectes de fonds, journées de loisirs, organisation de conventions nationales, participation au Téléthon.</p>
           </div>
-          <div class="interest-item">
-            <p class="meta">Sports</p>
-            <ul class="list">
-              <li>Golf</li>
-              <li>Boxe thaï puis française</li>
-              <li>Handball</li>
-            </ul>
+          <div class="interest-card">
+            <span class="interest-card-index">04</span>
+            <h3 class="interest-card-title">Sports</h3>
+            <p class="interest-card-text">Golf, Boxe thaï puis française, Handball.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block block--accent block--expandable animate-on-scroll" aria-labelledby="formations-trigger" data-delay="0">
-        <button type="button" class="vehicle-trigger formations-trigger" id="formations-trigger" aria-expanded="false" aria-controls="formations-list">
-          <span class="vehicle-trigger__graphic formations-trigger__graphic" aria-hidden="true">
-            <img src="/formations-infographic.png" alt="" class="vehicle-trigger__img" />
-          </span>
-          <span class="label label--bar">Formations</span>
-          <span class="vehicle-trigger__icon" aria-hidden="true"></span>
-        </button>
-        <div id="formations-list" class="formations-list">
-          <div class="formation-item">
-            <button type="button" class="formation-item__header" aria-expanded="false" aria-controls="formation-detail-1">
-              <span class="formation-item__title">Licence professionnelle REL</span>
-              <span class="formation-item__meta">AFTRAL · Strasbourg · 2014–2015</span>
+    <!-- ========== FORMATIONS ========== -->
+    <section class="section section--dark" id="formations">
+      <div class="section-inner">
+        <p class="section-label anim-on-scroll">ACADÉMIQUE</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Formations</h2>
+        <div class="formations-container anim-on-scroll" style="transition-delay:.2s">
+
+          <div class="formation-card" data-formation="1">
+            <button type="button" class="formation-card-header" aria-expanded="false">
+              <div class="formation-card-left">
+                <h3 class="formation-card-title">Licence professionnelle REL</h3>
+                <p class="formation-card-meta">AFTRAL · Strasbourg · 2014–2015</p>
+              </div>
+              <span class="formation-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="formation-detail-1" class="formation-item__detail">
-              <p class="body">Spécialisation en <strong>pilotage d'unités logistiques</strong> et <strong>optimisation des flux internes</strong>. Expertise développée dans la <strong>gestion d'entrepôt</strong>, le <strong>management d'équipes opérationnelles</strong> et le <strong>pilotage de la performance</strong> via des indicateurs clés (<strong>KPI</strong>). Compétences axées sur l'<strong>amélioration continue</strong> des processus, la <strong>gestion des stocks</strong> et la mise en œuvre de solutions systèms d'informations  logistiques (<strong>WMS</strong>).</p>
+            <div class="formation-card-body">
+              <p class="exp-body-text">Spécialisation en <strong>pilotage d'unités logistiques</strong> et <strong>optimisation des flux internes</strong>. Expertise développée dans la <strong>gestion d'entrepôt</strong>, le <strong>management d'équipes opérationnelles</strong> et le <strong>pilotage de la performance</strong> via des indicateurs clés (KPI).</p>
             </div>
           </div>
-          <div class="formation-item">
-            <button type="button" class="formation-item__header" aria-expanded="false" aria-controls="formation-detail-2">
-              <span class="formation-item__title">Licence professionnelle RPTL</span>
-              <span class="formation-item__meta">ISTELI · Strasbourg · 2013–2014</span>
+
+          <div class="formation-card" data-formation="2">
+            <button type="button" class="formation-card-header" aria-expanded="false">
+              <div class="formation-card-left">
+                <h3 class="formation-card-title">Licence professionnelle RPTL</h3>
+                <p class="formation-card-meta">ISTELI · Strasbourg · 2013–2014</p>
+              </div>
+              <span class="formation-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="formation-detail-2" class="formation-item__detail">
-              <p class="body">Spécialisation en <strong>management</strong> et <strong>pilotage de production</strong> transport/logistique. Expertise acquise dans la <strong>conception d'offres de transport</strong>, le suivi d'indicateurs de performance (<strong>KPI</strong>) et l'<strong>amélioration continue</strong> des processus. Formation axée sur la <strong>réactivité opérationnelle</strong> face aux aléas de la <strong>Supply Chain</strong> et la <strong>coordination des flux</strong> en environnement logistique.</p>
+            <div class="formation-card-body">
+              <p class="exp-body-text">Spécialisation en <strong>management</strong> et <strong>pilotage de production</strong> transport/logistique. Expertise acquise dans la <strong>conception d'offres de transport</strong>, le suivi d'indicateurs de performance (KPI) et l'<strong>amélioration continue</strong> des processus.</p>
             </div>
           </div>
-          <div class="formation-item">
-            <button type="button" class="formation-item__header" aria-expanded="false" aria-controls="formation-detail-3">
-              <span class="formation-item__title">BTS Transport et Prestations Logistiques</span>
-              <span class="formation-item__meta">AFTRAL · Strasbourg · 2011–2013</span>
+
+          <div class="formation-card" data-formation="3">
+            <button type="button" class="formation-card-header" aria-expanded="false">
+              <div class="formation-card-left">
+                <h3 class="formation-card-title">BTS Transport et Prestations Logistiques</h3>
+                <p class="formation-card-meta">AFTRAL · Strasbourg · 2011–2013</p>
+              </div>
+              <span class="formation-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="formation-detail-3" class="formation-item__detail">
-              <p class="body">Maîtrise des fondamentaux de la <strong>Supply Chain</strong> : organisation des <strong>flux nationaux et internationaux</strong>, <strong>planification d'exploitation</strong> et <strong>gestion réglementaire</strong>. Cette formation m'a permis d'acquérir une solide expertise technique dans le choix des <strong>solutions de transport</strong>, la <strong>gestion des litiges</strong> et l'<strong>optimisation des prestations logistiques</strong>, avec une forte culture du respect des contraintes de <strong>coûts, délais et sécurité</strong>.</p>
+            <div class="formation-card-body">
+              <p class="exp-body-text">Maîtrise des fondamentaux de la <strong>Supply Chain</strong> : organisation des flux nationaux et internationaux, planification d'exploitation et gestion réglementaire.</p>
             </div>
           </div>
-          <div class="formation-item">
-            <button type="button" class="formation-item__header" aria-expanded="false" aria-controls="formation-detail-4">
-              <span class="formation-item__title">Baccalauréat Économique et Social</span>
-              <span class="formation-item__meta">Strasbourg · 2011</span>
+
+          <div class="formation-card" data-formation="4">
+            <button type="button" class="formation-card-header" aria-expanded="false">
+              <div class="formation-card-left">
+                <h3 class="formation-card-title">Baccalauréat Économique et Social</h3>
+                <p class="formation-card-meta">Strasbourg · 2011</p>
+              </div>
+              <span class="formation-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
             </button>
-            <div id="formation-detail-4" class="formation-item__detail">
-              <p class="body">Diplôme obtenu à <strong>Strasbourg</strong> en <strong>2011</strong>.</p>
+            <div class="formation-card-body">
+              <p class="exp-body-text">Diplôme obtenu à Strasbourg en 2011.</p>
             </div>
           </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer id="contact" class="footer animate-on-scroll" data-delay="0">
-        <div class="footer-tech">
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" id="footer">
+      <div class="section-inner">
+        <div class="footer-top">
+          <div class="footer-brand">CORENTIN BOISSELIER</div>
+          <p class="footer-tagline">Expert Pricing Automobile · IA appliquée & automatisation</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">À propos</a>
+          <a href="#experience">Expériences</a>
+          <a href="#vehicles">Véhicules</a>
+          <a href="#formations">Formations</a>
+        </div>
+        <div class="footer-bottom">
           <button type="button" class="footer-tech-btn" id="footer-tech-btn" aria-expanded="false" aria-controls="footer-tech-panel">
             Comment ce site est-il fait ?
           </button>
@@ -461,26 +608,31 @@
             <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est-il fait ?</h2>
             <p class="footer-tech-intro">En bref, pour les curieux qui ne sont pas à l'aise avec la technique :</p>
             <ul class="footer-tech-list">
-              <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d’interaction).</li>
+              <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d'interaction).</li>
               <li><strong>Elle est construite</strong> avec Astro — un outil qui permet de générer des sites rapides et légers.</li>
-              <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu’un ouvre le lien.</li>
-              <li><strong>Le chatbot</strong> utilise l’intelligence artificielle de Google (Gemini) pour répondre à vos questions à ma place, en s’appuyant sur les infos de mon CV. Il peut aussi répondre aux questions sur l'automobile (marques, histoire, étymologie, etc.) en s'appuyant sur une recherche web. Les curieux y trouveront aussi quelques réponses surprises 😉</li>
+              <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu'un ouvre le lien.</li>
+              <li><strong>Le chatbot</strong> utilise l'intelligence artificielle de Google (Gemini) pour répondre à vos questions à ma place.</li>
             </ul>
-            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">Fermer</button>
+            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">FERMER</button>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
-    </div>
-
+    <!-- ========== CHATBOT WIDGET ========== -->
     <div class="chat-widget" id="chat-widget" aria-label="Chatbot">
-      <button type="button" class="chat-toggle-mobile" id="chat-toggle-mobile" aria-label="Réduire le chat" aria-expanded="true">
-        <span class="chat-toggle-mobile-icon chat-toggle-mobile-icon--minimize" aria-hidden="true">−</span>
-        <span class="chat-toggle-mobile-icon chat-toggle-mobile-icon--open" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </span>
+      <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Ouvrir le chat" aria-expanded="false">
+        <svg class="chat-toggle-icon chat-toggle-icon--open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <svg class="chat-toggle-icon chat-toggle-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <div class="chat">
+      <div class="chat-panel" id="chat-panel">
+        <div class="chat-panel-header">
+          <span class="chat-panel-title">CORENTIN VIRTUEL</span>
+          <span class="chat-panel-dot"></span>
+          <button type="button" class="chat-minimize-btn" id="chat-minimize" aria-label="Réduire le chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
         <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
         <div class="chat-suggestions" id="chat-suggestions">
           <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Résume-moi ton CV</button>
@@ -492,733 +644,1444 @@
             class="chat-input"
             name="message"
             rows="1"
-            placeholder="Ex : Tu peux me résumer son parcours en 3 points ?"
+            placeholder="Posez-moi une question..."
             required
             enterkeyhint="send"
           ></textarea>
-          <button type="submit" class="chat-submit-btn" aria-label="Envoyer" tabindex="-1">Envoyer</button>
+          <button type="submit" class="chat-send-btn" aria-label="Envoyer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
         </form>
-        <div class="chat-hint">Appuyez sur Entrée pour envoyer</div>
         <div class="chat-status" id="chat-status" aria-live="polite"></div>
       </div>
     </div>
 
+    <!-- ========== CONTACT MODAL ========== -->
     <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Formulaire de contact">
       <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="contact-modal-title" aria-modal="true">
+        <button type="button" class="contact-modal-close" id="contact-close" aria-label="Fermer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <p class="contact-modal-label">CONTACT</p>
         <h2 id="contact-modal-title" class="contact-modal-title">Écrivez-moi</h2>
         <form id="contact-form" class="contact-form">
-          <label class="contact-label">Votre nom <input type="text" name="name" class="contact-input" required autocomplete="name"></label>
-          <label class="contact-label">Votre email <input type="email" name="email" class="contact-input" required autocomplete="email"></label>
-          <label class="contact-label">Message <textarea name="message" class="contact-textarea" rows="4" required></textarea></label>
+          <label class="contact-label">
+            <span class="contact-label-text">Votre nom</span>
+            <input type="text" name="name" class="contact-input" required autocomplete="name">
+          </label>
+          <label class="contact-label">
+            <span class="contact-label-text">Votre email</span>
+            <input type="email" name="email" class="contact-input" required autocomplete="email">
+          </label>
+          <label class="contact-label">
+            <span class="contact-label-text">Message</span>
+            <textarea name="message" class="contact-textarea" rows="4" required></textarea>
+          </label>
           <div class="contact-actions">
-            <button type="submit" class="btn contact-submit">Envoyer</button>
-            <button type="button" class="contact-close" id="contact-close" aria-label="Fermer">Fermer</button>
+            <button type="submit" class="contact-submit-btn">ENVOYER</button>
           </div>
         </form>
         <p id="contact-feedback" class="contact-feedback" aria-live="polite" hidden></p>
       </div>
     </div>
 
+    <!-- ========== FLOATING CTA (bottom-right, Bugatti-style) ========== -->
+    <div class="floating-cta" id="floating-cta">
+      <div class="floating-cta-content">
+        <p class="floating-cta-title">Prêt pour une nouvelle aventure ?</p>
+        <p class="floating-cta-sub">Prenez part à l'incomparable</p>
+        <button type="button" class="floating-cta-btn" id="floating-cta-btn">ACCÉDER AU CONTACT</button>
+      </div>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
     <script>
-      (function () {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const els = document.querySelectorAll('.animate-on-scroll');
-        if (prefersReducedMotion) {
-          els.forEach((el) => el.classList.add('in-view'));
+    (function () {
+      /* ---- Smooth scroll for anchor links ---- */
+      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            // Close menu if open
+            closeMenu();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      /* ---- Nav scroll effect ---- */
+      var nav = document.getElementById('main-nav');
+      var heroEl = document.getElementById('hero');
+      function updateNav() {
+        if (!nav) return;
+        if (window.scrollY > 80) {
+          nav.classList.add('nav--scrolled');
         } else {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('in-view');
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            { rootMargin: '0px 0px -8% 0px', threshold: 0 }
-          );
-          els.forEach((el) => {
-            const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
-            el.style.transitionDelay = delay ? delay + 'ms' : '';
-            observer.observe(el);
-          });
+          nav.classList.remove('nav--scrolled');
         }
+      }
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
 
-
-        var expTrigger = document.getElementById('exp-trigger');
-        var expList = document.getElementById('exp-list');
-        function setHeight(el, open) {
-          if (!el) return;
-          if (open) {
-            el.style.height = el.scrollHeight + 'px';
-            requestAnimationFrame(function () {
-              el.style.height = 'auto';
-            });
-          } else {
-            el.style.height = el.scrollHeight + 'px';
-            requestAnimationFrame(function () {
-              el.style.height = '0px';
-            });
-          }
-        }
-        if (expTrigger && expList) {
-          expTrigger.addEventListener('click', function () {
-            var block = expTrigger.closest('.block--expandable');
-            var isOpen = block && block.classList.contains('is-open');
-            // Close vehicles and interests when opening experiences
-            if (!isOpen) {
-              var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
-              if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
-                vehiclesBlock.classList.remove('is-open');
-                var vehiclesList = document.getElementById('vehicles-list');
-                if (vehiclesList) setHeight(vehiclesList, false);
-                var vehiclesTrigger = document.getElementById('vehicles-trigger');
-                if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var interestsBlock = document.querySelector('#interests-trigger') ? document.querySelector('#interests-trigger').closest('.block--expandable') : null;
-              if (interestsBlock && interestsBlock.classList.contains('is-open')) {
-                interestsBlock.classList.remove('is-open');
-                var interestsList = document.getElementById('interests-list');
-                if (interestsList) setHeight(interestsList, false);
-                var interestsTrigger = document.getElementById('interests-trigger');
-                if (interestsTrigger) interestsTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var formationsBlock = document.querySelector('#formations-trigger') ? document.querySelector('#formations-trigger').closest('.block--expandable') : null;
-              if (formationsBlock && formationsBlock.classList.contains('is-open')) {
-                formationsBlock.classList.remove('is-open');
-                var formationsList = document.getElementById('formations-list');
-                if (formationsList) setHeight(formationsList, false);
-                var formationsTrigger = document.getElementById('formations-trigger');
-                if (formationsTrigger) formationsTrigger.setAttribute('aria-expanded', 'false');
-              }
-            }
-            if (block) block.classList.toggle('is-open', !isOpen);
-            expTrigger.setAttribute('aria-expanded', !isOpen);
-            setHeight(expList, !isOpen);
-          });
-        }
-
-        var vehiclesTrigger = document.getElementById('vehicles-trigger');
-        var vehiclesList = document.getElementById('vehicles-list');
-        if (vehiclesTrigger && vehiclesList) {
-          vehiclesTrigger.addEventListener('click', function () {
-            var block = vehiclesTrigger.closest('.block--expandable');
-            var isOpen = block && block.classList.contains('is-open');
-            // Close experiences and interests when opening vehicles
-            if (!isOpen) {
-              var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
-              if (expBlock && expBlock.classList.contains('is-open')) {
-                expBlock.classList.remove('is-open');
-                var expList = document.getElementById('exp-list');
-                if (expList) setHeight(expList, false);
-                var expTrigger = document.getElementById('exp-trigger');
-                if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var interestsBlock = document.querySelector('#interests-trigger') ? document.querySelector('#interests-trigger').closest('.block--expandable') : null;
-              if (interestsBlock && interestsBlock.classList.contains('is-open')) {
-                interestsBlock.classList.remove('is-open');
-                var interestsList = document.getElementById('interests-list');
-                if (interestsList) setHeight(interestsList, false);
-                var interestsTrigger = document.getElementById('interests-trigger');
-                if (interestsTrigger) interestsTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var formationsBlock = document.querySelector('#formations-trigger') ? document.querySelector('#formations-trigger').closest('.block--expandable') : null;
-              if (formationsBlock && formationsBlock.classList.contains('is-open')) {
-                formationsBlock.classList.remove('is-open');
-                var formationsList = document.getElementById('formations-list');
-                if (formationsList) setHeight(formationsList, false);
-                var formationsTrigger = document.getElementById('formations-trigger');
-                if (formationsTrigger) formationsTrigger.setAttribute('aria-expanded', 'false');
-              }
-            }
-            if (block) block.classList.toggle('is-open', !isOpen);
-            vehiclesTrigger.setAttribute('aria-expanded', !isOpen);
-            setHeight(vehiclesList, !isOpen);
-          });
-        }
-
-        var interestsTrigger = document.getElementById('interests-trigger');
-        var interestsList = document.getElementById('interests-list');
-        if (interestsTrigger && interestsList) {
-          interestsTrigger.addEventListener('click', function () {
-            var block = interestsTrigger.closest('.block--expandable');
-            var isOpen = block && block.classList.contains('is-open');
-            // Close experiences and vehicles when opening interests
-            if (!isOpen) {
-              var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
-              if (expBlock && expBlock.classList.contains('is-open')) {
-                expBlock.classList.remove('is-open');
-                var expList = document.getElementById('exp-list');
-                if (expList) setHeight(expList, false);
-                var expTrigger = document.getElementById('exp-trigger');
-                if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
-              if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
-                vehiclesBlock.classList.remove('is-open');
-                var vehiclesList = document.getElementById('vehicles-list');
-                if (vehiclesList) setHeight(vehiclesList, false);
-                var vehiclesTrigger = document.getElementById('vehicles-trigger');
-                if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var formationsBlock = document.querySelector('#formations-trigger') ? document.querySelector('#formations-trigger').closest('.block--expandable') : null;
-              if (formationsBlock && formationsBlock.classList.contains('is-open')) {
-                formationsBlock.classList.remove('is-open');
-                var formationsList = document.getElementById('formations-list');
-                if (formationsList) setHeight(formationsList, false);
-                var formationsTrigger = document.getElementById('formations-trigger');
-                if (formationsTrigger) formationsTrigger.setAttribute('aria-expanded', 'false');
-              }
-            }
-            if (block) block.classList.toggle('is-open', !isOpen);
-            interestsTrigger.setAttribute('aria-expanded', !isOpen);
-            setHeight(interestsList, !isOpen);
-          });
-        }
-
-        var formationsTrigger = document.getElementById('formations-trigger');
-        var formationsList = document.getElementById('formations-list');
-        if (formationsTrigger && formationsList) {
-          formationsTrigger.addEventListener('click', function () {
-            var block = formationsTrigger.closest('.block--expandable');
-            var isOpen = block && block.classList.contains('is-open');
-            // Close experiences, vehicles and interests when opening formations
-            if (!isOpen) {
-              var expBlock = document.querySelector('#exp-trigger') ? document.querySelector('#exp-trigger').closest('.block--expandable') : null;
-              if (expBlock && expBlock.classList.contains('is-open')) {
-                expBlock.classList.remove('is-open');
-                var expList = document.getElementById('exp-list');
-                if (expList) setHeight(expList, false);
-                var expTrigger = document.getElementById('exp-trigger');
-                if (expTrigger) expTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var vehiclesBlock = document.querySelector('#vehicles-trigger') ? document.querySelector('#vehicles-trigger').closest('.block--expandable') : null;
-              if (vehiclesBlock && vehiclesBlock.classList.contains('is-open')) {
-                vehiclesBlock.classList.remove('is-open');
-                var vehiclesList = document.getElementById('vehicles-list');
-                if (vehiclesList) setHeight(vehiclesList, false);
-                var vehiclesTrigger = document.getElementById('vehicles-trigger');
-                if (vehiclesTrigger) vehiclesTrigger.setAttribute('aria-expanded', 'false');
-              }
-              var interestsBlock = document.querySelector('#interests-trigger') ? document.querySelector('#interests-trigger').closest('.block--expandable') : null;
-              if (interestsBlock && interestsBlock.classList.contains('is-open')) {
-                interestsBlock.classList.remove('is-open');
-                var interestsList = document.getElementById('interests-list');
-                if (interestsList) setHeight(interestsList, false);
-                var interestsTrigger = document.getElementById('interests-trigger');
-                if (interestsTrigger) interestsTrigger.setAttribute('aria-expanded', 'false');
-              }
-            }
-            if (block) block.classList.toggle('is-open', !isOpen);
-            formationsTrigger.setAttribute('aria-expanded', !isOpen);
-            setHeight(formationsList, !isOpen);
-          });
-        }
-
-        // Make the whole expandable area clickable (except inner buttons/links)
-        document.querySelectorAll('.block--expandable').forEach(function (block) {
-          block.addEventListener('click', function (evt) {
-            if (evt.target.closest('button') || evt.target.closest('a')) return;
-            var trigger = block.querySelector('.exp-trigger, .vehicle-trigger');
-            if (trigger) trigger.click();
-          });
+      /* ---- Menu overlay ---- */
+      var menuBtn = document.getElementById('nav-menu-btn');
+      var menuOverlay = document.getElementById('menu-overlay');
+      function openMenu() {
+        if (!menuOverlay || !menuBtn) return;
+        menuOverlay.classList.add('is-open');
+        menuOverlay.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        if (!menuOverlay || !menuBtn) return;
+        menuOverlay.classList.remove('is-open');
+        menuOverlay.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          var isOpen = menuOverlay && menuOverlay.classList.contains('is-open');
+          if (isOpen) closeMenu(); else openMenu();
         });
-        document.querySelectorAll('.exp-item__header').forEach(function (btn) {
-          var item = btn.closest('.exp-item');
-          var id = btn.getAttribute('aria-controls');
-          var detail = id ? document.getElementById(id) : null;
-          if (!item || !detail) return;
-          btn.addEventListener('click', function () {
-            var isOpen = item.classList.contains('is-open');
-            // Close any other open item
-            document.querySelectorAll('.exp-item.is-open').forEach(function (openItem) {
-              if (openItem === item) return;
-              openItem.classList.remove('is-open');
-              var openBtn = openItem.querySelector('.exp-item__header');
-              var openId = openBtn ? openBtn.getAttribute('aria-controls') : null;
-              var openDetail = openId ? document.getElementById(openId) : null;
-              if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
-              setHeight(openDetail, false);
-            });
-            item.classList.toggle('is-open', !isOpen);
-            btn.setAttribute('aria-expanded', !isOpen);
-            setHeight(detail, !isOpen);
-            if (expList) {
-              // Recalculate list height when an inner item opens/closes.
-              requestAnimationFrame(function () {
-                if (expList.style.height === 'auto') return;
-                expList.style.height = expList.scrollHeight + 'px';
-              });
+      }
+      document.querySelectorAll('.menu-link').forEach(function(link) {
+        link.addEventListener('click', function() { closeMenu(); });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* ---- Scroll-triggered animations ---- */
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var animEls = document.querySelectorAll('.anim-on-scroll');
+      if (prefersReducedMotion) {
+        animEls.forEach(function(el) { el.classList.add('is-visible'); });
+      } else {
+        var scrollObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              scrollObserver.unobserve(entry.target);
             }
           });
-        });
-        document.querySelectorAll('.formation-item__header').forEach(function (btn) {
-          var item = btn.closest('.formation-item');
-          var id = btn.getAttribute('aria-controls');
-          var detail = id ? document.getElementById(id) : null;
-          if (!item || !detail) return;
-          btn.addEventListener('click', function () {
-            var isOpen = item.classList.contains('is-open');
-            // Close any other open formation item
-            document.querySelectorAll('.formation-item.is-open').forEach(function (openItem) {
-              if (openItem === item) return;
-              openItem.classList.remove('is-open');
-              var openBtn = openItem.querySelector('.formation-item__header');
-              var openId = openBtn ? openBtn.getAttribute('aria-controls') : null;
-              var openDetail = openId ? document.getElementById(openId) : null;
-              if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
-              setHeight(openDetail, false);
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+        animEls.forEach(function(el) { scrollObserver.observe(el); });
+      }
+
+      /* ---- Experience cards accordion ---- */
+      function setupAccordion(selector) {
+        document.querySelectorAll(selector).forEach(function(card) {
+          var header = card.querySelector('[aria-expanded]');
+          var body = card.querySelector('.exp-card-body, .formation-card-body');
+          if (!header || !body) return;
+          header.addEventListener('click', function() {
+            var isOpen = card.classList.contains('is-open');
+            // Close others
+            document.querySelectorAll(selector + '.is-open').forEach(function(openCard) {
+              if (openCard === card) return;
+              openCard.classList.remove('is-open');
+              var ob = openCard.querySelector('.exp-card-body, .formation-card-body');
+              var oh = openCard.querySelector('[aria-expanded]');
+              if (ob) { ob.style.maxHeight = '0'; }
+              if (oh) oh.setAttribute('aria-expanded', 'false');
             });
-            item.classList.toggle('is-open', !isOpen);
-            btn.setAttribute('aria-expanded', !isOpen);
-            setHeight(detail, !isOpen);
-            if (formationsList) {
-              // Recalculate list height when an inner item opens/closes.
-              requestAnimationFrame(function () {
-                if (formationsList.style.height === 'auto') return;
-                formationsList.style.height = formationsList.scrollHeight + 'px';
-              });
-            }
-          });
-        });
-
-        // Chat minimize / expand (mobile / iPhone)
-        var chatWidget = document.getElementById('chat-widget');
-        var chatToggleMobile = document.getElementById('chat-toggle-mobile');
-        if (chatWidget && chatToggleMobile) {
-          chatToggleMobile.addEventListener('click', function () {
-            var isMinimized = chatWidget.classList.toggle('is-minimized');
-            chatToggleMobile.setAttribute('aria-expanded', isMinimized ? 'false' : 'true');
-            chatToggleMobile.setAttribute('aria-label', isMinimized ? 'Ouvrir le chat' : 'Réduire le chat');
-          });
-        }
-
-        // Chatbot
-        var chatForm = document.getElementById('chat-form');
-        var chatInput = document.getElementById('chat-input');
-        var chatMessages = document.getElementById('chat-messages');
-        var chatStatus = document.getElementById('chat-status');
-        if (chatForm && chatInput && chatMessages && chatStatus) {
-          var chatHistory = [];
-          function formatChatReply(text) {
-            if (!text) return '';
-            var escaped = text
-              .replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;');
-            return escaped
-              .replace(/\n/g, '<br>')
-              .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-              .replace(/(<br>|^)\s*\*\s+/g, '$1• ');
-          }
-          var appendMessage = function (role, text) {
-            var msg = document.createElement('div');
-            msg.className = 'chat-message chat-message--' + role;
-            var bubble = document.createElement('div');
-            bubble.className = 'chat-bubble';
-            if (role === 'assistant') {
-              bubble.innerHTML = formatChatReply(text);
+            card.classList.toggle('is-open', !isOpen);
+            header.setAttribute('aria-expanded', String(!isOpen));
+            if (!isOpen) {
+              body.style.maxHeight = body.scrollHeight + 'px';
             } else {
-              bubble.textContent = text;
+              body.style.maxHeight = '0';
             }
-            msg.appendChild(bubble);
-            chatMessages.appendChild(msg);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          };
-          var welcomeMsg = 'Bonjour 👋 Je suis le Corentin virtuel. Dites-moi ce que vous voulez savoir, je suis là pour aider !';
-          appendMessage('assistant', welcomeMsg);
-          chatHistory.push({ role: 'assistant', content: welcomeMsg });
-          var chatSuggestions = document.getElementById('chat-suggestions');
-          var suggestionCv = document.getElementById('chat-suggestion-cv');
-          var suggestionRandom = document.getElementById('chat-suggestion-random');
-          var randomCvQuestions = [
-            'Quelle est ta plus grande réalisation professionnelle ?',
-            'Pourquoi avoir choisi le pricing automobile ?',
-            'Quelles sont tes compétences en IA ?',
-            'Tu peux me parler de ton expérience chez Alcopa ?',
-            'Quelles langues parles-tu ?',
-            'Quel est ton parcours en 3 points ?',
-            "Qu'est-ce qui te motive au quotidien ?",
-            'Comment as-tu réduit le temps de traitement de 35 à 40 % ?',
-            'Quel rôle joue l\'automatisation dans ton travail ?'
-          ];
-          function hideSuggestions() {
-            if (chatSuggestions) chatSuggestions.classList.add('is-hidden');
-          }
-          function sendMessage(text) {
-            if (!text || !text.trim()) return;
-            hideSuggestions();
-            appendMessage('user', text.trim());
-            chatInput.value = '';
-            autoResize();
-            chatInput.disabled = true;
-            chatStatus.innerHTML = '<span class="chat-status-dots" aria-hidden="true"><span></span><span></span><span></span></span>';
-            var submitBtn = chatForm.querySelector('button[type="submit"]');
-            if (submitBtn) submitBtn.disabled = true;
-            fetch('/api/chat', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20) }),
-              cache: 'no-store'
-            })
-              .then(function (res) {
-                return res.json().catch(function () { return {}; }).then(function (data) {
-                  if (!res.ok) throw new Error(data && data.error ? data.error : 'Erreur serveur');
-                  return data;
-                });
-              })
-              .then(function (data) {
-                var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
-                appendMessage('assistant', reply);
-                chatHistory.push({ role: 'user', content: text.trim() }, { role: 'assistant', content: reply });
-                chatStatus.innerHTML = '';
-              })
-              .catch(function (err) {
-                chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue. Réessayez plus tard.";
-              })
-              .finally(function () {
-                chatInput.disabled = false;
-                if (submitBtn) submitBtn.disabled = false;
-                chatInput.focus();
-              });
-          }
-          if (suggestionCv) suggestionCv.addEventListener('click', function () { sendMessage('Résume-moi ton CV'); });
-          if (suggestionRandom) suggestionRandom.addEventListener('click', function () {
-            var q = randomCvQuestions[Math.floor(Math.random() * randomCvQuestions.length)];
-            sendMessage(q);
-          });
-          var autoResize = function () {
-            var lineHeight = parseFloat(getComputedStyle(chatInput).lineHeight) || 20;
-            var maxHeight = lineHeight * 6;
-            chatInput.style.height = 'auto';
-            var next = Math.min(chatInput.scrollHeight, maxHeight);
-            chatInput.style.height = next + 'px';
-          };
-          autoResize();
-          chatInput.addEventListener('input', function () {
-            autoResize();
-            if (chatInput.value.indexOf('\n') !== -1) {
-              chatInput.value = chatInput.value.replace(/\r?\n/g, ' ').trim();
-              autoResize();
-              if (chatInput.value) chatForm.requestSubmit();
-            }
-          });
-          function handleEnter(evt) {
-            var key = evt.key;
-            var code = evt.keyCode || evt.which;
-            var isEnter = key === 'Enter' || key === 'Go' || key === 'Send' || code === 13;
-            if (isEnter && !evt.shiftKey) {
-              evt.preventDefault();
-              evt.stopPropagation();
-              evt.stopImmediatePropagation();
-              setTimeout(function () { chatForm.requestSubmit(); }, 0);
-            }
-          }
-          chatInput.addEventListener('keydown', handleEnter, true);
-          chatInput.addEventListener('keydown', handleEnter, false);
-          chatInput.addEventListener('keypress', function (evt) {
-            var code = evt.keyCode || evt.which;
-            if (code === 13 && !evt.shiftKey) {
-              evt.preventDefault();
-              evt.stopPropagation();
-              setTimeout(function () { chatForm.requestSubmit(); }, 0);
-            }
-          }, true);
-          chatForm.addEventListener('submit', function (evt) {
-            evt.preventDefault();
-            var text = chatInput.value.trim();
-            if (!text) return;
-            sendMessage(text);
-          });
-        }
-
-        // Panneau « Comment ce site est-il fait ? »
-        var footerTechBtn = document.getElementById('footer-tech-btn');
-        var footerTechPanel = document.getElementById('footer-tech-panel');
-        var footerTechClose = document.getElementById('footer-tech-close');
-        if (footerTechBtn && footerTechPanel) {
-          function openTechPanel() {
-            footerTechPanel.classList.add('is-open');
-            footerTechPanel.setAttribute('aria-hidden', 'false');
-            if (footerTechBtn) footerTechBtn.setAttribute('aria-expanded', 'true');
-          }
-          function closeTechPanel() {
-            footerTechPanel.classList.remove('is-open');
-            footerTechPanel.setAttribute('aria-hidden', 'true');
-            if (footerTechBtn) footerTechBtn.setAttribute('aria-expanded', 'false');
-          }
-          footerTechBtn.addEventListener('click', function () {
-            if (footerTechPanel.classList.contains('is-open')) closeTechPanel();
-            else openTechPanel();
-          });
-          if (footerTechClose) footerTechClose.addEventListener('click', closeTechPanel);
-        }
-
-        // Brand list toggles
-        var brandButtons = document.querySelectorAll('.brand-btn');
-        brandButtons.forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            var brand = btn.getAttribute('data-brand');
-            var item = btn.closest('.brand-item');
-            var list = item ? item.querySelector('.brand-list[data-brand-list="' + brand + '"]') : null;
-            if (!item || !list) return;
-            var isOpen = item.classList.contains('is-open');
-            // Close other open brand lists
-            document.querySelectorAll('.brand-item.is-open').forEach(function (openItem) {
-              if (openItem === item) return;
-              openItem.classList.remove('is-open');
-              var openBtn = openItem.querySelector('.brand-btn');
-              var openList = openItem.querySelector('.brand-list');
-              if (openBtn) {
-                openBtn.classList.remove('is-active');
-                openBtn.setAttribute('aria-expanded', 'false');
-              }
-              setHeight(openList, false);
-            });
-            item.classList.toggle('is-open', !isOpen);
-            btn.classList.toggle('is-active', !isOpen);
-            btn.setAttribute('aria-expanded', String(!isOpen));
-            setHeight(list, !isOpen);
           });
         });
+      }
+      setupAccordion('.exp-card');
+      setupAccordion('.formation-card');
 
-        // Sticky name on left margin when hero title leaves view
-        var heroTitle = document.querySelector('.hero-title');
-        var stickyName = document.querySelector('.sticky-name');
-        if (heroTitle && stickyName) {
-          var nameObserver = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                document.body.classList.toggle('show-sticky-name', !entry.isIntersecting);
-              });
-            },
-            { threshold: 0 }
-          );
-          nameObserver.observe(heroTitle);
+      /* ---- Brand cards toggle ---- */
+      document.querySelectorAll('.brand-card-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var card = btn.closest('.brand-card');
+          var list = card ? card.querySelector('.brand-card-list') : null;
+          if (!card || !list) return;
+          var isOpen = card.classList.contains('is-open');
+          // Close others
+          document.querySelectorAll('.brand-card.is-open').forEach(function(oc) {
+            if (oc === card) return;
+            oc.classList.remove('is-open');
+            var ol = oc.querySelector('.brand-card-list');
+            var ob = oc.querySelector('.brand-card-btn');
+            if (ol) ol.style.maxHeight = '0';
+            if (ob) ob.setAttribute('aria-expanded', 'false');
+          });
+          card.classList.toggle('is-open', !isOpen);
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          if (!isOpen) {
+            list.style.maxHeight = list.scrollHeight + 'px';
+          } else {
+            list.style.maxHeight = '0';
+          }
+        });
+      });
+
+      /* ---- Chat widget ---- */
+      var chatWidget = document.getElementById('chat-widget');
+      var chatToggle = document.getElementById('chat-toggle');
+      var chatPanel = document.getElementById('chat-panel');
+      var chatForm = document.getElementById('chat-form');
+      var chatInput = document.getElementById('chat-input');
+      var chatMessages = document.getElementById('chat-messages');
+      var chatStatus = document.getElementById('chat-status');
+      var chatHistory = [];
+
+      function closeChatPanel() {
+        if (chatWidget) chatWidget.classList.remove('is-open');
+        if (chatToggle) chatToggle.setAttribute('aria-expanded', 'false');
+      }
+      if (chatToggle && chatPanel) {
+        chatToggle.addEventListener('click', function() {
+          var isOpen = chatWidget.classList.contains('is-open');
+          chatWidget.classList.toggle('is-open', !isOpen);
+          chatToggle.setAttribute('aria-expanded', String(!isOpen));
+          if (!isOpen && chatInput) chatInput.focus();
+        });
+      }
+      var chatMinimize = document.getElementById('chat-minimize');
+      if (chatMinimize) {
+        chatMinimize.addEventListener('click', closeChatPanel);
+      }
+
+      function formatChatReply(text) {
+        if (!text) return '';
+        var escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        return escaped.replace(/\n/g, '<br>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(<br>|^)\s*\*\s+/g, '$1&bull; ');
+      }
+
+      function appendMessage(role, text) {
+        if (!chatMessages) return;
+        var msg = document.createElement('div');
+        msg.className = 'chat-msg chat-msg--' + role;
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        if (role === 'assistant') {
+          bubble.innerHTML = formatChatReply(text);
+        } else {
+          bubble.textContent = text;
         }
-      })();
+        msg.appendChild(bubble);
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      var welcomeMsg = "Bonjour ! Je suis l'alter ego virtuel de Corentin. Posez-moi une question sur son parcours.";
+      appendMessage('assistant', welcomeMsg);
+      chatHistory.push({ role: 'assistant', content: welcomeMsg });
+
+      var chatSuggestions = document.getElementById('chat-suggestions');
+      var suggestionCv = document.getElementById('chat-suggestion-cv');
+      var suggestionRandom = document.getElementById('chat-suggestion-random');
+      var randomCvQuestions = [
+        'Quelle est ta plus grande réalisation professionnelle ?',
+        'Pourquoi avoir choisi le pricing automobile ?',
+        'Quelles sont tes compétences en IA ?',
+        'Tu peux me parler de ton expérience chez Alcopa ?',
+        'Quelles langues parles-tu ?',
+        'Quel est ton parcours en 3 points ?',
+        "Qu'est-ce qui te motive au quotidien ?",
+        'Comment as-tu réduit le temps de traitement de 35 à 40 % ?',
+        'Quel rôle joue l\'automatisation dans ton travail ?'
+      ];
+      function hideSuggestions() {
+        if (chatSuggestions) chatSuggestions.classList.add('is-hidden');
+      }
+
+      function sendMessage(text) {
+        if (!text || !text.trim()) return;
+        hideSuggestions();
+        appendMessage('user', text.trim());
+        if (chatInput) { chatInput.value = ''; autoResize(); }
+        if (chatInput) chatInput.disabled = true;
+        if (chatStatus) chatStatus.innerHTML = '<span class="chat-dots"><span></span><span></span><span></span></span>';
+        var submitBtn = chatForm ? chatForm.querySelector('button[type="submit"]') : null;
+        if (submitBtn) submitBtn.disabled = true;
+        fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20) }),
+          cache: 'no-store'
+        })
+        .then(function(res) {
+          return res.json().catch(function() { return {}; }).then(function(data) {
+            if (!res.ok) throw new Error(data && data.error ? data.error : 'Erreur serveur');
+            return data;
+          });
+        })
+        .then(function(data) {
+          var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
+          appendMessage('assistant', reply);
+          chatHistory.push({ role: 'user', content: text.trim() }, { role: 'assistant', content: reply });
+          if (chatStatus) chatStatus.innerHTML = '';
+        })
+        .catch(function(err) {
+          if (chatStatus) chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue.";
+        })
+        .finally(function() {
+          if (chatInput) chatInput.disabled = false;
+          if (submitBtn) submitBtn.disabled = false;
+          if (chatInput) chatInput.focus();
+        });
+      }
+
+      if (suggestionCv) suggestionCv.addEventListener('click', function() { sendMessage('Résume-moi ton CV'); });
+      if (suggestionRandom) suggestionRandom.addEventListener('click', function() {
+        var q = randomCvQuestions[Math.floor(Math.random() * randomCvQuestions.length)];
+        sendMessage(q);
+      });
+
+      function autoResize() {
+        if (!chatInput) return;
+        var lineHeight = parseFloat(getComputedStyle(chatInput).lineHeight) || 20;
+        var maxH = lineHeight * 5;
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, maxH) + 'px';
+      }
+      if (chatInput) {
+        autoResize();
+        chatInput.addEventListener('input', autoResize);
+      }
+
+      if (chatForm && chatInput) {
+        chatInput.addEventListener('keydown', function(e) {
+          if ((e.key === 'Enter' || e.keyCode === 13) && !e.shiftKey) {
+            e.preventDefault();
+            chatForm.requestSubmit();
+          }
+        });
+        chatForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var text = chatInput.value.trim();
+          if (text) sendMessage(text);
+        });
+      }
+
+      /* ---- Contact modal ---- */
+      var contactOverlay = document.getElementById('contact-overlay');
+      var contactClose = document.getElementById('contact-close');
+      var contactForm = document.getElementById('contact-form');
+      var contactFeedback = document.getElementById('contact-feedback');
+      var navContactBtn = document.getElementById('nav-contact-btn');
+      var floatingCtaBtn = document.getElementById('floating-cta-btn');
+
+      function openContact() {
+        if (contactOverlay) {
+          contactOverlay.classList.add('is-open');
+          contactOverlay.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+      function closeContact() {
+        if (contactOverlay) {
+          contactOverlay.classList.remove('is-open');
+          contactOverlay.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+      if (navContactBtn) navContactBtn.addEventListener('click', openContact);
+      if (floatingCtaBtn) floatingCtaBtn.addEventListener('click', openContact);
+      if (contactClose) contactClose.addEventListener('click', closeContact);
+      if (contactOverlay) {
+        contactOverlay.addEventListener('click', function(e) {
+          if (e.target === contactOverlay) closeContact();
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && contactOverlay && contactOverlay.classList.contains('is-open')) closeContact();
+      });
+
+      if (contactForm && contactFeedback) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var fd = new FormData(contactForm);
+          var name = fd.get('name') || '';
+          var email = fd.get('email') || '';
+          var message = fd.get('message') || '';
+          contactFeedback.hidden = false;
+          contactFeedback.className = 'contact-feedback';
+          contactFeedback.textContent = 'Envoi en cours…';
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, email: email, message: message }),
+          })
+          .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+          .then(function(r) {
+            if (r.ok) {
+              contactFeedback.textContent = 'Message envoyé. Je vous répondrai rapidement.';
+              contactFeedback.classList.add('is-success');
+              contactForm.reset();
+            } else {
+              contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Une erreur est survenue.';
+              contactFeedback.classList.add('is-error');
+            }
+          })
+          .catch(function() {
+            contactFeedback.textContent = 'Une erreur est survenue.';
+            contactFeedback.classList.add('is-error');
+          });
+        });
+      }
+
+      /* ---- Footer tech panel ---- */
+      var footerTechBtn = document.getElementById('footer-tech-btn');
+      var footerTechPanel = document.getElementById('footer-tech-panel');
+      var footerTechClose = document.getElementById('footer-tech-close');
+      if (footerTechBtn && footerTechPanel) {
+        footerTechBtn.addEventListener('click', function() {
+          var isOpen = footerTechPanel.classList.contains('is-open');
+          footerTechPanel.classList.toggle('is-open', !isOpen);
+          footerTechPanel.setAttribute('aria-hidden', String(isOpen));
+          footerTechBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+        if (footerTechClose) footerTechClose.addEventListener('click', function() {
+          footerTechPanel.classList.remove('is-open');
+          footerTechPanel.setAttribute('aria-hidden', 'true');
+          footerTechBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      /* ---- Floating CTA visibility ---- */
+      var floatingCta = document.getElementById('floating-cta');
+      if (floatingCta) {
+        var ctaObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) {
+              floatingCta.classList.add('is-visible');
+            }
+          });
+        }, { threshold: 0 });
+        if (heroEl) ctaObserver.observe(heroEl);
+      }
+    })();
     </script>
 
+    <!-- ========== STYLES ========== -->
     <style is:global>
-      /* BMW Designworks–inspired · précision, lignes nettes, bleu accent */
-      * {
-        box-sizing: border-box;
-      }
+      /* ===== RESET & BASE ===== */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
       body {
-        margin: 0;
-        min-height: 100vh;
-        background-color: #08080a;
-        color: #e8e8ea;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-        font-size: 17px;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
+        color: #e8e8ec;
+        background: #000000;
+        overflow-x: hidden;
+      }
+      a { color: inherit; text-decoration: none; }
+      button { font-family: inherit; cursor: pointer; }
+      img { max-width: 100%; display: block; }
+      ul { list-style: none; }
+      strong { font-weight: 600; color: #ffffff; }
+
+      /* ===== CSS VARIABLES ===== */
+      :root {
+        --color-bg: #000000;
+        --color-bg-alt: #0a0a0a;
+        --color-bg-card: #111113;
+        --color-text: #e8e8ec;
+        --color-text-muted: #8a8a92;
+        --color-text-subtle: #5a5a62;
+        --color-white: #ffffff;
+        --color-border: rgba(255,255,255,0.08);
+        --color-border-hover: rgba(255,255,255,0.18);
+        --color-accent: #c8a96e;
+        --font-display: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, sans-serif;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+        --transition: 0.4s var(--ease);
       }
 
-      .wrap {
-        max-width: 44rem;
-        margin: 0 auto;
-        padding: 56px 24px 72px;
-      }
-      @media (min-width: 640px) {
-        .wrap { padding: 72px 40px 96px; }
-      }
-      @media (min-width: 1100px) {
-        .wrap { padding-right: 60px; }
-      }
-
-      /* Scroll-in · apparition précise */
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .animate-on-scroll.in-view {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Hero · typo serrée, premium */
-      .hero {
-        margin-bottom: 56px;
-      }
-      .sticky-name {
+      /* ===== NAVIGATION ===== */
+      .nav {
         position: fixed;
-        top: 24px;
-        left: 24px;
-        z-index: 60;
-        font-size: 1.4rem;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        text-transform: none;
-        color: inherit;
-        opacity: 0;
-        transform: translateY(-6px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+        height: 72px;
+        background: transparent;
+        transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
       }
-      .show-sticky-name .sticky-name {
-        opacity: 1;
-        transform: translateY(0);
+      .nav--scrolled {
+        background: rgba(0,0,0,0.85);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.06);
       }
-      @media (max-width: 900px) {
-        .sticky-name {
-          font-size: 1.1rem;
-          top: 16px;
-          left: 16px;
-        }
-      }
-      .hero-content {
-        max-width: 100%;
-      }
-      .hero-meta {
-        margin: 0 0 12px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #8a8a8f;
-      }
-      .hero-tags {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .nav-menu-btn {
+        display: flex;
+        align-items: center;
         gap: 12px;
-        margin: 0 0 18px;
+        background: none;
+        border: none;
+        color: var(--color-white);
+        padding: 8px 0;
       }
-      .hero-tag {
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 22px;
+      }
+      .nav-hamburger span {
+        display: block;
+        height: 1.5px;
+        width: 100%;
+        background: var(--color-white);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .nav-menu-text {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        white-space: nowrap;
+        transition: opacity 0.3s ease;
+      }
+      .nav-contact-btn {
+        background: none;
+        border: none;
+        color: var(--color-white);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 8px 0;
+        transition: color 0.2s ease;
+      }
+      .nav-contact-btn:hover { color: var(--color-accent); }
+
+      @media (max-width: 640px) {
+        .nav { padding: 0 20px; height: 60px; }
+        .nav-logo { font-size: 11px; letter-spacing: 0.15em; }
+        .nav-menu-text { display: none; }
+      }
+
+      /* ===== MENU OVERLAY ===== */
+      .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+        background: #000000;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8px 12px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #c8c8cc;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s var(--ease), visibility 0.5s var(--ease);
       }
-      @media (max-width: 520px) {
-        .hero-tags {
-          grid-template-columns: 1fr;
-        }
+      .menu-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
       }
-      .hero-title {
-        margin: 0 0 20px;
-        font-size: 2rem;
-        font-weight: 800;
-        line-height: 1.15;
-        letter-spacing: -0.04em;
-        color: #ffffff;
-      }
-      @media (min-width: 640px) {
-        .hero-title { font-size: 2.75rem; letter-spacing: -0.05em; }
-      }
-      .hero-desc {
-        margin: 0 0 36px;
-        font-size: 1rem;
-        color: #a0a0a5;
-        line-height: 1.65;
-        max-width: 34rem;
-      }
-      .hero blockquote {
-        margin: 0 auto 40px;
-        padding: 0 2.25em;
-        border: none;
+      .menu-overlay-inner {
         text-align: center;
-        max-width: 34rem;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 40px;
+      }
+      .menu-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .menu-link {
+        display: block;
+        padding: 20px 0;
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 400;
+        color: var(--color-white);
+        border-bottom: 1px solid var(--color-border);
+        transition: color 0.3s ease, letter-spacing 0.3s ease;
         position: relative;
-        font-size: 1.125rem;
-        line-height: 1.7;
-        color: #d0d0d4;
-        font-style: italic;
       }
-      /* Guillemets en hauteur (~2 lignes), positionnés à gauche et à droite */
-      .hero blockquote::before,
-      .hero blockquote::after {
+      .menu-link:first-child { border-top: 1px solid var(--color-border); }
+      .menu-link::before {
+        content: attr(data-index);
         position: absolute;
-        top: 0;
-        font-size: 3.6rem;
-        line-height: 1;
-        color: #d0d0d4;
-        opacity: 0.85;
-        font-family: Georgia, serif;
-        pointer-events: none;
-      }
-      .hero blockquote::before {
-        content: '\00AB';
         left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--font-body);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        color: var(--color-text-muted);
       }
-      .hero blockquote::after {
-        content: '\00BB';
-        right: 0;
+      .menu-link:hover {
+        color: var(--color-accent);
+        letter-spacing: 0.05em;
       }
-      /* Présentation · donner envie de lire */
-      .hero-intro {
-        max-width: 34rem;
-        margin: 0 auto;
+      .menu-footer {
+        margin-top: 60px;
       }
-      .hero-intro p {
-        margin: 0 0 1rem;
-        font-size: 1.0625rem;
-        line-height: 1.75;
-        color: #b4b4b8;
-      }
-      .hero-intro p:last-child {
-        margin-bottom: 0;
-      }
-      /* CTA · outline puis rempli, accent bleu BMW */
-      .btn {
-        display: inline-block;
-        padding: 14px 32px;
-        background-color: transparent;
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
+      .menu-footer-text {
+        font-size: 12px;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        text-decoration: none;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 0;
-        cursor: pointer;
-        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-      }
-      .btn:hover {
-        background-color: #0066b1;
-        border-color: #0066b1;
-        color: #ffffff;
-        transform: translateY(-1px);
-      }
-      /* Bouton flottant · toujours visible en bas à gauche */
-      .btn-float {
-        position: fixed;
-        bottom: 24px;
-        left: 24px;
-        z-index: 99;
-        background-color: #0066b1;
-        border-color: #0066b1;
-        color: #ffffff;
-      }
-      .btn-float:hover {
-        background-color: #1a1a1d;
-        border-color: rgba(255, 255, 255, 0.25);
-        color: #ffffff;
+        color: var(--color-text-muted);
+        margin-bottom: 4px;
       }
 
-      /* Modal contact · ton adresse n'apparaît jamais dans la page */
+      /* ===== HERO ===== */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 50% 40%, rgba(40,35,25,0.5) 0%, transparent 70%),
+          radial-gradient(ellipse 60% 50% at 70% 60%, rgba(30,25,20,0.3) 0%, transparent 60%),
+          linear-gradient(180deg, #000000 0%, #0a0808 40%, #080604 70%, #000000 100%);
+        z-index: 0;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(0,0,0,0.4) 100%);
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 40px;
+      }
+      .hero-eyebrow {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 24px;
+      }
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(2.8rem, 8vw, 6rem);
+        font-weight: 400;
+        line-height: 1.05;
+        letter-spacing: 0.04em;
+        color: var(--color-white);
+        margin-bottom: 28px;
+      }
+      .hero-subtitle {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 48px;
+      }
+      .hero-cta {
+        display: inline-block;
+        padding: 16px 40px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        border: 1px solid rgba(255,255,255,0.4);
+        transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+      }
+      .hero-cta:hover {
+        border-color: var(--color-white);
+        background: var(--color-white);
+        color: #000000;
+      }
+      .hero-scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .hero-scroll-line {
+        display: block;
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+        animation: scrollLine 2s ease-in-out infinite;
+      }
+      @keyframes scrollLine {
+        0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+        30% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+        60% { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+        100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+      }
+
+      /* Hero entry animation */
+      .anim-fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 1s var(--ease-out) forwards;
+      }
+      @keyframes fadeUp {
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ===== SECTIONS ===== */
+      .section {
+        padding: 120px 0;
+        position: relative;
+      }
+      .section--dark {
+        background: var(--color-bg-alt);
+      }
+      .section--vehicles {
+        background: var(--color-bg);
+      }
+      .section-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      .section-inner--narrow {
+        max-width: 800px;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 16px;
+      }
+      .section-heading {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 400;
+        line-height: 1.15;
+        color: var(--color-white);
+        margin-bottom: 48px;
+      }
+      .section-intro {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--color-text-muted);
+        max-width: 700px;
+        margin-bottom: 48px;
+      }
+
+      @media (max-width: 768px) {
+        .section { padding: 80px 0; }
+        .section-inner { padding: 0 24px; }
+      }
+
+      /* ===== SCROLL ANIMATIONS ===== */
+      .anim-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+      }
+      .anim-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== ABOUT SECTION ===== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        margin-bottom: 80px;
+      }
+      @media (max-width: 768px) {
+        .about-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
+      }
+      .about-quote {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--color-text);
+        margin-bottom: 32px;
+        position: relative;
+        padding: 0;
+      }
+      .about-quote-mark {
+        color: var(--color-accent);
+        font-size: 1.5rem;
+      }
+      .about-text {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--color-text-muted);
+        margin-bottom: 16px;
+      }
+      .about-text:last-child { margin-bottom: 0; }
+
+      /* ===== STATS ===== */
+      .stats-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 48px 0;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        flex-wrap: wrap;
+      }
+      .stat {
+        flex: 1;
+        text-align: center;
+        padding: 16px 20px;
+        min-width: 140px;
+      }
+      .stat-number {
+        display: block;
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 400;
+        color: var(--color-white);
+        margin-bottom: 8px;
+      }
+      .stat-label {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .stat-divider {
+        width: 1px;
+        height: 48px;
+        background: var(--color-border);
+      }
+      @media (max-width: 768px) {
+        .stats-row { flex-direction: column; gap: 0; }
+        .stat-divider { width: 60px; height: 1px; }
+        .stat { padding: 20px 16px; }
+      }
+
+      /* ===== EXPERIENCE CARDS ===== */
+      .exp-container, .formations-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .exp-card, .formation-card {
+        border-bottom: 1px solid var(--color-border);
+        transition: background 0.3s ease;
+      }
+      .exp-card:first-child, .formation-card:first-child {
+        border-top: 1px solid var(--color-border);
+      }
+      .exp-card:hover, .formation-card:hover {
+        background: rgba(255,255,255,0.02);
+      }
+      .exp-card-header, .formation-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 28px 0;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        text-align: left;
+      }
+      .exp-card-left, .formation-card-left {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .exp-card-index {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        color: var(--color-accent);
+        opacity: 0.7;
+        min-width: 30px;
+        padding-top: 2px;
+      }
+      .exp-card-title, .formation-card-title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--color-white);
+        margin-bottom: 4px;
+      }
+      .exp-card-meta, .formation-card-meta {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.02em;
+      }
+      .exp-card-icon, .formation-card-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+      }
+      .exp-card-icon svg, .formation-card-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: var(--color-text-muted);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        transition: stroke 0.3s ease;
+      }
+      .exp-card.is-open .exp-card-icon,
+      .formation-card.is-open .formation-card-icon {
+        transform: rotate(45deg);
+      }
+      .exp-card.is-open .exp-card-icon svg,
+      .formation-card.is-open .formation-card-icon svg {
+        stroke: var(--color-accent);
+      }
+      .exp-card-body, .formation-card-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s var(--ease);
+        padding: 0 0 0 54px;
+      }
+      .exp-card.is-open .exp-card-body,
+      .formation-card.is-open .formation-card-body {
+        padding-bottom: 28px;
+      }
+      .exp-body-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--color-text-muted);
+        margin-bottom: 12px;
+      }
+      .exp-body-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin: 20px 0 8px;
+      }
+      .exp-body-list {
+        margin-bottom: 12px;
+      }
+      .exp-body-list li {
+        padding: 6px 0 6px 16px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--color-text-muted);
+        position: relative;
+      }
+      .exp-body-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 14px;
+        width: 4px;
+        height: 4px;
+        background: var(--color-accent);
+        border-radius: 50%;
+      }
+
+      @media (max-width: 768px) {
+        .exp-card-body, .formation-card-body { padding-left: 0; }
+        .exp-card-left, .formation-card-left { gap: 16px; }
+      }
+
+      /* ===== BRAND GRID ===== */
+      .brand-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px;
+      }
+      .brand-card {
+        display: flex;
+        flex-direction: column;
+      }
+      .brand-card-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 24px 16px;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        transition: border-color 0.3s ease, background 0.3s ease;
+      }
+      .brand-card-btn:hover {
+        border-color: var(--color-border-hover);
+        background: rgba(255,255,255,0.04);
+      }
+      .brand-card.is-open .brand-card-btn {
+        border-color: var(--color-accent);
+      }
+      .brand-card-logo {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+      }
+      .brand-card-logo--lg {
+        transform: scale(1.4);
+      }
+      .brand-card-name {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .brand-card-list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-top: none;
+      }
+      .brand-card.is-open .brand-card-list {
+        border-color: var(--color-accent);
+      }
+      .brand-card-list ul {
+        padding: 16px 20px;
+      }
+      .brand-card-list li {
+        padding: 4px 0;
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        text-align: center;
+      }
+
+      /* ===== LANGUAGES ===== */
+      .lang-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 640px) {
+        .lang-grid { grid-template-columns: 1fr; }
+      }
+      .lang-card {
+        text-align: center;
+        padding: 40px 24px;
+        border: 1px solid var(--color-border);
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+      .lang-card:hover { border-color: var(--color-border-hover); }
+      .lang-card-flag {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        opacity: 0.06;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+      .lang-card-flag--fr { background-image: url('/flag-fr.png'); }
+      .lang-card-flag--uk { background-image: url('/flag-uk.png'); }
+      .lang-card-flag--de { background-image: url('/flag-de.png'); }
+      .lang-card > * { position: relative; z-index: 1; }
+      .lang-card-name {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--color-white);
+        margin-bottom: 8px;
+      }
+      .lang-card-level {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.05em;
+      }
+
+      /* ===== INTERESTS ===== */
+      .interests-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .interests-grid { grid-template-columns: 1fr; }
+      }
+      .interest-card {
+        padding: 40px 32px;
+        border: 1px solid var(--color-border);
+        transition: border-color 0.3s ease, background 0.3s ease;
+        position: relative;
+      }
+      .interest-card:hover {
+        border-color: var(--color-border-hover);
+        background: rgba(255,255,255,0.02);
+      }
+      .interest-card-index {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--color-accent);
+        opacity: 0.6;
+        margin-bottom: 16px;
+      }
+      .interest-card-title {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--color-white);
+        margin-bottom: 12px;
+      }
+      .interest-card-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--color-text-muted);
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        padding: 80px 0 48px;
+        border-top: 1px solid var(--color-border);
+        background: var(--color-bg);
+      }
+      .footer-top {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .footer-brand {
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        margin-bottom: 8px;
+      }
+      .footer-tagline {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        letter-spacing: 0.05em;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        transition: color 0.2s ease;
+      }
+      .footer-links a:hover { color: var(--color-white); }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 32px;
+        border-top: 1px solid var(--color-border);
+      }
+      .footer-tech-btn {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--color-text-subtle);
+        background: none;
+        border: none;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s ease;
+      }
+      .footer-tech-btn:hover { color: var(--color-text-muted); }
+      .footer-tech-panel {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        margin-top: 20px;
+        text-align: left;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 24px;
+        border: 1px solid transparent;
+      }
+      .footer-tech-panel.is-open {
+        max-height: 600px;
+        opacity: 1;
+        padding: 24px;
+        border-color: var(--color-border);
+        background: var(--color-bg-card);
+      }
+      .footer-tech-title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        color: var(--color-white);
+        margin-bottom: 12px;
+      }
+      .footer-tech-intro {
+        font-size: 14px;
+        color: var(--color-text-muted);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+      .footer-tech-list {
+        margin-bottom: 20px;
+        padding-left: 20px;
+        list-style: disc;
+      }
+      .footer-tech-list li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--color-text-muted);
+        margin-bottom: 8px;
+      }
+      .footer-tech-close {
+        padding: 10px 24px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-white);
+        background: none;
+        border: 1px solid var(--color-border-hover);
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+      .footer-tech-close:hover {
+        border-color: var(--color-white);
+        background: var(--color-white);
+        color: #000;
+      }
+
+      /* ===== CHAT WIDGET ===== */
+      .chat-widget {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 120;
+      }
+      .chat-toggle {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-white);
+        border: none;
+        color: #000;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .chat-toggle:hover { transform: scale(1.05); }
+      .chat-toggle-icon { width: 24px; height: 24px; }
+      .chat-toggle-icon--close { display: none; }
+      .chat-widget.is-open .chat-toggle-icon--open { display: none; }
+      .chat-widget.is-open .chat-toggle-icon--close { display: block; }
+      .chat-panel {
+        position: absolute;
+        bottom: 68px;
+        right: 0;
+        width: 380px;
+        background: rgba(10,10,12,0.96);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+        display: none;
+        flex-direction: column;
+      }
+      .chat-widget.is-open .chat-panel {
+        display: flex;
+      }
+      .chat-panel-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .chat-minimize-btn {
+        margin-left: auto;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--color-text-muted);
+        padding: 0;
+        transition: color 0.2s ease;
+      }
+      .chat-minimize-btn:hover { color: var(--color-white); }
+      .chat-minimize-btn svg { width: 16px; height: 16px; }
+      .chat-panel-title {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .chat-panel-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #4ade80;
+      }
+      .chat-messages {
+        min-height: 200px;
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 16px 20px;
+      }
+      .chat-msg { display: flex; margin-bottom: 10px; }
+      .chat-msg:last-child { margin-bottom: 0; }
+      .chat-msg--user { justify-content: flex-end; }
+      .chat-bubble {
+        max-width: 85%;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: var(--color-text);
+        background: rgba(255,255,255,0.06);
+      }
+      .chat-msg--user .chat-bubble {
+        background: rgba(200,169,110,0.15);
+        border: 1px solid rgba(200,169,110,0.25);
+      }
+      .chat-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 20px 12px;
+      }
+      .chat-suggestions.is-hidden { display: none; }
+      .chat-suggestion-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        background: none;
+        border: 1px solid rgba(200,169,110,0.3);
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+      .chat-suggestion-btn:hover {
+        background: rgba(200,169,110,0.1);
+        border-color: var(--color-accent);
+      }
+      .chat-form {
+        display: flex;
+        align-items: flex-end;
+        gap: 0;
+        padding: 12px 20px;
+        border-top: 1px solid var(--color-border);
+      }
+      .chat-input {
+        flex: 1;
+        padding: 10px 12px;
+        background: transparent;
+        border: none;
+        color: var(--color-text);
+        font-size: 0.9rem;
+        font-family: inherit;
+        resize: none;
+        min-height: 1.5em;
+        max-height: 7.5em;
+        line-height: 1.5;
+        overflow: hidden;
+      }
+      .chat-input:focus { outline: none; }
+      .chat-input::placeholder { color: var(--color-text-subtle); }
+      .chat-send-btn {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--color-accent);
+        transition: color 0.2s ease;
+      }
+      .chat-send-btn:hover { color: var(--color-white); }
+      .chat-send-btn svg { width: 18px; height: 18px; }
+      .chat-status {
+        min-height: 16px;
+        padding: 0 20px 12px;
+        font-size: 12px;
+        color: var(--color-text-subtle);
+      }
+      .chat-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .chat-dots span {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: currentColor;
+        animation: chatDot 1.4s ease-in-out infinite both;
+      }
+      .chat-dots span:nth-child(2) { animation-delay: 0.2s; }
+      .chat-dots span:nth-child(3) { animation-delay: 0.4s; }
+      @keyframes chatDot {
+        0%, 80%, 100% { opacity: 0.3; transform: scale(0.85); }
+        40% { opacity: 1; transform: scale(1); }
+      }
+
+      @media (max-width: 640px) {
+        .chat-widget { bottom: 16px; right: 16px; }
+        .chat-panel { width: calc(100vw - 32px); right: 0; }
+        .chat-toggle { width: 48px; height: 48px; }
+      }
+
+      /* ===== CONTACT MODAL ===== */
       .contact-overlay {
         position: fixed;
         inset: 0;
-        z-index: 100;
+        z-index: 200;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(8px);
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.25s ease, visibility 0.25s ease;
+        transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
       }
       .contact-overlay.is-open {
         opacity: 1;
@@ -1226,1163 +2089,163 @@
       }
       .contact-modal {
         width: 100%;
-        max-width: 420px;
-        padding: 24px;
-        background: #1a1a1d;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        max-width: 480px;
+        padding: 48px 40px;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        position: relative;
+      }
+      .contact-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--color-text-muted);
+        transition: color 0.2s ease;
+      }
+      .contact-modal-close:hover { color: var(--color-white); }
+      .contact-modal-close svg { width: 20px; height: 20px; }
+      .contact-modal-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 8px;
       }
       .contact-modal-title {
-        margin: 0 0 16px;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #e0e0e2;
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--color-white);
+        margin-bottom: 32px;
       }
       .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 20px;
       }
       .contact-label {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #c8c8cc;
-      }
-      .contact-input,
-      .contact-textarea {
-        padding: 10px 12px;
-        font-size: 14px;
-        font-family: inherit;
-        color: #e0e0e2;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 6px;
-      }
-      .contact-input::placeholder,
-      .contact-textarea::placeholder {
-        color: #8a8a8f;
-      }
-      .contact-textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-      .contact-actions {
-        display: flex;
-        gap: 12px;
-        margin-top: 8px;
-      }
-      .contact-submit {
-        flex: 1;
-      }
-      .contact-close {
-        padding: 10px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        color: #c8c8cc;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 6px;
-        cursor: pointer;
-        transition: color 0.2s ease, border-color 0.2s ease;
-      }
-      .contact-close:hover {
-        color: #e0e0e2;
-        border-color: rgba(255, 255, 255, 0.35);
-      }
-      .contact-feedback {
-        margin: 12px 0 0;
-        font-size: 14px;
-      }
-      .contact-feedback.is-success { color: #6bcf7f; }
-      .contact-feedback.is-error { color: #e07c7c; }
-      html[data-theme="light"] .contact-modal {
-        background: #ffffff;
-        border-color: rgba(0, 0, 0, 0.1);
-      }
-      html[data-theme="light"] .contact-modal-title { color: #1a1a1a; }
-      html[data-theme="light"] .contact-label { color: #4a4a4f; }
-      html[data-theme="light"] .contact-input,
-      html[data-theme="light"] .contact-textarea {
-        color: #1a1a1a;
-        background: rgba(0, 0, 0, 0.04);
-        border-color: rgba(0, 0, 0, 0.15);
-      }
-      html[data-theme="light"] .contact-close {
-        color: #4a4a4f;
-        border-color: rgba(0, 0, 0, 0.2);
-      }
-      html[data-theme="light"] .contact-close:hover {
-        color: #1a1a1a;
-        border-color: rgba(0, 0, 0, 0.35);
-      }
-
-      /* Rules · fines, argent */
-      .rule {
-        margin: 0 0 48px;
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .rule--heavy {
-        margin-bottom: 56px;
-        border-top-width: 1px;
-        border-top-color: rgba(255, 255, 255, 0.12);
-      }
-
-      /* Sections · cartes précises, bords droits */
-      .block {
-        margin-bottom: 0;
-        padding: 32px 0 40px;
-        background: transparent;
-        border-radius: 0;
-        border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        transition: background-color 0.25s ease;
-      }
-      .block:hover {
-        background-color: rgba(255, 255, 255, 0.02);
-      }
-      @media (min-width: 640px) {
-        .block { padding: 40px 0 48px; }
-      }
-      .label {
-        margin: 0 0 16px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: #8a8a8f;
-      }
-      .label--bar {
-        padding-left: 20px;
-        border-left: 2px solid #0066b1;
-      }
-      /* Expériences professionnelles · texte centré, haut à 20px, infographie à 10px du bord gauche */
-      .block--expandable .exp-trigger {
-        position: relative;
-        display: block;
-        width: 100%;
-        min-height: 56px;
-        padding: 20px 28px 10px 10px;
-        margin: 0;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-      }
-      /* Règle alignement : centre des infographies à 30px = colonne verticale (trait bleu) ; texte démarre à 30px */
-      .exp-trigger__graphic,
-      .vehicle-trigger__graphic,
-      .interests-trigger__graphic,
-      .formations-trigger__graphic,
-      .languages-trigger__graphic {
-        position: absolute;
-        left: 30px;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-      }
-      .exp-trigger__graphic {
-        width: 32px;
-        height: 32px;
-        color: #0066b1;
-      }
-      .exp-trigger__graphic svg {
-        width: 100%;
-        height: 100%;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-      .block--expandable .exp-trigger .label {
-        position: absolute;
-        left: 0;
-        right: 28px;
-        top: 20px;
-        bottom: 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        font-size: 20px;
-        letter-spacing: 0.06em;
-        color: #ffffff;
-        text-align: center;
-        padding: 0 10px;
-        box-sizing: border-box;
-        min-width: 0;
-      }
-      .exp-trigger__icon {
-        width: 12px;
-        height: 12px;
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
-        transition: transform 0.25s ease;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        z-index: 1;
-      }
-      /* Véhicules, Intérêts, Formations, Langues · même règle */
-      .vehicle-trigger {
-        position: relative;
-        display: block;
-        width: 100%;
-        min-height: 56px;
-        padding: 20px 28px 10px 10px;
-        margin: 0;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-      }
-      .vehicle-trigger__graphic {
-        width: 55px;
-        height: 55px;
-      }
-      .vehicle-trigger__img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
-      }
-      .interests-trigger__graphic,
-      .formations-trigger__graphic,
-      .languages-trigger__graphic {
-        width: 86px;
-        height: 86px;
-      }
-      .vehicle-trigger .label {
-        position: absolute;
-        left: 0;
-        right: 28px;
-        top: 20px;
-        bottom: 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        font-size: 20px;
-        letter-spacing: 0.06em;
-        color: #ffffff;
-        text-align: center;
-        padding: 0 10px;
-        box-sizing: border-box;
-        min-width: 0;
-      }
-      /* Mobile portrait : texte à droite de l’infographie, passage sur 2 lignes si besoin */
-      @media (max-width: 768px) {
-        .exp-trigger__graphic,
-        .vehicle-trigger__graphic,
-        .interests-trigger__graphic,
-        .formations-trigger__graphic,
-        .languages-trigger__graphic {
-          left: 30px;
-          transform: translate(-50%, -50%);
-        }
-        .block--expandable .exp-trigger .label,
-        .vehicle-trigger .label {
-          left: 96px;
-          padding-left: 0;
-          text-align: center;
-          flex-wrap: wrap;
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-        }
-      }
-      .vehicle-trigger__icon {
-        width: 12px;
-        height: 12px;
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
-        transition: transform 0.25s ease;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        z-index: 1;
-      }
-      .languages-trigger {
-        cursor: default;
-      }
-      .block--expandable.is-open .vehicle-trigger__icon {
-        transform: translateY(-50%) rotate(-135deg);
-      }
-      .vehicle-list {
-        margin-top: 20px;
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.45s ease, opacity 0.35s ease;
-      }
-      .block--expandable.is-open .vehicle-list {
-        opacity: 1;
-      }
-      .interest-list {
-        margin-top: 20px;
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.45s ease, opacity 0.35s ease;
-      }
-      .block--expandable.is-open .interest-list {
-        opacity: 1;
-      }
-      .formations-list {
-        margin-top: 20px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.45s ease, opacity 0.35s ease;
-      }
-      .block--expandable.is-open .formations-list {
-        opacity: 1;
-      }
-      .block--expandable.is-open .exp-trigger__icon {
-        transform: translateY(-50%) rotate(-135deg);
-      }
-      .exp-list {
-        margin-top: 20px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.45s ease, opacity 0.35s ease;
-      }
-      .block--expandable.is-open .exp-list {
-        opacity: 1;
-      }
-      .exp-item,
-      .formation-item {
-        margin-bottom: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 0;
-      }
-      .exp-item:last-child,
-      .formation-item:last-child {
-        margin-bottom: 0;
-      }
-      .exp-item__header,
-      .formation-item__header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        padding: 16px 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-        text-align: left;
-        transition: background-color 0.2s ease;
-      }
-      .exp-item__header:hover,
-      .formation-item__header:hover {
-        background-color: rgba(255, 255, 255, 0.03);
-      }
-      .exp-item__title,
-      .formation-item__title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #e8e8ea;
-        margin-bottom: 4px;
-      }
-      .exp-item__meta,
-      .formation-item__meta {
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: #71717a;
-      }
-      .exp-item__detail,
-      .formation-item__detail {
-        padding: 0 20px 16px;
-        overflow: hidden;
-        height: 0;
-        opacity: 0;
-        transition: height 0.4s ease, opacity 0.3s ease;
-      }
-      .exp-item.is-open .exp-item__detail,
-      .formation-item.is-open .formation-item__detail {
-        opacity: 1;
-      }
-      .exp-item__detail .body,
-      .formation-item__detail .body {
-        margin: 0;
-        padding-top: 0;
-      }
-      html[data-theme="light"] .exp-list {
-        border-top-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .formations-list {
-        border-top-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .exp-item,
-      html[data-theme="light"] .formation-item {
-        border-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .exp-item__header:hover,
-      html[data-theme="light"] .formation-item__header:hover {
-        background-color: rgba(0, 0, 0, 0.03);
-      }
-      html[data-theme="light"] .exp-item__title,
-      html[data-theme="light"] .formation-item__title {
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .exp-item__meta,
-      html[data-theme="light"] .formation-item__meta {
-        color: #5a5a5f;
-      }
-      html[data-theme="light"] .vehicle-trigger .label {
-        color: #0a0a0a;
-      }
-      html[data-theme="light"] .vehicle-trigger__graphic {
-        color: #0066b1;
-      }
-      html[data-theme="light"] .block--expandable .exp-trigger .label {
-        color: #0a0a0a;
-      }
-      html[data-theme="light"] .exp-trigger__graphic {
-        color: #0066b1;
-      }
-      .body {
-        margin: 0;
-        font-size: 1rem;
-        color: #c8c8cc;
-        line-height: 1.7;
-      }
-      .meta {
-        margin: 16px 0 0;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #6a6a6f;
-      }
-      .list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      .list li {
-        margin-bottom: 10px;
-        padding-left: 0;
-        font-size: 1rem;
-        color: #c8c8cc;
-        line-height: 1.6;
-      }
-      .list li::before {
-        content: '— ';
-        color: #5a5a5f;
-        font-weight: 500;
-      }
-      /* Marques possédées */
-      .brand-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 18px;
-      }
-      .brand-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .brand-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 10px;
-        cursor: pointer;
-        transition: border-color 0.2s ease, background-color 0.2s ease;
-      }
-      .brand-btn:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-        border-color: rgba(255, 255, 255, 0.35);
-      }
-      .brand-btn.is-active {
-        border-color: #0066b1;
-      }
-      .brand-logo {
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
-        display: block;
-      }
-      .brand-btn[data-brand="simca"] .brand-logo {
-        transform: scale(1.6);
-        transform-origin: center;
-      }
-      .brand-list {
-        margin-top: 14px;
-        padding-top: 12px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        width: 100%;
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.35s ease, opacity 0.25s ease;
-      }
-      .brand-list .list {
-        text-align: center;
-      }
-      .brand-list .list li::before {
-        content: '';
-      }
-      .brand-item.is-open .brand-list {
-        opacity: 1;
-      }
-      .languages-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 16px;
-      }
-      .interest-item + .interest-item {
-        margin-top: 28px;
-      }
-      .interest-item strong {
-        font-weight: 600;
-        color: #ffffff;
-      }
-      .exp-item strong {
-        font-weight: 600;
-        color: #ffffff;
-      }
-      .formation-item strong {
-        font-weight: 600;
-        color: #ffffff;
-      }
-      .chat-widget {
-        position: fixed;
-        right: 16px;
-        bottom: 24px;
-        width: 380px;
-        min-width: 380px;
-        max-width: 380px;
-        z-index: 120;
-        padding: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(10, 10, 12, 0.92);
-        backdrop-filter: blur(12px);
-        border-radius: 16px;
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-      }
-      /* Bouton réduire / icône (visible uniquement sur mobile) — bulle pour le mettre en valeur */
-      .chat-toggle-mobile {
-        display: none;
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        z-index: 5;
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border: none;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.2);
-        color: inherit;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-      }
-      .chat-toggle-mobile:hover {
-        background: rgba(255, 255, 255, 0.28);
-        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      }
-      .chat-toggle-mobile-icon {
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-        line-height: 1;
-      }
-      .chat-toggle-mobile-icon--open {
-        display: none;
-      }
-      .chat-toggle-mobile-icon--open svg {
-        width: 100%;
-        height: 100%;
-      }
-      @media (max-width: 768px) {
-        .chat-toggle-mobile {
-          display: flex;
-        }
-        /* Réduit : uniquement l’icône (cercle), pas de texte */
-        .chat-widget.is-minimized {
-          width: 56px;
-          height: 56px;
-          min-width: 56px;
-          min-height: 56px;
-          padding: 0;
-          border-radius: 50%;
-          overflow: hidden;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 102, 177, 0.2);
-        }
-        .chat-widget.is-minimized .chat {
-          display: none !important;
-        }
-        .chat-widget.is-minimized .chat-toggle-mobile {
-          top: 0;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          width: 56px;
-          height: 56px;
-          padding: 0;
-          border-radius: 50%;
-          background: #0066b1;
-          color: #fff;
-          border: none;
-          box-shadow: none;
-        }
-        .chat-widget.is-minimized .chat-toggle-mobile:hover {
-          background: #005a9e;
-        }
-        .chat-widget.is-minimized .chat-toggle-mobile-icon--minimize {
-          display: none;
-        }
-        .chat-widget.is-minimized .chat-toggle-mobile-icon--open {
-          display: flex;
-          width: 26px;
-          height: 26px;
-        }
-      }
-      .chat {
-        margin-top: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .chat-suggestions {
-        display: flex;
-        flex-wrap: wrap;
         gap: 8px;
       }
-      .chat-suggestions.is-hidden {
-        display: none;
-      }
-      .chat-suggestion-btn {
-        padding: 8px 12px;
-        font-size: 13px;
+      .contact-label-text {
+        font-size: 11px;
         font-weight: 500;
-        color: #0066b1;
-        background: rgba(0, 102, 177, 0.15);
-        border: 1px solid rgba(0, 102, 177, 0.35);
-        border-radius: 8px;
-        cursor: pointer;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .contact-input, .contact-textarea {
+        padding: 14px 16px;
+        font-size: 14px;
         font-family: inherit;
-        transition: background 0.2s ease, border-color 0.2s ease;
+        color: var(--color-text);
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--color-border);
+        transition: border-color 0.2s ease;
       }
-      .chat-suggestion-btn:hover {
-        background: rgba(0, 102, 177, 0.25);
-        border-color: rgba(0, 102, 177, 0.5);
-      }
-      .chat-messages {
-        min-height: 140px;
-        max-height: 280px;
-        overflow-y: auto;
-        padding: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 12px;
-      }
-      .chat-message {
-        display: flex;
-        margin-bottom: 10px;
-      }
-      .chat-message:last-child {
-        margin-bottom: 0;
-      }
-      .chat-message--user {
-        justify-content: flex-end;
-      }
-      .chat-bubble {
-        max-width: 80%;
-        padding: 10px 12px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.08);
-        color: #e8e8ea;
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-      .chat-message--user .chat-bubble {
-        background: rgba(0, 102, 177, 0.22);
-        border: 1px solid rgba(0, 102, 177, 0.4);
-      }
-      .chat-form {
-        display: flex;
-        gap: 12px;
-        align-items: flex-end;
-      }
-      .chat-submit-btn {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-        white-space: nowrap;
-      }
-      @media (max-width: 768px) {
-        .chat-submit-btn {
-          position: static;
-          width: auto;
-          height: auto;
-          padding: 10px 16px;
-          margin: 0;
-          overflow: visible;
-          clip: auto;
-          border: 1px solid rgba(0, 102, 177, 0.5);
-          background: #0066b1;
-          color: #fff;
-          font-size: 14px;
-          font-weight: 600;
-          border-radius: 10px;
-          white-space: nowrap;
-          flex-shrink: 0;
-          cursor: pointer;
-        }
-        .chat-submit-btn:active {
-          opacity: 0.9;
-        }
-      }
-      .chat-input {
-        flex: 1;
-        padding: 10px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: rgba(255, 255, 255, 0.02);
-        color: #e8e8ea;
-        font-size: 0.95rem;
-        border-radius: 10px;
-        resize: none;
-        min-height: 1.6em;
-        max-height: 9.6em;
-        line-height: 1.6;
-        overflow: hidden;
-      }
-      .chat-input:focus {
+      .contact-input:focus, .contact-textarea:focus {
         outline: none;
-        border-color: rgba(0, 102, 177, 0.6);
-        box-shadow: 0 0 0 2px rgba(0, 102, 177, 0.15);
+        border-color: var(--color-accent);
       }
-      .chat-submit {
-        padding: 10px 16px;
-      }
-      .chat-status {
-        min-height: 16px;
+      .contact-input::placeholder, .contact-textarea::placeholder { color: var(--color-text-subtle); }
+      .contact-textarea { resize: vertical; min-height: 100px; }
+      .contact-actions { margin-top: 8px; }
+      .contact-submit-btn {
+        width: 100%;
+        padding: 16px;
         font-size: 12px;
-        color: #8a8a8f;
-      }
-      .chat-status-dots {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-      }
-      .chat-status-dots span {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: currentColor;
-        animation: chat-dot 1.4s ease-in-out infinite both;
-      }
-      .chat-status-dots span:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .chat-status-dots span:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-      @keyframes chat-dot {
-        0%, 80%, 100% {
-          opacity: 0.3;
-          transform: scale(0.85);
-        }
-        40% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      .chat-hint {
-        font-size: 11px;
-        color: #6a6a6f;
-        margin-top: -4px;
-      }
-      .language-card {
-        position: relative;
-        padding: 16px 18px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 14px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.02);
-        overflow: hidden;
-      }
-      .language-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        opacity: 0.08;
-        background-size: cover;
-        background-position: center;
-        filter: saturate(0.9) contrast(1.05);
-        z-index: 0;
-      }
-      .language-card > * {
-        position: relative;
-        z-index: 1;
-      }
-      .language-card--fr::before {
-        background-image: url('/flag-fr.png');
-      }
-      .language-card--uk::before {
-        background-image: url('/flag-uk.png');
-      }
-      .language-card--de::before {
-        background-image: url('/flag-de.png');
-      }
-      .language-name {
-        font-weight: 700;
-        letter-spacing: -0.01em;
-      }
-      .language-level {
-        margin-top: 6px;
-        color: #b4b4b8;
-        font-size: 0.95rem;
-      }
-      @media (max-width: 700px) {
-        .languages-grid {
-          grid-template-columns: 1fr;
-          margin-top: 31px;
-        }
-      }
-      html[data-theme="light"] .brand-btn {
-        border-color: rgba(0, 0, 0, 0.2);
-      }
-      html[data-theme="light"] .brand-btn:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        border-color: rgba(0, 0, 0, 0.35);
-      }
-      html[data-theme="light"] .brand-list {
-        border-top-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .language-card {
-        border-color: rgba(0, 0, 0, 0.12);
-        background: rgba(0, 0, 0, 0.02);
-      }
-      html[data-theme="light"] .language-level {
-        color: #4a4a4f;
-      }
-      html[data-theme="light"] .chat-messages {
-        border-color: rgba(0, 0, 0, 0.12);
-        background: rgba(0, 0, 0, 0.02);
-      }
-      html[data-theme="light"] .chat-bubble {
-        color: #1a1a1a;
-        background: rgba(0, 0, 0, 0.04);
-      }
-      html[data-theme="light"] .chat-message--user .chat-bubble {
-        border-color: rgba(0, 102, 177, 0.3);
-        background: rgba(0, 102, 177, 0.12);
-      }
-      html[data-theme="light"] .chat-input {
-        border-color: rgba(0, 0, 0, 0.16);
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .chat-status {
-        color: #5a5a5f;
-      }
-      html[data-theme="light"] .chat-widget {
-        background: rgba(255, 255, 255, 0.94);
-        border-color: rgba(0, 0, 0, 0.12);
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
-      }
-      html[data-theme="light"] .chat-toggle-mobile {
-        background: rgba(255, 255, 255, 0.9);
-        border-color: rgba(0, 0, 0, 0.12);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-      }
-      html[data-theme="light"] .chat-toggle-mobile:hover {
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      }
-      html[data-theme="light"] .chat-suggestion-btn {
-        color: #0066b1;
-        background: rgba(0, 102, 177, 0.12);
-        border-color: rgba(0, 102, 177, 0.3);
-      }
-      html[data-theme="light"] .chat-suggestion-btn:hover {
-        background: rgba(0, 102, 177, 0.2);
-        border-color: rgba(0, 102, 177, 0.45);
-      }
-      @media (max-width: 640px) {
-        .chat-widget {
-          right: 8px;
-          bottom: 16px;
-          width: 380px;
-          min-width: 380px;
-          max-width: 380px;
-        }
-      }
-      html[data-theme="light"] .interest-item strong {
-        color: #0a0a0a;
-      }
-      html[data-theme="light"] .exp-item strong {
-        color: #0a0a0a;
-      }
-      html[data-theme="light"] .formation-item strong {
-        color: #0a0a0a;
-      }
-
-      /* Footer · sobre */
-      .footer {
-        margin-top: 48px;
-        padding: 40px 0 56px;
-        text-align: left;
-        background: transparent;
-        border-radius: 0;
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .footer-meta {
-        margin: 0 0 24px;
-        font-size: 11px;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: #6a6a6f;
+        color: #000;
+        background: var(--color-white);
+        border: 1px solid var(--color-white);
+        transition: background 0.2s ease, color 0.2s ease;
       }
+      .contact-submit-btn:hover {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+        color: #000;
+      }
+      .contact-feedback {
+        margin-top: 16px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .contact-feedback.is-success { color: #4ade80; }
+      .contact-feedback.is-error { color: #f87171; }
 
-      /* Comment ce site est-il fait ? */
-      .footer-tech {
-        margin-top: 24px;
-      }
-      .footer-tech-btn {
-        display: inline-block;
-        padding: 8px 0;
-        font-size: 13px;
-        font-weight: 500;
-        color: #8a8a8f;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: color 0.2s ease;
-      }
-      .footer-tech-btn:hover {
-        color: #0066b1;
-      }
-      .footer-tech-panel {
-        margin-top: 20px;
-        padding: 24px;
-        max-width: 520px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        max-height: 0;
+      /* ===== FLOATING CTA ===== */
+      .floating-cta {
+        position: fixed;
+        bottom: 24px;
+        right: 96px;
+        z-index: 110;
         opacity: 0;
-        visibility: hidden;
-        transition: max-height 0.3s ease, opacity 0.2s ease, visibility 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+        transform: translateY(20px);
+        transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+        pointer-events: none;
       }
-      .footer-tech-panel.is-open {
-        max-height: 70vh;
+      .floating-cta.is-visible {
         opacity: 1;
-        visibility: visible;
-        overflow-y: auto;
+        transform: translateY(0);
+        pointer-events: auto;
       }
-      .footer-tech-title {
-        margin: 0 0 12px;
-        font-size: 18px;
-        font-weight: 700;
-        color: #ffffff;
+      .floating-cta-content {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        padding: 20px 24px;
+        max-width: 280px;
       }
-      .footer-tech-intro {
-        margin: 0 0 16px;
-        font-size: 14px;
-        line-height: 1.5;
-        color: #a0a0a5;
+      .floating-cta-title {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        color: var(--color-white);
+        margin-bottom: 4px;
       }
-      .footer-tech-list {
-        margin: 0 0 20px;
-        padding-left: 20px;
-        font-size: 14px;
-        line-height: 1.6;
-        color: #c0c0c5;
-      }
-      .footer-tech-list li {
-        margin-bottom: 10px;
-      }
-      .footer-tech-list li:last-child {
-        margin-bottom: 0;
-      }
-      .footer-tech-close {
-        padding: 8px 16px;
+      .floating-cta-sub {
         font-size: 13px;
-        font-weight: 600;
-        color: #ffffff;
-        background: #0066b1;
+        color: var(--color-text-muted);
+        margin-bottom: 16px;
+      }
+      .floating-cta-btn {
+        display: block;
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+        background: var(--color-white);
         border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-family: inherit;
         transition: background 0.2s ease;
       }
-      .footer-tech-close:hover {
-        background: #005a9e;
-      }
-      html[data-theme="light"] .footer-tech-btn {
-        color: #5a5a5f;
-      }
-      html[data-theme="light"] .footer-tech-btn:hover {
-        color: #0066b1;
-      }
-      html[data-theme="light"] .footer-tech-panel {
-        background: rgba(0, 0, 0, 0.04);
-        border-color: rgba(0, 0, 0, 0.1);
-      }
-      html[data-theme="light"] .footer-tech-title {
-        color: #0a0a0a;
-      }
-      html[data-theme="light"] .footer-tech-intro {
-        color: #5a5a5f;
-      }
-      html[data-theme="light"] .footer-tech-list {
-        color: #2a2a2a;
+      .floating-cta-btn:hover { background: var(--color-accent); }
+
+      @media (max-width: 768px) {
+        .floating-cta { display: none; }
       }
 
-      /* Bouton thème · fixe en haut à droite */
-      /* Mode clair */
-      html[data-theme="light"] body {
-        background-color: #f2f2f4;
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .hero-meta { color: #5a5a5f; }
-      html[data-theme="light"] .hero-title { color: #0a0a0a; }
-      html[data-theme="light"] .hero-desc { color: #4a4a4f; }
-      html[data-theme="light"] .hero blockquote { color: #38383d; }
-      html[data-theme="light"] .hero-intro p { color: #4a4a4f; }
-      html[data-theme="light"] .hero-tag {
-        color: #1a1a1a;
-      }
-      html[data-theme="light"] .hero blockquote::before,
-      html[data-theme="light"] .hero blockquote::after { color: #38383d; }
-      html[data-theme="light"] .btn {
-        color: #1a1a1a;
-        border-color: rgba(0, 0, 0, 0.2);
-      }
-      html[data-theme="light"] .btn:hover {
-        background-color: #0066b1;
-        border-color: #0066b1;
-        color: #ffffff;
-      }
-      html[data-theme="light"] .btn-float {
-        background-color: #0066b1;
-        border-color: #0066b1;
-        color: #ffffff;
-      }
-      html[data-theme="light"] .btn-float:hover {
-        background-color: #1a1a1d;
-        border-color: rgba(0, 0, 0, 0.2);
-        color: #ffffff;
-      }
-      html[data-theme="light"] .rule { border-top-color: rgba(0, 0, 0, 0.08); }
-      html[data-theme="light"] .rule--heavy { border-top-color: rgba(0, 0, 0, 0.12); }
-      html[data-theme="light"] .block {
-        border-bottom-color: rgba(0, 0, 0, 0.08);
-      }
-      html[data-theme="light"] .block:hover {
-        background-color: rgba(0, 0, 0, 0.03);
-      }
-      html[data-theme="light"] .label { color: #5a5a5f; }
-      html[data-theme="light"] .body { color: #2a2a2a; }
-      html[data-theme="light"] .meta { color: #5a5a5f; }
-      html[data-theme="light"] .list li { color: #2a2a2a; }
-      html[data-theme="light"] .list li::before { color: #8a8a8f; }
-      html[data-theme="light"] .footer { border-top-color: rgba(0, 0, 0, 0.08); }
-      html[data-theme="light"] .footer-meta { color: #5a5a5f; }
+      /* ===== SCROLLBAR ===== */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+      /* ===== SELECTION ===== */
+      ::selection { background: rgba(200,169,110,0.3); color: var(--color-white); }
     </style>
 
-    <script>
-      (function () {
-        var contactBtn = document.getElementById('contact-btn');
-        var contactOverlay = document.getElementById('contact-overlay');
-        var contactClose = document.getElementById('contact-close');
-        var contactForm = document.getElementById('contact-form');
-        var contactFeedback = document.getElementById('contact-feedback');
-        if (contactBtn && contactOverlay) {
-          contactBtn.addEventListener('click', function () {
-            contactOverlay.classList.add('is-open');
-            contactOverlay.setAttribute('aria-hidden', 'false');
-          });
-        }
-        function closeContact() {
-          if (contactOverlay) {
-            contactOverlay.classList.remove('is-open');
-            contactOverlay.setAttribute('aria-hidden', 'true');
-          }
-        }
-        if (contactClose) contactClose.addEventListener('click', closeContact);
-        if (contactOverlay) {
-          contactOverlay.addEventListener('click', function (e) {
-            if (e.target === contactOverlay) closeContact();
-          });
-        }
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && contactOverlay && contactOverlay.classList.contains('is-open')) closeContact();
-        });
-        if (contactForm && contactFeedback) {
-          contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var fd = new FormData(contactForm);
-            var name = fd.get('name') || '';
-            var email = fd.get('email') || '';
-            var message = fd.get('message') || '';
-            contactFeedback.hidden = false;
-            contactFeedback.className = 'contact-feedback';
-            contactFeedback.textContent = 'Envoi en cours…';
-            fetch('/api/contact', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name: name, email: email, message: message }),
-            })
-              .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
-              .then(function (r) {
-                if (r.ok) {
-                  contactFeedback.textContent = 'Message envoyé. Je vous répondrai rapidement.';
-                  contactFeedback.classList.add('is-success');
-                  contactForm.reset();
-                } else {
-                  contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Une erreur est survenue.';
-                  contactFeedback.classList.add('is-error');
-                }
-              })
-              .catch(function () {
-                contactFeedback.textContent = 'Une erreur est survenue.';
-                contactFeedback.classList.add('is-error');
-              });
-          });
-        }
-      })();
-    </script>
   </body>
 </html>
