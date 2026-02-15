@@ -1,0 +1,129 @@
+---
+/**
+ * EXEMPLE D'UTILISATION - Page avec traductions
+ * 
+ * Ce fichier montre comment créer une page multilingue.
+ * Créez 3 versions de cette page :
+ * - src/pages/exemple.astro (FR)
+ * - src/pages/en/exemple.astro (EN)
+ * - src/pages/de/exemple.astro (DE)
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Contenu spécifique à la langue
+const content = {
+  fr: {
+    heading: 'Bienvenue sur mon site',
+    intro: 'Ceci est un exemple de page multilingue.',
+  },
+  en: {
+    heading: 'Welcome to my website',
+    intro: 'This is an example of a multilingual page.',
+  },
+  de: {
+    heading: 'Willkommen auf meiner Website',
+    intro: 'Dies ist ein Beispiel für eine mehrsprachige Seite.',
+  },
+}[lang];
+---
+
+<BaseLayout 
+  title={`${content.heading} - Corentin BOISSELIER`}
+  description={content.intro}
+>
+  <!-- Navigation avec sélecteur de langue -->
+  <nav class="nav">
+    <a href={lang === 'fr' ? '/' : `/${lang}/`} class="nav-logo">
+      CORENTIN BOISSELIER
+    </a>
+    
+    <!-- Le LanguagePicker est déjà dans le BaseLayout, 
+         mais vous pouvez aussi l'ajouter ici -->
+  </nav>
+
+  <!-- Contenu principal -->
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <h1>{content.heading}</h1>
+        <p>{content.intro}</p>
+        
+        <!-- Exemple d'utilisation des traductions du dictionnaire -->
+        <p>{t('hero.subtitle')}</p>
+        <p>{t('hero.location')}</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="section-inner">
+      <p>{t('footer.tagline')}</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-logo {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-white, #ffffff);
+  }
+
+  .section {
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #8a8a92;
+    margin-bottom: 16px;
+  }
+
+  .site-footer {
+    padding: 80px 0 48px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+</style>

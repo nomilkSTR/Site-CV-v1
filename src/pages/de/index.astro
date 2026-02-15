@@ -1,19 +1,19 @@
 ---
 /**
  * One-Page — Corentin BOISSELIER
- * IA appliquée & automatisation — Strasbourg
+ * Angewandte KI & Automatisierung — Strasbourg
  * Style : inspiré Bugatti — luxe, plein écran, typographie forte, animations fluides
  */
-import LanguagePicker from '../components/LanguagePicker.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Corentin BOISSELIER — IA & automatisation. 43 000 dossiers VO/VU par an, -40% de temps grâce à l'IA." />
-    <title>Corentin BOISSELIER — IA & automatisation</title>
+    <meta name="description" content="Corentin BOISSELIER — KI & Automatisierung. 43 000 GW/NW-Vorgänge pro Jahr, -40% Bearbeitungszeit dank KI." />
+    <title>Corentin BOISSELIER — KI & Automatisierung</title>
     
     <!-- Balises hreflang pour le SEO multilingue -->
     <link rel="alternate" hreflang="fr" href="https://corentinboisselier.com/" />
@@ -27,31 +27,31 @@ import LanguagePicker from '../components/LanguagePicker.astro';
   </head>
   <body>
 
-    <!-- ========== NAVIGATION FIXE ========== -->
+    <!-- ========== FESTE NAVIGATION ========== -->
     <nav class="nav" id="main-nav">
-      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Menü öffnen" aria-expanded="false">
         <span class="nav-hamburger" aria-hidden="true">
           <span></span><span></span>
         </span>
-        <span class="nav-menu-text">MENU</span>
+        <span class="nav-menu-text">MENÜ</span>
       </button>
       <a href="#hero" class="nav-logo">CORENTIN BOISSELIER</a>
       <div class="nav-right">
         <LanguagePicker />
-        <button type="button" class="nav-contact-btn" id="nav-contact-btn">CONTACT</button>
+        <button type="button" class="nav-contact-btn" id="nav-contact-btn">KONTAKT</button>
       </div>
     </nav>
 
-    <!-- ========== MENU OVERLAY PLEIN ÉCRAN ========== -->
+    <!-- ========== VOLLBILD-MENÜ-OVERLAY ========== -->
     <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
       <div class="menu-overlay-inner">
         <nav class="menu-nav">
-          <a href="#about" class="menu-link" data-index="01">À propos</a>
-          <a href="#experience" class="menu-link" data-index="02">Expériences</a>
-          <a href="#vehicles" class="menu-link" data-index="03">Véhicules</a>
-          <a href="#languages" class="menu-link" data-index="04">Langues</a>
-          <a href="#interests" class="menu-link" data-index="05">Intérêts</a>
-          <a href="#formations" class="menu-link" data-index="06">Formations</a>
+          <a href="#about" class="menu-link" data-index="01">Über mich</a>
+          <a href="#experience" class="menu-link" data-index="02">Berufserfahrung</a>
+          <a href="#vehicles" class="menu-link" data-index="03">Fahrzeuge</a>
+          <a href="#languages" class="menu-link" data-index="04">Sprachen</a>
+          <a href="#interests" class="menu-link" data-index="05">Interessen</a>
+          <a href="#formations" class="menu-link" data-index="06">Ausbildung</a>
         </nav>
         <div class="menu-footer">
           <p class="menu-footer-text">Strasbourg, France</p>
@@ -65,42 +65,42 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title anim-fade-up" style="animation-delay:.15s">CORENTIN<br>BOISSELIER</h1>
-        <p class="hero-subtitle anim-fade-up" style="animation-delay:.3s">Analyst Pricer — IA appliquée & automatisation<span class="hero-subtitle-location">Strasbourg, France</span></p>
-        <a href="#about" class="hero-cta anim-fade-up" style="animation-delay:.5s">DÉCOUVRIR MON PARCOURS</a>
+        <p class="hero-subtitle anim-fade-up" style="animation-delay:.3s">Analyst Pricer — Angewandte KI & Automatisierung<span class="hero-subtitle-location">Strasbourg, France</span></p>
+        <a href="#about" class="hero-cta anim-fade-up" style="animation-delay:.5s">MEINEN WERDEGANG ENTDECKEN</a>
       </div>
       <div class="hero-scroll-indicator anim-fade-up" style="animation-delay:.7s" aria-hidden="true">
         <span class="hero-scroll-line"></span>
       </div>
     </section>
 
-    <!-- ========== À PROPOS / INTRO ========== -->
+    <!-- ========== ÜBER MICH / INTRO ========== -->
     <section class="section section--about" id="about">
       <div class="section-inner">
         <div class="about-grid">
           <div class="about-left anim-on-scroll">
             <blockquote class="about-quote about-quote--featured">
               <span class="about-quote-mark">&laquo;</span>
-              Il n'y a rien de noble à être supérieur à son prochain&nbsp;; la vraie noblesse, c'est d'être supérieur à son ancien&nbsp;soi.
+              Es ist nichts Edles daran, seinem Mitmenschen überlegen zu sein; wahre Größe besteht darin, seinem früheren Selbst überlegen zu sein.
               <span class="about-quote-mark">&raquo;</span>
             </blockquote>
           </div>
           <div class="about-right anim-on-scroll" style="transition-delay:.15s">
             <p class="about-text">
-              Expert du marché VO/VU avec <strong>43 000 dossiers traités/an</strong>, je génère <strong>1,7 M€</strong> de revenu demi-net annuel.
+              Experte für den GW/NW-Markt mit <strong>43 000 bearbeiteten Vorgängen/Jahr</strong>, generiere ich <strong>1,7 Mio. €</strong> Halbnetto-Jahresumsatz.
             </p>
             <p class="about-text">
-              Passionné par l'optimisation, je décuple ma productivité et améliore l'expérience client en pilotant des solutions d'IA et d'automatisation (Python/JS, API, Airtable, Cursor) pour fiabiliser les cotations. <strong>Temps de traitement diminué de 35 à 40%</strong>.
+              Begeistert von Optimierung, steigere ich meine Produktivität und verbessere das Kundenerlebnis durch den Einsatz von KI- und Automatisierungslösungen (Python/JS, API, Airtable, Cursor) zur Absicherung der Bewertungen. <strong>Bearbeitungszeit um 35 bis 40 % reduziert</strong>.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== EXPÉRIENCES ========== -->
+    <!-- ========== BERUFSERFAHRUNG ========== -->
     <section class="section section--dark" id="experience">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">PARCOURS PROFESSIONNEL</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Expériences</h2>
+        <p class="section-label anim-on-scroll">BERUFSERFAHRUNG</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Berufserfahrung</h2>
         <div class="exp-container anim-on-scroll" style="transition-delay:.2s">
 
           <div class="exp-card" data-exp="1">
@@ -109,7 +109,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
                 <span class="exp-card-index">01</span>
                 <div>
                   <h3 class="exp-card-title">Analyst Pricer</h3>
-                  <p class="exp-card-meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</p>
+                  <p class="exp-card-meta">Alcopa Auction · Neuilly-sur-Seine (100% Remote) · Seit 01/2023</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -117,29 +117,29 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Assistant de Cotation Intelligent</strong> | Fullstack & IA</p>
-              <p class="exp-body-text">Optimisation de la chaîne de valeur VO/VU par l'automatisation</p>
-              <h4 class="exp-body-label">Le Défi</h4>
-              <p class="exp-body-text">Améliorer l'expérience utilisateur (UX) et réduire le temps de traitement des fiches au quotidien en éliminant les tâches répétitives et à faible valeur ajoutée.</p>
-              <h4 class="exp-body-label">Ma Solution Technique</h4>
-              <p class="exp-body-text">J'ai conçu et déployé un assistant de cotation hybride articulant données internes et intelligence artificielle :</p>
+              <p class="exp-body-text"><strong>Intelligenter Bewertungsassistent</strong> | Fullstack & KI</p>
+              <p class="exp-body-text">Optimierung der GW/NW-Wertschöpfungskette durch Automatisierung</p>
+              <h4 class="exp-body-label">Die Herausforderung</h4>
+              <p class="exp-body-text">Verbesserung der Benutzererfahrung (UX) und Reduzierung der täglichen Bearbeitungszeit durch Eliminierung repetitiver und wenig wertschöpfender Aufgaben.</p>
+              <h4 class="exp-body-label">Meine technische Lösung</h4>
+              <p class="exp-body-text">Ich habe einen hybriden Bewertungsassistenten konzipiert und eingesetzt, der interne Daten und künstliche Intelligenz verbindet:</p>
               <ul class="exp-body-list">
-                <li><strong>Architecture de Données</strong> : Développement assisté par IA sous Python & JavaScript avec centralisation de l'historique transactionnel via Supabase.</li>
-                <li><strong>Intelligence Artificielle</strong> : Intégration de l'IA Gemini 3 Flash pour lecture des fiches et analyse contextuelle.</li>
-                <li><strong>Prompt Engineering</strong> : Conception de structures de prompts rigoureuses pour garantir la fiabilité des données extraites.</li>
-                <li><strong>Automatisation</strong> : Capture automatique des fiches.</li>
+                <li><strong>Datenarchitektur</strong>: KI-gestützte Entwicklung in Python & JavaScript mit Zentralisierung der Transaktionshistorie über Supabase.</li>
+                <li><strong>Künstliche Intelligenz</strong>: Integration der KI Gemini 3 Flash zur Auswertung von Fahrzeugdatenblättern und kontextbezogener Analyse.</li>
+                <li><strong>Prompt Engineering</strong>: Entwurf strukturierter Prompts zur Gewährleistung der Zuverlässigkeit der extrahierten Daten.</li>
+                <li><strong>Automatisierung</strong>: Automatische Erfassung der Fahrzeugdatenblätter.</li>
               </ul>
-              <h4 class="exp-body-label">Résultats & Impact</h4>
+              <h4 class="exp-body-label">Ergebnisse & Auswirkungen</h4>
               <ul class="exp-body-list">
-                <li><strong>Performance Opérationnelle</strong> : Gain de <strong>40% de productivité</strong>, améliorant l'UX et libérant un temps critique pour l'analyse des dossiers.</li>
-                <li><strong>Expérience Utilisateur</strong> : Optimisation drastique du workflow Analyst Pricer (réduction du nombre de clics et de la charge cognitive).</li>
-                <li><strong>Sécurité Business</strong> : Fiabilisation des engagements grâce à une analyse IA instantanée.</li>
+                <li><strong>Operative Leistung</strong>: <strong>40 % Produktivitätssteigerung</strong>, Verbesserung der UX und Freisetzung kritischer Zeit für die Vorgangsanalyse.</li>
+                <li><strong>Benutzererfahrung</strong>: Drastische Optimierung des Analyst-Pricer-Workflows (Reduzierung der Klickanzahl und der kognitiven Belastung).</li>
+                <li><strong>Geschäftssicherheit</strong>: Absicherung der Verpflichtungen dank sofortiger KI-Analyse.</li>
               </ul>
-              <h4 class="exp-body-label">Expertise Marché & Négociation</h4>
+              <h4 class="exp-body-label">Marktexpertise & Verhandlung</h4>
               <ul class="exp-body-list">
-                <li><strong>Analyse de Marché</strong> : Suivi permanent des gammes et des tendances de prix sur le segment VO.</li>
-                <li><strong>Négociation Stratégique</strong> : Validation et réévaluation des engagements et gestion de la relation avec les apporteurs.</li>
-                <li><strong>Volume</strong> : Pilotage et traitement d'un flux de <strong>43 000 dossiers</strong> par an.</li>
+                <li><strong>Marktanalyse</strong>: Laufende Beobachtung der Sortimente und Preisentwicklungen im GW-Segment.</li>
+                <li><strong>Strategische Verhandlung</strong>: Validierung und Neubewertung von Verpflichtungen sowie Pflege der Beziehungen zu den Zulieferern.</li>
+                <li><strong>Volumen</strong>: Steuerung und Bearbeitung eines Flusses von <strong>43 000 Vorgängen</strong> pro Jahr.</li>
               </ul>
             </div>
           </div>
@@ -149,7 +149,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">02</span>
                 <div>
-                  <h3 class="exp-card-title">Négociateur immobilier</h3>
+                  <h3 class="exp-card-title">Immobilienmakler</h3>
                   <p class="exp-card-meta">Étude de Me Philippe de GAIL · Strasbourg · 10/2021 – 05/2023</p>
                 </div>
               </div>
@@ -158,21 +158,21 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Estimation & Stratégie de Commercialisation</strong></p>
-              <p class="exp-body-text">L'estimation n'est pas une simple évaluation, c'est une lecture stratégique du marché.</p>
+              <p class="exp-body-text"><strong>Bewertung & Vermarktungsstrategie</strong></p>
+              <p class="exp-body-text">Die Bewertung ist keine bloße Einschätzung, sondern eine strategische Marktanalyse.</p>
               <ul class="exp-body-list">
-                <li><strong>Expertise Métier</strong> : Analyse comparative de marché et évaluation précise de la valeur des biens, intégrant les caractéristiques et le contexte local.</li>
-                <li><strong>Mise en Valeur</strong> : Établissement de la stratégie de commercialisation en synergie avec les vendeurs.</li>
+                <li><strong>Fachkompetenz</strong>: Vergleichende Marktanalyse und präzise Immobilienbewertung unter Berücksichtigung der Merkmale und des lokalen Kontexts.</li>
+                <li><strong>Wertdarstellung</strong>: Erarbeitung der Vermarktungsstrategie in Zusammenarbeit mit den Verkäufern.</li>
               </ul>
-              <h4 class="exp-body-label">Négociation</h4>
+              <h4 class="exp-body-label">Verhandlung</h4>
               <ul class="exp-body-list">
-                <li><strong>Négociation Tripartite</strong> : Arbitrage des intérêts divergents pour aboutir à un accord mutuel.</li>
-                <li><strong>Accompagnement Client</strong> : Suivi personnalisé depuis la première visite jusqu'à la signature finale.</li>
+                <li><strong>Dreiseitige Verhandlung</strong>: Vermittlung zwischen divergierenden Interessen bis zum gegenseitigen Einvernehmen.</li>
+                <li><strong>Kundenbetreuung</strong>: Persönliche Begleitung vom ersten Besichtigungstermin bis zur Unterschrift.</li>
               </ul>
-              <h4 class="exp-body-label">Rédaction d'Actes & Sécurité Juridique</h4>
+              <h4 class="exp-body-label">Urkundenerstellung & Rechtssicherheit</h4>
               <ul class="exp-body-list">
-                <li><strong>Formalisme Rigoureux</strong> : Rédaction de mandats, d'avant-contrats et d'actes authentiques.</li>
-                <li><strong>Ingénierie Documentaire</strong> : Analyse et collecte des pièces d'urbanisme, des diagnostics et des titres de propriété.</li>
+                <li><strong>Strenger Formalismus</strong>: Erstellung von Mandaten, Vorverträgen und notariellen Urkunden.</li>
+                <li><strong>Dokumentenmanagement</strong>: Analyse und Beschaffung von Planungsunterlagen, Gutachten und Eigentumstiteln.</li>
               </ul>
             </div>
           </div>
@@ -182,7 +182,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">03</span>
                 <div>
-                  <h3 class="exp-card-title">Directeur Général</h3>
+                  <h3 class="exp-card-title">Geschäftsführer</h3>
                   <p class="exp-card-meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</p>
                 </div>
               </div>
@@ -191,25 +191,25 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Entrepreneuriat : Direction Générale & Modèle à Impact</strong> (Les Sunneliers SAS)</p>
-              <p class="exp-body-text">De l'innovation cosmétique à la préservation des océans.</p>
-              <h4 class="exp-body-label">Vision Stratégique & Leadership</h4>
-              <p class="exp-body-text">Co-fondateur et dirigeant de la startup strasbourgeoise Niu & You, j'ai piloté l'entreprise avec une autonomie décisionnelle totale.</p>
+              <p class="exp-body-text"><strong>Unternehmertum: Geschäftsführung & Impact-Modell</strong> (Les Sunneliers SAS)</p>
+              <p class="exp-body-text">Von kosmetischer Innovation zum Schutz der Ozeane.</p>
+              <h4 class="exp-body-label">Strategische Vision & Führung</h4>
+              <p class="exp-body-text">Mitgründer und Geschäftsführer des Straßburger Start-ups Niu & You, leitete ich das Unternehmen mit vollständiger Entscheidungsautonomie.</p>
               <ul class="exp-body-list">
-                <li><strong>Gouvernance Indépendante</strong> : Capacité à décider et à arbitrer les choix critiques sans supervision.</li>
-                <li><strong>Vision à 360°</strong> : Pilotage d'une structure où chaque décision sert une stratégie globale de croissance durable.</li>
+                <li><strong>Eigenständige Unternehmensführung</strong>: Fähigkeit, kritische Entscheidungen eigenverantwortlich zu treffen.</li>
+                <li><strong>360°-Vision</strong>: Steuerung einer Struktur, in der jede Entscheidung einer globalen Strategie für nachhaltiges Wachstum dient.</li>
               </ul>
-              <h4 class="exp-body-label">Maîtrise Opérationnelle & Commerciale</h4>
+              <h4 class="exp-body-label">Operative & kommerzielle Kompetenz</h4>
               <ul class="exp-body-list">
-                <li><strong>Pilotage des Flux & Logistique</strong> : Conception et gestion intégrale de la supply chain.</li>
-                <li><strong>Animation du Réseau</strong> : Développement et fidélisation d'un réseau de distribution.</li>
-                <li><strong>Gestion de la Rentabilité</strong> : Suivi rigoureux de la performance financière.</li>
+                <li><strong>Warenfluss- & Logistiksteuerung</strong>: Konzeption und vollständige Verwaltung der Supply Chain.</li>
+                <li><strong>Netzwerkpflege</strong>: Aufbau und Bindung eines Vertriebsnetzwerks.</li>
+                <li><strong>Rentabilitätsmanagement</strong>: Rigorose Überwachung der finanziellen Performance.</li>
               </ul>
-              <h4 class="exp-body-label">Le Modèle Octop'Us</h4>
+              <h4 class="exp-body-label">Das Octop'Us-Modell</h4>
               <ul class="exp-body-list">
-                <li><strong>Innovation Régénératrice</strong> : "1 tube vendu = 1m² de plage nettoyé".</li>
-                <li><strong>Fondation d'Octop'Us</strong> : Création d'une ONG dédiée à la protection des océans.</li>
-                <li><strong>Ingénierie à Impact</strong> : Modèle de mécénat optimisé reversant une partie des bénéfices à l'ONG.</li>
+                <li><strong>Regenerative Innovation</strong>: „1 verkaufte Tube = 1 m² gereinigter Strand".</li>
+                <li><strong>Gründung von Octop'Us</strong>: Aufbau einer NGO zum Schutz der Ozeane.</li>
+                <li><strong>Impact Engineering</strong>: Optimiertes Sponsoringmodell mit Gewinnbeteiligung zugunsten der NGO.</li>
               </ul>
             </div>
           </div>
@@ -219,7 +219,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">04</span>
                 <div>
-                  <h3 class="exp-card-title">Administrateur Logistique</h3>
+                  <h3 class="exp-card-title">Logistikverwalter</h3>
                   <p class="exp-card-meta">Scheppach France · Strasbourg · 05/2018 – 03/2020</p>
                 </div>
               </div>
@@ -229,9 +229,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Pilotage des flux logistiques (France)</strong> : Coordination du transport et suivi opérationnel des expéditions.</li>
-                <li><strong>Optimisation de la performance</strong> : Audit des process internes et actions correctives.</li>
-                <li><strong>Gestion des litiges et SAV</strong> : Analyse des causes racines et déploiement de solutions.</li>
+                <li><strong>Steuerung der Logistikflüsse (Frankreich)</strong>: Koordination des Transports und operative Überwachung der Sendungen.</li>
+                <li><strong>Leistungsoptimierung</strong>: Audit interner Prozesse und Korrekturmaßnahmen.</li>
+                <li><strong>Reklamations- und Kundendienstmanagement</strong>: Ursachenanalyse und Implementierung von Lösungen.</li>
               </ul>
             </div>
           </div>
@@ -241,8 +241,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">05</span>
                 <div>
-                  <h3 class="exp-card-title">Affréteur</h3>
-                  <p class="exp-card-meta">Transports Breger · Haguenau · 02/2016 – 09/2016 et 09/2017 – 05/2018</p>
+                  <h3 class="exp-card-title">Spediteur</h3>
+                  <p class="exp-card-meta">Transports Breger · Haguenau · 02/2016 – 09/2016 und 09/2017 – 05/2018</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -251,9 +251,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Ingénierie de flux</strong> : Optimisation du remplissage et organisation des ruptures de charge.</li>
-                <li><strong>Sourcing fournisseurs</strong> : Identification, sélection et négociation avec les sous-traitants.</li>
-                <li><strong>Expertise secteur Automobile</strong> : Pilotage des flux vers les usines Renault (France) et Mercedes-Benz (Allemagne).</li>
+                <li><strong>Flussteuerung</strong>: Optimierung der Auslastung und Organisation der Umschlagpunkte.</li>
+                <li><strong>Lieferantenbeschaffung</strong>: Identifikation, Auswahl und Verhandlung mit Subunternehmern.</li>
+                <li><strong>Branchenexpertise Automobil</strong>: Steuerung der Flüsse zu Renault-Werken (Frankreich) und Mercedes-Benz (Deutschland).</li>
               </ul>
             </div>
           </div>
@@ -263,8 +263,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">06</span>
                 <div>
-                  <h3 class="exp-card-title">Gestionnaire de parc</h3>
-                  <p class="exp-card-meta">Autohaus Tabor · Kehl (Allemagne) · 09/2016 – 09/2017</p>
+                  <h3 class="exp-card-title">Fuhrparkmanager</h3>
+                  <p class="exp-card-meta">Autohaus Tabor · Kehl (Deutschland) · 09/2016 – 09/2017</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -273,9 +273,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Audit de conformité</strong> : Expertise technique rigoureuse des arrivages (neufs/occasions).</li>
-                <li><strong>Gestion du cycle de reconditionnement</strong> : Évaluation des frais de remise en état et planification des interventions.</li>
-                <li><strong>Optimisation logistique inter-sites</strong> : Pilotage du réagencement des stocks et transfert de flotte.</li>
+                <li><strong>Konformitätsprüfung</strong>: Gründliche technische Inspektion der Neuzugänge (Neu- und Gebrauchtwagen).</li>
+                <li><strong>Aufbereitungszyklusmanagement</strong>: Bewertung der Instandsetzungskosten und Planung der Maßnahmen.</li>
+                <li><strong>Standortübergreifende Logistikoptimierung</strong>: Steuerung der Bestandsumschichtung und des Flottenumzugs.</li>
               </ul>
             </div>
           </div>
@@ -285,8 +285,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">07</span>
                 <div>
-                  <h3 class="exp-card-title">Apprenti affréteur et exploitant transport</h3>
-                  <p class="exp-card-meta">Expériences complémentaires</p>
+                  <h3 class="exp-card-title">Auszubildender Spediteur und Transportdisponent</h3>
+                  <p class="exp-card-meta">Ergänzende Erfahrungen</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -295,10 +295,10 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li>Alinéa Courses Express – La Wantzenau – 04/2015 à 02/2016</li>
-                <li>Mercurio France – Molsheim – 10/2014 à 04/2015</li>
-                <li>Geodis BM – Strasbourg – 10/2013 à 10/2014</li>
-                <li>DB Schenker – Strasbourg – 10/2011 à 09/2013</li>
+                <li>Alinéa Courses Express – La Wantzenau – 04/2015 bis 02/2016</li>
+                <li>Mercurio France – Molsheim – 10/2014 bis 04/2015</li>
+                <li>Geodis BM – Strasbourg – 10/2013 bis 10/2014</li>
+                <li>DB Schenker – Strasbourg – 10/2011 bis 09/2013</li>
               </ul>
             </div>
           </div>
@@ -307,13 +307,13 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== VÉHICULES ========== -->
+    <!-- ========== FAHRZEUGE ========== -->
     <section class="section section--vehicles" id="vehicles">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">LA PASSION</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Véhicules possédés</h2>
+        <p class="section-label anim-on-scroll">DIE LEIDENSCHAFT</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Besessene Fahrzeuge</h2>
         <p class="section-intro anim-on-scroll" style="transition-delay:.2s">
-          Au-delà des chiffres, mon parcours est porté par une passion authentique pour l'automobile. Depuis 2012, j'ai possédé <strong>31 véhicules</strong> sur lesquels j'ai pu découvrir la mécanique aussi bien que la mise en valeur esthétique.
+          Über die Zahlen hinaus wird mein Werdegang von einer authentischen Leidenschaft für das Automobil getragen. Seit 2012 habe ich <strong>31 Fahrzeuge</strong> besessen, an denen ich sowohl die Mechanik als auch die ästhetische Aufbereitung kennengelernt habe.
         </p>
         <div class="brand-grid anim-on-scroll" style="transition-delay:.3s">
           <div class="brand-card">
@@ -447,11 +447,11 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== LANGUES ========== -->
+    <!-- ========== SPRACHEN ========== -->
     <section class="section section--dark" id="languages">
       <div class="section-inner section-inner--narrow">
-        <p class="section-label anim-on-scroll">COMMUNICATION</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Langues maîtrisées</h2>
+        <p class="section-label anim-on-scroll">KOMMUNIKATION</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Sprachkenntnisse</h2>
         <div class="lang-grid anim-on-scroll" style="transition-delay:.2s">
 
           <div class="lang-card">
@@ -463,10 +463,10 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Français</h3>
-              <span class="lang-card-level">Langue maternelle</span>
+              <h3 class="lang-card-name">Französisch</h3>
+              <span class="lang-card-level">Muttersprache</span>
             </div>
-            <span class="lang-badge">Natif</span>
+            <span class="lang-badge">Muttersprachler</span>
           </div>
 
           <div class="lang-card">
@@ -484,8 +484,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Anglais</h3>
-              <span class="lang-card-level">Courant</span>
+              <h3 class="lang-card-name">Englisch</h3>
+              <span class="lang-card-level">Fließend</span>
             </div>
             <span class="lang-badge">C1</span>
           </div>
@@ -499,8 +499,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Allemand</h3>
-              <span class="lang-card-level">Cursus bilingue</span>
+              <h3 class="lang-card-name">Deutsch</h3>
+              <span class="lang-card-level">Bilingualer Studiengang</span>
             </div>
             <span class="lang-badge">C1</span>
           </div>
@@ -509,41 +509,41 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== INTÉRÊTS ========== -->
+    <!-- ========== INTERESSEN ========== -->
     <section class="section" id="interests">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">AU-DELÀ DU MÉTIER</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Intérêts & Passions</h2>
+        <p class="section-label anim-on-scroll">ÜBER DEN BERUF HINAUS</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Interessen & Leidenschaften</h2>
         <div class="interests-grid anim-on-scroll" style="transition-delay:.2s">
           <div class="interest-card">
             <span class="interest-card-index">01</span>
-            <h3 class="interest-card-title">Passion Automobile & Restauration</h3>
-            <p class="interest-card-text">Depuis 2012, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré l'achat, la mécanique, le detailing et la revente de <strong>31 voitures</strong>. Membre actif de l'<strong>Enthousiast'Club Jaguar Alsace</strong>.</p>
+            <h3 class="interest-card-title">Leidenschaft Automobil & Restaurierung</h3>
+            <p class="interest-card-text">Seit 2012 kaufe und restauriere ich Gebrauchtwagen: Ich habe den Kauf, die Mechanik, das Detailing und den Wiederverkauf von <strong>31 Fahrzeugen</strong> durchgeführt. Aktives Mitglied des <strong>Enthousiast'Club Jaguar Alsace</strong>.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">02</span>
-            <h3 class="interest-card-title">Aviation</h3>
-            <p class="interest-card-text"><strong>Pilote privé en formation (PPL)</strong>. Lâché solo, grande nav solo validée. Une véritable école de la rigueur et de la gestion du stress.</p>
+            <h3 class="interest-card-title">Luftfahrt</h3>
+            <p class="interest-card-text"><strong>Privatpilot in Ausbildung (PPL)</strong>. Erster Alleinflug absolviert, Überlandflug solo bestanden. Eine echte Schule der Disziplin und des Stressmanagements.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">03</span>
-            <h3 class="interest-card-title">Engagement Associatif</h3>
-            <p class="interest-card-text">Membre actif du LEO Club pendant <strong>7 ans</strong> et ancien Président. Collectes de fonds, journées de loisirs, organisation de conventions nationales, participation au Téléthon.</p>
+            <h3 class="interest-card-title">Ehrenamtliches Engagement</h3>
+            <p class="interest-card-text">Aktives Mitglied des LEO Clubs seit <strong>7 Jahren</strong> und ehemaliger Präsident. Spendensammlungen, Freizeittage, Organisation nationaler Konferenzen, Teilnahme am Téléthon.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">04</span>
-            <h3 class="interest-card-title">Sports</h3>
-            <p class="interest-card-text">Golf, Boxe thaï puis française, Handball.</p>
+            <h3 class="interest-card-title">Sport</h3>
+            <p class="interest-card-text">Golf, Thaiboxen und anschließend Savate, Handball.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FORMATIONS ========== -->
+    <!-- ========== AUSBILDUNG ========== -->
     <section class="section section--dark" id="formations">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">ACADÉMIQUE</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Formations</h2>
+        <p class="section-label anim-on-scroll">AUSBILDUNG</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Ausbildung</h2>
         <div class="formations-container anim-on-scroll" style="transition-delay:.2s">
 
           <div class="formation-card" data-formation="1">
@@ -557,7 +557,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Spécialisation en <strong>pilotage d'unités logistiques</strong> et <strong>optimisation des flux internes</strong>. Expertise développée dans la <strong>gestion d'entrepôt</strong>, le <strong>management d'équipes opérationnelles</strong> et le <strong>pilotage de la performance</strong> via des indicateurs clés (KPI).</p>
+              <p class="exp-body-text">Spezialisierung in <strong>Steuerung logistischer Einheiten</strong> und <strong>Optimierung interner Flüsse</strong>. Erworbene Expertise im Bereich <strong>Lagerverwaltung</strong>, <strong>Management operativer Teams</strong> und <strong>Leistungssteuerung</strong> mittels Schlüsselindikatoren (KPI).</p>
             </div>
           </div>
 
@@ -572,14 +572,14 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Spécialisation en <strong>management</strong> et <strong>pilotage de production</strong> transport/logistique. Expertise acquise dans la <strong>conception d'offres de transport</strong>, le suivi d'indicateurs de performance (KPI) et l'<strong>amélioration continue</strong> des processus.</p>
+              <p class="exp-body-text">Spezialisierung in <strong>Management</strong> und <strong>Steuerung der Transport-/Logistikproduktion</strong>. Erworbene Expertise in der <strong>Konzeption von Transportangeboten</strong>, der Überwachung von Leistungsindikatoren (KPI) und der <strong>kontinuierlichen Verbesserung</strong> von Prozessen.</p>
             </div>
           </div>
 
           <div class="formation-card" data-formation="3">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">BTS Transport et Prestations Logistiques</h3>
+                <h3 class="formation-card-title">BTS Transport und Logistikdienstleistungen</h3>
                 <p class="formation-card-meta">AFTRAL · Strasbourg · 2011–2013</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -587,14 +587,14 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Maîtrise des fondamentaux de la <strong>Supply Chain</strong> : organisation des flux nationaux et internationaux, planification d'exploitation et gestion réglementaire.</p>
+              <p class="exp-body-text">Beherrschung der Grundlagen der <strong>Supply Chain</strong>: Organisation nationaler und internationaler Flüsse, Betriebsplanung und regulatorisches Management.</p>
             </div>
           </div>
 
           <div class="formation-card" data-formation="4">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">Baccalauréat Économique et Social</h3>
+                <h3 class="formation-card-title">Abitur Wirtschaft und Sozialwissenschaften</h3>
                 <p class="formation-card-meta">Strasbourg · 2011</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -602,7 +602,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Diplôme obtenu à Strasbourg en 2011.</p>
+              <p class="exp-body-text">Abschluss erworben in Strasbourg im Jahr 2011.</p>
             </div>
           </div>
 
@@ -615,53 +615,53 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       <div class="section-inner">
         <div class="footer-top">
           <div class="footer-brand">CORENTIN BOISSELIER</div>
-          <p class="footer-tagline">Analyst Pricer VO/ VU · IA appliquée & automatisation</p>
+          <p class="footer-tagline">Analyst Pricer VO/VU · Angewandte KI & Automatisierung</p>
         </div>
         <div class="footer-links">
-          <a href="#about">À propos</a>
-          <a href="#experience">Expériences</a>
-          <a href="#vehicles">Véhicules</a>
-          <a href="#formations">Formations</a>
+          <a href="#about">Über mich</a>
+          <a href="#experience">Berufserfahrung</a>
+          <a href="#vehicles">Fahrzeuge</a>
+          <a href="#formations">Ausbildung</a>
         </div>
         <div class="footer-bottom">
           <button type="button" class="footer-tech-btn" id="footer-tech-btn" aria-expanded="false" aria-controls="footer-tech-panel">
-            Comment ce site est-il fait ?
+            Wie wurde diese Seite erstellt?
           </button>
           <div id="footer-tech-panel" class="footer-tech-panel" role="dialog" aria-labelledby="footer-tech-title" aria-hidden="true">
-            <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est-il fait ?</h2>
-            <p class="footer-tech-intro">En bref, pour les curieux qui ne sont pas à l'aise avec la technique :</p>
+            <h2 id="footer-tech-title" class="footer-tech-title">Wie wurde diese Seite erstellt?</h2>
+            <p class="footer-tech-intro">Kurz gesagt, für Neugierige, die nicht technikaffin sind:</p>
             <ul class="footer-tech-list">
-              <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d'interaction).</li>
-              <li><strong>Elle est construite</strong> avec Astro — un outil qui permet de générer des sites rapides et légers.</li>
-              <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu'un ouvre le lien.</li>
-            <li><strong>Le chatbot</strong> utilise l'IA de Google (Gemini) pour répondre à vos questions à ma place.</li>
+              <li><strong>Diese Seite</strong> ist eine einzelne Webseite (Text, Gestaltung, ein wenig Interaktion).</li>
+              <li><strong>Sie wurde erstellt</strong> mit Astro — einem Tool, das schnelle und leichtgewichtige Websites generiert.</li>
+              <li><strong>Sie ist online</strong> dank Vercel — einem Dienst, der die Seite hostet und anzeigt, wenn jemand den Link öffnet.</li>
+            <li><strong>Der Chatbot</strong> nutzt die KI von Google (Gemini), um Ihre Fragen an meiner Stelle zu beantworten.</li>
             </ul>
-            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">FERMER</button>
+            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Schließen">SCHLIEßEN</button>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- ========== CHATBOT WIDGET ========== -->
+    <!-- ========== CHATBOT-WIDGET ========== -->
     <div class="chat-widget" id="chat-widget" aria-label="Chatbot">
-      <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Ouvrir le chat" aria-expanded="false">
+      <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Chat öffnen" aria-expanded="false">
         <span class="chat-toggle-ring"></span>
         <svg class="chat-toggle-icon chat-toggle-icon--open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <svg class="chat-toggle-icon chat-toggle-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <span class="chat-label" id="chat-label">Une question ? Demandez-moi</span>
+      <span class="chat-label" id="chat-label">Eine Frage? Fragen Sie mich</span>
       <div class="chat-panel" id="chat-panel">
         <div class="chat-panel-header">
-          <span class="chat-panel-title">CORENTIN VIRTUEL</span>
+          <span class="chat-panel-title">VIRTUELLER CORENTIN</span>
           <span class="chat-panel-dot"></span>
-          <button type="button" class="chat-minimize-btn" id="chat-minimize" aria-label="Réduire le chat">
+          <button type="button" class="chat-minimize-btn" id="chat-minimize" aria-label="Chat minimieren">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>
           </button>
         </div>
         <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
         <div class="chat-suggestions" id="chat-suggestions">
-          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Résume-moi ton CV</button>
-          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-random">Une question au hasard</button>
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Fassen Sie Ihren Lebenslauf zusammen</button>
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-random">Zufällige Frage</button>
         </div>
         <form id="chat-form" class="chat-form" action="#" method="post">
           <textarea
@@ -669,11 +669,11 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             class="chat-input"
             name="message"
             rows="1"
-            placeholder="Posez-moi une question..."
+            placeholder="Stellen Sie mir eine Frage..."
             required
             enterkeyhint="send"
           ></textarea>
-          <button type="submit" class="chat-send-btn" aria-label="Envoyer">
+          <button type="submit" class="chat-send-btn" aria-label="Senden">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
         </form>
@@ -681,29 +681,29 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </div>
 
-    <!-- ========== CONTACT MODAL ========== -->
-    <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Formulaire de contact">
+    <!-- ========== KONTAKT-MODAL ========== -->
+    <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Kontaktformular">
       <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="contact-modal-title" aria-modal="true">
-        <button type="button" class="contact-modal-close" id="contact-close" aria-label="Fermer">
+        <button type="button" class="contact-modal-close" id="contact-close" aria-label="Schließen">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
-        <p class="contact-modal-label">CONTACT</p>
-        <h2 id="contact-modal-title" class="contact-modal-title">Écrivez-moi</h2>
+        <p class="contact-modal-label">KONTAKT</p>
+        <h2 id="contact-modal-title" class="contact-modal-title">Schreiben Sie mir</h2>
         <form id="contact-form" class="contact-form">
           <label class="contact-label">
-            <span class="contact-label-text">Votre nom</span>
+            <span class="contact-label-text">Ihr Name</span>
             <input type="text" name="name" class="contact-input" required autocomplete="name">
           </label>
           <label class="contact-label">
-            <span class="contact-label-text">Votre email</span>
+            <span class="contact-label-text">Ihre E-Mail</span>
             <input type="email" name="email" class="contact-input" required autocomplete="email">
           </label>
           <label class="contact-label">
-            <span class="contact-label-text">Message</span>
+            <span class="contact-label-text">Nachricht</span>
             <textarea name="message" class="contact-textarea" rows="4" required></textarea>
           </label>
           <div class="contact-actions">
-            <button type="submit" class="contact-submit-btn">ENVOYER</button>
+            <button type="submit" class="contact-submit-btn">SENDEN</button>
           </div>
         </form>
         <p id="contact-feedback" class="contact-feedback" aria-live="polite" hidden></p>
@@ -897,7 +897,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-      var welcomeMsg = "Bonjour ! Je suis l'alter ego virtuel de Corentin. Posez-moi une question sur son parcours.";
+      var welcomeMsg = "Guten Tag! Ich bin Corentins virtuelles Alter Ego. Stellen Sie mir eine Frage zu seinem Werdegang.";
       appendMessage('assistant', welcomeMsg);
       chatHistory.push({ role: 'assistant', content: welcomeMsg });
 
@@ -905,15 +905,15 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       var suggestionCv = document.getElementById('chat-suggestion-cv');
       var suggestionRandom = document.getElementById('chat-suggestion-random');
       var randomCvQuestions = [
-        'Quelle est ta plus grande réalisation professionnelle ?',
-        'Pourquoi avoir choisi le pricing automobile ?',
-        'Quelles sont tes compétences en IA ?',
-        'Tu peux me parler de ton expérience chez Alcopa ?',
-        'Quelles langues parles-tu ?',
-        'Quel est ton parcours en 3 points ?',
-        "Qu'est-ce qui te motive au quotidien ?",
-        'Comment as-tu réduit le temps de traitement de 35 à 40 % ?',
-        'Quel rôle joue l\'automatisation dans ton travail ?'
+        'Was ist Ihre größte berufliche Errungenschaft?',
+        'Warum haben Sie sich für die Fahrzeugbewertung entschieden?',
+        'Welche KI-Kompetenzen haben Sie?',
+        'Können Sie mir von Ihrer Erfahrung bei Alcopa erzählen?',
+        'Welche Sprachen sprechen Sie?',
+        'Was ist Ihr Werdegang in 3 Punkten?',
+        'Was motiviert Sie im Alltag?',
+        'Wie haben Sie die Bearbeitungszeit um 35 bis 40 % reduziert?',
+        'Welche Rolle spielt die Automatisierung in Ihrer Arbeit?'
       ];
       function hideSuggestions() {
         if (chatSuggestions) chatSuggestions.classList.add('is-hidden');
@@ -931,23 +931,23 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20) }),
+          body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20), lang: 'de' }),
           cache: 'no-store'
         })
         .then(function(res) {
           return res.json().catch(function() { return {}; }).then(function(data) {
-            if (!res.ok) throw new Error(data && data.error ? data.error : 'Erreur serveur');
+            if (!res.ok) throw new Error(data && data.error ? data.error : 'Serverfehler');
             return data;
           });
         })
         .then(function(data) {
-          var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
+          var reply = data.reply || 'Ich kann momentan nicht antworten.';
           appendMessage('assistant', reply);
           chatHistory.push({ role: 'user', content: text.trim() }, { role: 'assistant', content: reply });
           if (chatStatus) chatStatus.innerHTML = '';
         })
         .catch(function(err) {
-          if (chatStatus) chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue.";
+          if (chatStatus) chatStatus.textContent = err && err.message ? err.message : "Ein Fehler ist aufgetreten.";
         })
         .finally(function() {
           if (chatInput) chatInput.disabled = false;
@@ -956,7 +956,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         });
       }
 
-      if (suggestionCv) suggestionCv.addEventListener('click', function() { sendMessage('Résume-moi ton CV'); });
+      if (suggestionCv) suggestionCv.addEventListener('click', function() { sendMessage('Fassen Sie Ihren Lebenslauf zusammen'); });
       if (suggestionRandom) suggestionRandom.addEventListener('click', function() {
         var q = randomCvQuestions[Math.floor(Math.random() * randomCvQuestions.length)];
         sendMessage(q);
@@ -1034,7 +1034,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
           var message = fd.get('message') || '';
           contactFeedback.hidden = false;
           contactFeedback.className = 'contact-feedback';
-          contactFeedback.textContent = 'Envoi en cours…';
+          contactFeedback.textContent = 'Wird gesendet…';
           fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1043,16 +1043,16 @@ import LanguagePicker from '../components/LanguagePicker.astro';
           .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
           .then(function(r) {
             if (r.ok) {
-              contactFeedback.textContent = 'Message envoyé. Je vous répondrai rapidement.';
+              contactFeedback.textContent = 'Nachricht gesendet. Ich melde mich in Kürze bei Ihnen.';
               contactFeedback.classList.add('is-success');
               contactForm.reset();
             } else {
-              contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Une erreur est survenue.';
+              contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Ein Fehler ist aufgetreten.';
               contactFeedback.classList.add('is-error');
             }
           })
           .catch(function() {
-            contactFeedback.textContent = 'Une erreur est survenue.';
+            contactFeedback.textContent = 'Ein Fehler ist aufgetreten.';
             contactFeedback.classList.add('is-error');
           });
         });

@@ -10,6 +10,13 @@ const isVercel = process.env.VERCEL === '1';
 export default defineConfig({
   output: 'server',
   adapter: isVercel ? vercel() : node({ mode: 'standalone' }),
+  i18n: {
+    defaultLocale: 'fr',
+    locales: ['fr', 'en', 'de'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   vite: {
     plugins: [tailwindcss()]
   }

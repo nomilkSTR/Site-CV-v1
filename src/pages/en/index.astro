@@ -1,19 +1,19 @@
 ---
 /**
  * One-Page — Corentin BOISSELIER
- * IA appliquée & automatisation — Strasbourg
- * Style : inspiré Bugatti — luxe, plein écran, typographie forte, animations fluides
+ * Applied AI & Automation — Strasbourg
+ * Style: Bugatti-inspired — luxury, fullscreen, bold typography, smooth animations
  */
-import LanguagePicker from '../components/LanguagePicker.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Corentin BOISSELIER — IA & automatisation. 43 000 dossiers VO/VU par an, -40% de temps grâce à l'IA." />
-    <title>Corentin BOISSELIER — IA & automatisation</title>
+    <meta name="description" content="Corentin BOISSELIER — AI & Automation. 43,000 used-vehicle files per year, -40% processing time thanks to AI." />
+    <title>Corentin BOISSELIER — AI & Automation</title>
     
     <!-- Balises hreflang pour le SEO multilingue -->
     <link rel="alternate" hreflang="fr" href="https://corentinboisselier.com/" />
@@ -27,9 +27,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
   </head>
   <body>
 
-    <!-- ========== NAVIGATION FIXE ========== -->
+    <!-- ========== FIXED NAVIGATION ========== -->
     <nav class="nav" id="main-nav">
-      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
         <span class="nav-hamburger" aria-hidden="true">
           <span></span><span></span>
         </span>
@@ -42,16 +42,16 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </nav>
 
-    <!-- ========== MENU OVERLAY PLEIN ÉCRAN ========== -->
+    <!-- ========== FULLSCREEN MENU OVERLAY ========== -->
     <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
       <div class="menu-overlay-inner">
         <nav class="menu-nav">
-          <a href="#about" class="menu-link" data-index="01">À propos</a>
-          <a href="#experience" class="menu-link" data-index="02">Expériences</a>
-          <a href="#vehicles" class="menu-link" data-index="03">Véhicules</a>
-          <a href="#languages" class="menu-link" data-index="04">Langues</a>
-          <a href="#interests" class="menu-link" data-index="05">Intérêts</a>
-          <a href="#formations" class="menu-link" data-index="06">Formations</a>
+          <a href="#about" class="menu-link" data-index="01">About</a>
+          <a href="#experience" class="menu-link" data-index="02">Experience</a>
+          <a href="#vehicles" class="menu-link" data-index="03">Vehicles</a>
+          <a href="#languages" class="menu-link" data-index="04">Languages</a>
+          <a href="#interests" class="menu-link" data-index="05">Interests</a>
+          <a href="#formations" class="menu-link" data-index="06">Education</a>
         </nav>
         <div class="menu-footer">
           <p class="menu-footer-text">Strasbourg, France</p>
@@ -65,42 +65,42 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title anim-fade-up" style="animation-delay:.15s">CORENTIN<br>BOISSELIER</h1>
-        <p class="hero-subtitle anim-fade-up" style="animation-delay:.3s">Analyst Pricer — IA appliquée & automatisation<span class="hero-subtitle-location">Strasbourg, France</span></p>
-        <a href="#about" class="hero-cta anim-fade-up" style="animation-delay:.5s">DÉCOUVRIR MON PARCOURS</a>
+        <p class="hero-subtitle anim-fade-up" style="animation-delay:.3s">Analyst Pricer — Applied AI & Automation<span class="hero-subtitle-location">Strasbourg, France</span></p>
+        <a href="#about" class="hero-cta anim-fade-up" style="animation-delay:.5s">DISCOVER MY JOURNEY</a>
       </div>
       <div class="hero-scroll-indicator anim-fade-up" style="animation-delay:.7s" aria-hidden="true">
         <span class="hero-scroll-line"></span>
       </div>
     </section>
 
-    <!-- ========== À PROPOS / INTRO ========== -->
+    <!-- ========== ABOUT / INTRO ========== -->
     <section class="section section--about" id="about">
       <div class="section-inner">
         <div class="about-grid">
           <div class="about-left anim-on-scroll">
             <blockquote class="about-quote about-quote--featured">
               <span class="about-quote-mark">&laquo;</span>
-              Il n'y a rien de noble à être supérieur à son prochain&nbsp;; la vraie noblesse, c'est d'être supérieur à son ancien&nbsp;soi.
+              There is nothing noble in being superior to your fellow man; true nobility is being superior to your former&nbsp;self.
               <span class="about-quote-mark">&raquo;</span>
             </blockquote>
           </div>
           <div class="about-right anim-on-scroll" style="transition-delay:.15s">
             <p class="about-text">
-              Expert du marché VO/VU avec <strong>43 000 dossiers traités/an</strong>, je génère <strong>1,7 M€</strong> de revenu demi-net annuel.
+              Used-vehicle market expert with <strong>43,000 files processed per year</strong>, generating <strong>€1.7M</strong> in annual half-net revenue.
             </p>
             <p class="about-text">
-              Passionné par l'optimisation, je décuple ma productivité et améliore l'expérience client en pilotant des solutions d'IA et d'automatisation (Python/JS, API, Airtable, Cursor) pour fiabiliser les cotations. <strong>Temps de traitement diminué de 35 à 40%</strong>.
+              Passionate about optimization, I multiply my productivity and enhance the customer experience by driving AI and automation solutions (Python/JS, APIs, Airtable, Cursor) to improve pricing accuracy. <strong>Processing time reduced by 35 to 40%</strong>.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== EXPÉRIENCES ========== -->
+    <!-- ========== EXPERIENCE ========== -->
     <section class="section section--dark" id="experience">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">PARCOURS PROFESSIONNEL</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Expériences</h2>
+        <p class="section-label anim-on-scroll">PROFESSIONAL EXPERIENCE</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Experience</h2>
         <div class="exp-container anim-on-scroll" style="transition-delay:.2s">
 
           <div class="exp-card" data-exp="1">
@@ -109,7 +109,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
                 <span class="exp-card-index">01</span>
                 <div>
                   <h3 class="exp-card-title">Analyst Pricer</h3>
-                  <p class="exp-card-meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Depuis 01/2023</p>
+                  <p class="exp-card-meta">Alcopa Auction · Neuilly-sur-Seine (100% remote) · Since 01/2023</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -117,29 +117,29 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Assistant de Cotation Intelligent</strong> | Fullstack & IA</p>
-              <p class="exp-body-text">Optimisation de la chaîne de valeur VO/VU par l'automatisation</p>
-              <h4 class="exp-body-label">Le Défi</h4>
-              <p class="exp-body-text">Améliorer l'expérience utilisateur (UX) et réduire le temps de traitement des fiches au quotidien en éliminant les tâches répétitives et à faible valeur ajoutée.</p>
-              <h4 class="exp-body-label">Ma Solution Technique</h4>
-              <p class="exp-body-text">J'ai conçu et déployé un assistant de cotation hybride articulant données internes et intelligence artificielle :</p>
+              <p class="exp-body-text"><strong>Intelligent Pricing Assistant</strong> | Fullstack & AI</p>
+              <p class="exp-body-text">Optimizing the used-vehicle value chain through automation</p>
+              <h4 class="exp-body-label">The Challenge</h4>
+              <p class="exp-body-text">Improve the user experience (UX) and reduce daily file processing time by eliminating repetitive, low-value tasks.</p>
+              <h4 class="exp-body-label">My Technical Solution</h4>
+              <p class="exp-body-text">I designed and deployed a hybrid pricing assistant combining internal data and artificial intelligence:</p>
               <ul class="exp-body-list">
-                <li><strong>Architecture de Données</strong> : Développement assisté par IA sous Python & JavaScript avec centralisation de l'historique transactionnel via Supabase.</li>
-                <li><strong>Intelligence Artificielle</strong> : Intégration de l'IA Gemini 3 Flash pour lecture des fiches et analyse contextuelle.</li>
-                <li><strong>Prompt Engineering</strong> : Conception de structures de prompts rigoureuses pour garantir la fiabilité des données extraites.</li>
-                <li><strong>Automatisation</strong> : Capture automatique des fiches.</li>
+                <li><strong>Data Architecture</strong>: AI-assisted development in Python & JavaScript with centralized transaction history via Supabase.</li>
+                <li><strong>Artificial Intelligence</strong>: Integration of Gemini 3 Flash AI for file reading and contextual analysis.</li>
+                <li><strong>Prompt Engineering</strong>: Design of rigorous prompt structures to ensure the reliability of extracted data.</li>
+                <li><strong>Automation</strong>: Automatic file capture.</li>
               </ul>
-              <h4 class="exp-body-label">Résultats & Impact</h4>
+              <h4 class="exp-body-label">Results & Impact</h4>
               <ul class="exp-body-list">
-                <li><strong>Performance Opérationnelle</strong> : Gain de <strong>40% de productivité</strong>, améliorant l'UX et libérant un temps critique pour l'analyse des dossiers.</li>
-                <li><strong>Expérience Utilisateur</strong> : Optimisation drastique du workflow Analyst Pricer (réduction du nombre de clics et de la charge cognitive).</li>
-                <li><strong>Sécurité Business</strong> : Fiabilisation des engagements grâce à une analyse IA instantanée.</li>
+                <li><strong>Operational Performance</strong>: <strong>40% productivity gain</strong>, improving UX and freeing critical time for file analysis.</li>
+                <li><strong>User Experience</strong>: Drastic optimization of the Analyst Pricer workflow (reduced clicks and cognitive load).</li>
+                <li><strong>Business Security</strong>: More reliable commitments through instant AI analysis.</li>
               </ul>
-              <h4 class="exp-body-label">Expertise Marché & Négociation</h4>
+              <h4 class="exp-body-label">Market Expertise & Negotiation</h4>
               <ul class="exp-body-list">
-                <li><strong>Analyse de Marché</strong> : Suivi permanent des gammes et des tendances de prix sur le segment VO.</li>
-                <li><strong>Négociation Stratégique</strong> : Validation et réévaluation des engagements et gestion de la relation avec les apporteurs.</li>
-                <li><strong>Volume</strong> : Pilotage et traitement d'un flux de <strong>43 000 dossiers</strong> par an.</li>
+                <li><strong>Market Analysis</strong>: Continuous monitoring of ranges and price trends in the used-vehicle segment.</li>
+                <li><strong>Strategic Negotiation</strong>: Validation and reassessment of commitments and management of relationships with suppliers.</li>
+                <li><strong>Volume</strong>: Management and processing of a flow of <strong>43,000 files</strong> per year.</li>
               </ul>
             </div>
           </div>
@@ -149,7 +149,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">02</span>
                 <div>
-                  <h3 class="exp-card-title">Négociateur immobilier</h3>
+                  <h3 class="exp-card-title">Real Estate Negotiator</h3>
                   <p class="exp-card-meta">Étude de Me Philippe de GAIL · Strasbourg · 10/2021 – 05/2023</p>
                 </div>
               </div>
@@ -158,21 +158,21 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Estimation & Stratégie de Commercialisation</strong></p>
-              <p class="exp-body-text">L'estimation n'est pas une simple évaluation, c'est une lecture stratégique du marché.</p>
+              <p class="exp-body-text"><strong>Valuation & Marketing Strategy</strong></p>
+              <p class="exp-body-text">Valuation is not a simple assessment — it's a strategic reading of the market.</p>
               <ul class="exp-body-list">
-                <li><strong>Expertise Métier</strong> : Analyse comparative de marché et évaluation précise de la valeur des biens, intégrant les caractéristiques et le contexte local.</li>
-                <li><strong>Mise en Valeur</strong> : Établissement de la stratégie de commercialisation en synergie avec les vendeurs.</li>
+                <li><strong>Professional Expertise</strong>: Comparative market analysis and precise property valuation, integrating local characteristics and context.</li>
+                <li><strong>Property Enhancement</strong>: Development of marketing strategies in collaboration with sellers.</li>
               </ul>
-              <h4 class="exp-body-label">Négociation</h4>
+              <h4 class="exp-body-label">Negotiation</h4>
               <ul class="exp-body-list">
-                <li><strong>Négociation Tripartite</strong> : Arbitrage des intérêts divergents pour aboutir à un accord mutuel.</li>
-                <li><strong>Accompagnement Client</strong> : Suivi personnalisé depuis la première visite jusqu'à la signature finale.</li>
+                <li><strong>Tripartite Negotiation</strong>: Arbitrating divergent interests to reach mutual agreements.</li>
+                <li><strong>Client Support</strong>: Personalized follow-up from the first visit to final signing.</li>
               </ul>
-              <h4 class="exp-body-label">Rédaction d'Actes & Sécurité Juridique</h4>
+              <h4 class="exp-body-label">Deed Drafting & Legal Compliance</h4>
               <ul class="exp-body-list">
-                <li><strong>Formalisme Rigoureux</strong> : Rédaction de mandats, d'avant-contrats et d'actes authentiques.</li>
-                <li><strong>Ingénierie Documentaire</strong> : Analyse et collecte des pièces d'urbanisme, des diagnostics et des titres de propriété.</li>
+                <li><strong>Rigorous Formalism</strong>: Drafting of mandates, preliminary contracts, and notarial deeds.</li>
+                <li><strong>Document Engineering</strong>: Analysis and collection of planning documents, diagnostics, and title deeds.</li>
               </ul>
             </div>
           </div>
@@ -182,7 +182,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">03</span>
                 <div>
-                  <h3 class="exp-card-title">Directeur Général</h3>
+                  <h3 class="exp-card-title">Chief Executive Officer</h3>
                   <p class="exp-card-meta">Les Sunneliers SAS · Strasbourg · 03/2020 – 10/2021</p>
                 </div>
               </div>
@@ -191,25 +191,25 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="exp-card-body">
-              <p class="exp-body-text"><strong>Entrepreneuriat : Direction Générale & Modèle à Impact</strong> (Les Sunneliers SAS)</p>
-              <p class="exp-body-text">De l'innovation cosmétique à la préservation des océans.</p>
-              <h4 class="exp-body-label">Vision Stratégique & Leadership</h4>
-              <p class="exp-body-text">Co-fondateur et dirigeant de la startup strasbourgeoise Niu & You, j'ai piloté l'entreprise avec une autonomie décisionnelle totale.</p>
+              <p class="exp-body-text"><strong>Entrepreneurship: General Management & Impact Model</strong> (Les Sunneliers SAS)</p>
+              <p class="exp-body-text">From cosmetic innovation to ocean preservation.</p>
+              <h4 class="exp-body-label">Strategic Vision & Leadership</h4>
+              <p class="exp-body-text">Co-founder and director of the Strasbourg-based startup Niu & You, I led the company with full decision-making autonomy.</p>
               <ul class="exp-body-list">
-                <li><strong>Gouvernance Indépendante</strong> : Capacité à décider et à arbitrer les choix critiques sans supervision.</li>
-                <li><strong>Vision à 360°</strong> : Pilotage d'une structure où chaque décision sert une stratégie globale de croissance durable.</li>
+                <li><strong>Independent Governance</strong>: Ability to make and arbitrate critical decisions without supervision.</li>
+                <li><strong>360° Vision</strong>: Managing a structure where every decision serves a sustainable growth strategy.</li>
               </ul>
-              <h4 class="exp-body-label">Maîtrise Opérationnelle & Commerciale</h4>
+              <h4 class="exp-body-label">Operational & Commercial Mastery</h4>
               <ul class="exp-body-list">
-                <li><strong>Pilotage des Flux & Logistique</strong> : Conception et gestion intégrale de la supply chain.</li>
-                <li><strong>Animation du Réseau</strong> : Développement et fidélisation d'un réseau de distribution.</li>
-                <li><strong>Gestion de la Rentabilité</strong> : Suivi rigoureux de la performance financière.</li>
+                <li><strong>Supply Chain Management</strong>: End-to-end design and management of the supply chain.</li>
+                <li><strong>Network Development</strong>: Building and retaining a distribution network.</li>
+                <li><strong>Profitability Management</strong>: Rigorous monitoring of financial performance.</li>
               </ul>
-              <h4 class="exp-body-label">Le Modèle Octop'Us</h4>
+              <h4 class="exp-body-label">The Octop'Us Model</h4>
               <ul class="exp-body-list">
-                <li><strong>Innovation Régénératrice</strong> : "1 tube vendu = 1m² de plage nettoyé".</li>
-                <li><strong>Fondation d'Octop'Us</strong> : Création d'une ONG dédiée à la protection des océans.</li>
-                <li><strong>Ingénierie à Impact</strong> : Modèle de mécénat optimisé reversant une partie des bénéfices à l'ONG.</li>
+                <li><strong>Regenerative Innovation</strong>: "1 tube sold = 1m² of beach cleaned".</li>
+                <li><strong>Founding of Octop'Us</strong>: Creation of an NGO dedicated to ocean protection.</li>
+                <li><strong>Impact Engineering</strong>: Optimized patronage model channeling part of profits to the NGO.</li>
               </ul>
             </div>
           </div>
@@ -219,7 +219,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">04</span>
                 <div>
-                  <h3 class="exp-card-title">Administrateur Logistique</h3>
+                  <h3 class="exp-card-title">Logistics Administrator</h3>
                   <p class="exp-card-meta">Scheppach France · Strasbourg · 05/2018 – 03/2020</p>
                 </div>
               </div>
@@ -229,9 +229,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Pilotage des flux logistiques (France)</strong> : Coordination du transport et suivi opérationnel des expéditions.</li>
-                <li><strong>Optimisation de la performance</strong> : Audit des process internes et actions correctives.</li>
-                <li><strong>Gestion des litiges et SAV</strong> : Analyse des causes racines et déploiement de solutions.</li>
+                <li><strong>Logistics Flow Management (France)</strong>: Transport coordination and operational shipment tracking.</li>
+                <li><strong>Performance Optimization</strong>: Internal process audits and corrective actions.</li>
+                <li><strong>Dispute & After-Sales Management</strong>: Root cause analysis and solution deployment.</li>
               </ul>
             </div>
           </div>
@@ -241,8 +241,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">05</span>
                 <div>
-                  <h3 class="exp-card-title">Affréteur</h3>
-                  <p class="exp-card-meta">Transports Breger · Haguenau · 02/2016 – 09/2016 et 09/2017 – 05/2018</p>
+                  <h3 class="exp-card-title">Freight Broker</h3>
+                  <p class="exp-card-meta">Transports Breger · Haguenau · 02/2016 – 09/2016 and 09/2017 – 05/2018</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -251,9 +251,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Ingénierie de flux</strong> : Optimisation du remplissage et organisation des ruptures de charge.</li>
-                <li><strong>Sourcing fournisseurs</strong> : Identification, sélection et négociation avec les sous-traitants.</li>
-                <li><strong>Expertise secteur Automobile</strong> : Pilotage des flux vers les usines Renault (France) et Mercedes-Benz (Allemagne).</li>
+                <li><strong>Flow Engineering</strong>: Load optimization and break-bulk organization.</li>
+                <li><strong>Supplier Sourcing</strong>: Identification, selection, and negotiation with subcontractors.</li>
+                <li><strong>Automotive Sector Expertise</strong>: Managing flows to Renault (France) and Mercedes-Benz (Germany) factories.</li>
               </ul>
             </div>
           </div>
@@ -263,8 +263,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">06</span>
                 <div>
-                  <h3 class="exp-card-title">Gestionnaire de parc</h3>
-                  <p class="exp-card-meta">Autohaus Tabor · Kehl (Allemagne) · 09/2016 – 09/2017</p>
+                  <h3 class="exp-card-title">Fleet Manager</h3>
+                  <p class="exp-card-meta">Autohaus Tabor · Kehl (Germany) · 09/2016 – 09/2017</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -273,9 +273,9 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li><strong>Audit de conformité</strong> : Expertise technique rigoureuse des arrivages (neufs/occasions).</li>
-                <li><strong>Gestion du cycle de reconditionnement</strong> : Évaluation des frais de remise en état et planification des interventions.</li>
-                <li><strong>Optimisation logistique inter-sites</strong> : Pilotage du réagencement des stocks et transfert de flotte.</li>
+                <li><strong>Compliance Audit</strong>: Rigorous technical inspection of incoming vehicles (new/used).</li>
+                <li><strong>Reconditioning Cycle Management</strong>: Assessment of refurbishment costs and intervention planning.</li>
+                <li><strong>Inter-Site Logistics Optimization</strong>: Stock rearrangement and fleet transfer management.</li>
               </ul>
             </div>
           </div>
@@ -285,8 +285,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               <div class="exp-card-left">
                 <span class="exp-card-index">07</span>
                 <div>
-                  <h3 class="exp-card-title">Apprenti affréteur et exploitant transport</h3>
-                  <p class="exp-card-meta">Expériences complémentaires</p>
+                  <h3 class="exp-card-title">Apprentice Freight Broker & Transport Operator</h3>
+                  <p class="exp-card-meta">Additional experience</p>
                 </div>
               </div>
               <span class="exp-card-icon" aria-hidden="true">
@@ -295,10 +295,10 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             </button>
             <div class="exp-card-body">
               <ul class="exp-body-list">
-                <li>Alinéa Courses Express – La Wantzenau – 04/2015 à 02/2016</li>
-                <li>Mercurio France – Molsheim – 10/2014 à 04/2015</li>
-                <li>Geodis BM – Strasbourg – 10/2013 à 10/2014</li>
-                <li>DB Schenker – Strasbourg – 10/2011 à 09/2013</li>
+                <li>Alinéa Courses Express – La Wantzenau – 04/2015 to 02/2016</li>
+                <li>Mercurio France – Molsheim – 10/2014 to 04/2015</li>
+                <li>Geodis BM – Strasbourg – 10/2013 to 10/2014</li>
+                <li>DB Schenker – Strasbourg – 10/2011 to 09/2013</li>
               </ul>
             </div>
           </div>
@@ -307,13 +307,13 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== VÉHICULES ========== -->
+    <!-- ========== VEHICLES ========== -->
     <section class="section section--vehicles" id="vehicles">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">LA PASSION</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Véhicules possédés</h2>
+        <p class="section-label anim-on-scroll">THE PASSION</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Vehicles Owned</h2>
         <p class="section-intro anim-on-scroll" style="transition-delay:.2s">
-          Au-delà des chiffres, mon parcours est porté par une passion authentique pour l'automobile. Depuis 2012, j'ai possédé <strong>31 véhicules</strong> sur lesquels j'ai pu découvrir la mécanique aussi bien que la mise en valeur esthétique.
+          Beyond the numbers, my career is driven by a genuine passion for automobiles. Since 2012, I have owned <strong>31 vehicles</strong> through which I discovered both mechanics and aesthetic enhancement.
         </p>
         <div class="brand-grid anim-on-scroll" style="transition-delay:.3s">
           <div class="brand-card">
@@ -447,11 +447,11 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== LANGUES ========== -->
+    <!-- ========== LANGUAGES ========== -->
     <section class="section section--dark" id="languages">
       <div class="section-inner section-inner--narrow">
         <p class="section-label anim-on-scroll">COMMUNICATION</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Langues maîtrisées</h2>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Languages</h2>
         <div class="lang-grid anim-on-scroll" style="transition-delay:.2s">
 
           <div class="lang-card">
@@ -463,10 +463,10 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Français</h3>
-              <span class="lang-card-level">Langue maternelle</span>
+              <h3 class="lang-card-name">French</h3>
+              <span class="lang-card-level">Native language</span>
             </div>
-            <span class="lang-badge">Natif</span>
+            <span class="lang-badge">Native</span>
           </div>
 
           <div class="lang-card">
@@ -484,8 +484,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Anglais</h3>
-              <span class="lang-card-level">Courant</span>
+              <h3 class="lang-card-name">English</h3>
+              <span class="lang-card-level">Fluent</span>
             </div>
             <span class="lang-badge">C1</span>
           </div>
@@ -499,8 +499,8 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </svg>
             </div>
             <div class="lang-card-info">
-              <h3 class="lang-card-name">Allemand</h3>
-              <span class="lang-card-level">Cursus bilingue</span>
+              <h3 class="lang-card-name">German</h3>
+              <span class="lang-card-level">Bilingual studies</span>
             </div>
             <span class="lang-badge">C1</span>
           </div>
@@ -509,47 +509,47 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       </div>
     </section>
 
-    <!-- ========== INTÉRÊTS ========== -->
+    <!-- ========== INTERESTS ========== -->
     <section class="section" id="interests">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">AU-DELÀ DU MÉTIER</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Intérêts & Passions</h2>
+        <p class="section-label anim-on-scroll">BEYOND WORK</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Interests & Passions</h2>
         <div class="interests-grid anim-on-scroll" style="transition-delay:.2s">
           <div class="interest-card">
             <span class="interest-card-index">01</span>
-            <h3 class="interest-card-title">Passion Automobile & Restauration</h3>
-            <p class="interest-card-text">Depuis 2012, j'achète et remets en état des véhicules d'occasion : j'ai ainsi géré l'achat, la mécanique, le detailing et la revente de <strong>31 voitures</strong>. Membre actif de l'<strong>Enthousiast'Club Jaguar Alsace</strong>.</p>
+            <h3 class="interest-card-title">Automotive Passion & Restoration</h3>
+            <p class="interest-card-text">Since 2012, I have been buying and restoring used vehicles: I have managed the purchase, mechanics, detailing, and resale of <strong>31 cars</strong>. Active member of the <strong>Enthousiast'Club Jaguar Alsace</strong>.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">02</span>
             <h3 class="interest-card-title">Aviation</h3>
-            <p class="interest-card-text"><strong>Pilote privé en formation (PPL)</strong>. Lâché solo, grande nav solo validée. Une véritable école de la rigueur et de la gestion du stress.</p>
+            <p class="interest-card-text"><strong>Private pilot in training (PPL)</strong>. First solo completed, long solo navigation validated. A true school of rigor and stress management.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">03</span>
-            <h3 class="interest-card-title">Engagement Associatif</h3>
-            <p class="interest-card-text">Membre actif du LEO Club pendant <strong>7 ans</strong> et ancien Président. Collectes de fonds, journées de loisirs, organisation de conventions nationales, participation au Téléthon.</p>
+            <h3 class="interest-card-title">Community Involvement</h3>
+            <p class="interest-card-text">Active member of LEO Club for <strong>7 years</strong> and former President. Fundraising, leisure days, national convention organization, Téléthon participation.</p>
           </div>
           <div class="interest-card">
             <span class="interest-card-index">04</span>
             <h3 class="interest-card-title">Sports</h3>
-            <p class="interest-card-text">Golf, Boxe thaï puis française, Handball.</p>
+            <p class="interest-card-text">Golf, Muay Thai then French boxing, Handball.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FORMATIONS ========== -->
+    <!-- ========== EDUCATION ========== -->
     <section class="section section--dark" id="formations">
       <div class="section-inner">
-        <p class="section-label anim-on-scroll">ACADÉMIQUE</p>
-        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Formations</h2>
+        <p class="section-label anim-on-scroll">EDUCATION</p>
+        <h2 class="section-heading anim-on-scroll" style="transition-delay:.1s">Education</h2>
         <div class="formations-container anim-on-scroll" style="transition-delay:.2s">
 
           <div class="formation-card" data-formation="1">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">Licence professionnelle REL</h3>
+                <h3 class="formation-card-title">Professional Bachelor's Degree REL</h3>
                 <p class="formation-card-meta">AFTRAL · Strasbourg · 2014–2015</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -557,14 +557,14 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Spécialisation en <strong>pilotage d'unités logistiques</strong> et <strong>optimisation des flux internes</strong>. Expertise développée dans la <strong>gestion d'entrepôt</strong>, le <strong>management d'équipes opérationnelles</strong> et le <strong>pilotage de la performance</strong> via des indicateurs clés (KPI).</p>
+              <p class="exp-body-text">Specialization in <strong>logistics unit management</strong> and <strong>internal flow optimization</strong>. Expertise developed in <strong>warehouse management</strong>, <strong>operational team leadership</strong>, and <strong>performance monitoring</strong> via key indicators (KPI).</p>
             </div>
           </div>
 
           <div class="formation-card" data-formation="2">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">Licence professionnelle RPTL</h3>
+                <h3 class="formation-card-title">Professional Bachelor's Degree RPTL</h3>
                 <p class="formation-card-meta">ISTELI · Strasbourg · 2013–2014</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -572,14 +572,14 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Spécialisation en <strong>management</strong> et <strong>pilotage de production</strong> transport/logistique. Expertise acquise dans la <strong>conception d'offres de transport</strong>, le suivi d'indicateurs de performance (KPI) et l'<strong>amélioration continue</strong> des processus.</p>
+              <p class="exp-body-text">Specialization in <strong>management</strong> and <strong>transport/logistics production oversight</strong>. Expertise gained in <strong>transport offer design</strong>, performance indicator tracking (KPI), and <strong>continuous improvement</strong> of processes.</p>
             </div>
           </div>
 
           <div class="formation-card" data-formation="3">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">BTS Transport et Prestations Logistiques</h3>
+                <h3 class="formation-card-title">BTS Transport and Logistics Services</h3>
                 <p class="formation-card-meta">AFTRAL · Strasbourg · 2011–2013</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -587,14 +587,14 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Maîtrise des fondamentaux de la <strong>Supply Chain</strong> : organisation des flux nationaux et internationaux, planification d'exploitation et gestion réglementaire.</p>
+              <p class="exp-body-text">Mastery of <strong>Supply Chain</strong> fundamentals: organization of domestic and international flows, operations planning, and regulatory management.</p>
             </div>
           </div>
 
           <div class="formation-card" data-formation="4">
             <button type="button" class="formation-card-header" aria-expanded="false">
               <div class="formation-card-left">
-                <h3 class="formation-card-title">Baccalauréat Économique et Social</h3>
+                <h3 class="formation-card-title">Baccalauréat in Economics and Social Sciences</h3>
                 <p class="formation-card-meta">Strasbourg · 2011</p>
               </div>
               <span class="formation-card-icon" aria-hidden="true">
@@ -602,7 +602,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
               </span>
             </button>
             <div class="formation-card-body">
-              <p class="exp-body-text">Diplôme obtenu à Strasbourg en 2011.</p>
+              <p class="exp-body-text">Diploma obtained in Strasbourg in 2011.</p>
             </div>
           </div>
 
@@ -615,28 +615,28 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       <div class="section-inner">
         <div class="footer-top">
           <div class="footer-brand">CORENTIN BOISSELIER</div>
-          <p class="footer-tagline">Analyst Pricer VO/ VU · IA appliquée & automatisation</p>
+          <p class="footer-tagline">Analyst Pricer VO/VU · Applied AI & Automation</p>
         </div>
         <div class="footer-links">
-          <a href="#about">À propos</a>
-          <a href="#experience">Expériences</a>
-          <a href="#vehicles">Véhicules</a>
-          <a href="#formations">Formations</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#vehicles">Vehicles</a>
+          <a href="#formations">Education</a>
         </div>
         <div class="footer-bottom">
           <button type="button" class="footer-tech-btn" id="footer-tech-btn" aria-expanded="false" aria-controls="footer-tech-panel">
-            Comment ce site est-il fait ?
+            How is this site built?
           </button>
           <div id="footer-tech-panel" class="footer-tech-panel" role="dialog" aria-labelledby="footer-tech-title" aria-hidden="true">
-            <h2 id="footer-tech-title" class="footer-tech-title">Comment ce site est-il fait ?</h2>
-            <p class="footer-tech-intro">En bref, pour les curieux qui ne sont pas à l'aise avec la technique :</p>
+            <h2 id="footer-tech-title" class="footer-tech-title">How is this site built?</h2>
+            <p class="footer-tech-intro">In short, for the curious who aren't into the technical side:</p>
             <ul class="footer-tech-list">
-              <li><strong>Cette page</strong> est une seule page web (texte, mise en forme, un peu d'interaction).</li>
-              <li><strong>Elle est construite</strong> avec Astro — un outil qui permet de générer des sites rapides et légers.</li>
-              <li><strong>Elle est en ligne</strong> grâce à Vercel — un service qui héberge le site et affiche la page quand quelqu'un ouvre le lien.</li>
-            <li><strong>Le chatbot</strong> utilise l'IA de Google (Gemini) pour répondre à vos questions à ma place.</li>
+              <li><strong>This page</strong> is a single web page (text, styling, a bit of interactivity).</li>
+              <li><strong>It is built</strong> with Astro — a tool that generates fast, lightweight websites.</li>
+              <li><strong>It is hosted</strong> on Vercel — a service that hosts the site and serves the page when someone opens the link.</li>
+            <li><strong>The chatbot</strong> uses Google's AI (Gemini) to answer your questions on my behalf.</li>
             </ul>
-            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Fermer">FERMER</button>
+            <button type="button" class="footer-tech-close" id="footer-tech-close" aria-label="Close">CLOSE</button>
           </div>
         </div>
       </div>
@@ -644,24 +644,24 @@ import LanguagePicker from '../components/LanguagePicker.astro';
 
     <!-- ========== CHATBOT WIDGET ========== -->
     <div class="chat-widget" id="chat-widget" aria-label="Chatbot">
-      <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Ouvrir le chat" aria-expanded="false">
+      <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Open chat" aria-expanded="false">
         <span class="chat-toggle-ring"></span>
         <svg class="chat-toggle-icon chat-toggle-icon--open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <svg class="chat-toggle-icon chat-toggle-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <span class="chat-label" id="chat-label">Une question ? Demandez-moi</span>
+      <span class="chat-label" id="chat-label">Got a question? Ask me</span>
       <div class="chat-panel" id="chat-panel">
         <div class="chat-panel-header">
-          <span class="chat-panel-title">CORENTIN VIRTUEL</span>
+          <span class="chat-panel-title">VIRTUAL CORENTIN</span>
           <span class="chat-panel-dot"></span>
-          <button type="button" class="chat-minimize-btn" id="chat-minimize" aria-label="Réduire le chat">
+          <button type="button" class="chat-minimize-btn" id="chat-minimize" aria-label="Minimize chat">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>
           </button>
         </div>
         <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
         <div class="chat-suggestions" id="chat-suggestions">
-          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Résume-moi ton CV</button>
-          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-random">Une question au hasard</button>
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-cv">Summarize your CV</button>
+          <button type="button" class="chat-suggestion-btn" id="chat-suggestion-random">Random question</button>
         </div>
         <form id="chat-form" class="chat-form" action="#" method="post">
           <textarea
@@ -669,11 +669,11 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             class="chat-input"
             name="message"
             rows="1"
-            placeholder="Posez-moi une question..."
+            placeholder="Ask me a question..."
             required
             enterkeyhint="send"
           ></textarea>
-          <button type="submit" class="chat-send-btn" aria-label="Envoyer">
+          <button type="submit" class="chat-send-btn" aria-label="Send">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
         </form>
@@ -682,20 +682,20 @@ import LanguagePicker from '../components/LanguagePicker.astro';
     </div>
 
     <!-- ========== CONTACT MODAL ========== -->
-    <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Formulaire de contact">
+    <div id="contact-overlay" class="contact-overlay" aria-hidden="true" aria-label="Contact form">
       <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="contact-modal-title" aria-modal="true">
-        <button type="button" class="contact-modal-close" id="contact-close" aria-label="Fermer">
+        <button type="button" class="contact-modal-close" id="contact-close" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <p class="contact-modal-label">CONTACT</p>
-        <h2 id="contact-modal-title" class="contact-modal-title">Écrivez-moi</h2>
+        <h2 id="contact-modal-title" class="contact-modal-title">Write to me</h2>
         <form id="contact-form" class="contact-form">
           <label class="contact-label">
-            <span class="contact-label-text">Votre nom</span>
+            <span class="contact-label-text">Your name</span>
             <input type="text" name="name" class="contact-input" required autocomplete="name">
           </label>
           <label class="contact-label">
-            <span class="contact-label-text">Votre email</span>
+            <span class="contact-label-text">Your email</span>
             <input type="email" name="email" class="contact-input" required autocomplete="email">
           </label>
           <label class="contact-label">
@@ -703,7 +703,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
             <textarea name="message" class="contact-textarea" rows="4" required></textarea>
           </label>
           <div class="contact-actions">
-            <button type="submit" class="contact-submit-btn">ENVOYER</button>
+            <button type="submit" class="contact-submit-btn">SEND</button>
           </div>
         </form>
         <p id="contact-feedback" class="contact-feedback" aria-live="polite" hidden></p>
@@ -897,7 +897,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-      var welcomeMsg = "Bonjour ! Je suis l'alter ego virtuel de Corentin. Posez-moi une question sur son parcours.";
+      var welcomeMsg = "Hello! I'm Corentin's virtual alter ego. Ask me anything about his background.";
       appendMessage('assistant', welcomeMsg);
       chatHistory.push({ role: 'assistant', content: welcomeMsg });
 
@@ -905,15 +905,15 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       var suggestionCv = document.getElementById('chat-suggestion-cv');
       var suggestionRandom = document.getElementById('chat-suggestion-random');
       var randomCvQuestions = [
-        'Quelle est ta plus grande réalisation professionnelle ?',
-        'Pourquoi avoir choisi le pricing automobile ?',
-        'Quelles sont tes compétences en IA ?',
-        'Tu peux me parler de ton expérience chez Alcopa ?',
-        'Quelles langues parles-tu ?',
-        'Quel est ton parcours en 3 points ?',
-        "Qu'est-ce qui te motive au quotidien ?",
-        'Comment as-tu réduit le temps de traitement de 35 à 40 % ?',
-        'Quel rôle joue l\'automatisation dans ton travail ?'
+        'What is your greatest professional achievement?',
+        'Why did you choose automotive pricing?',
+        'What are your AI skills?',
+        'Can you tell me about your experience at Alcopa?',
+        'What languages do you speak?',
+        'Summarize your career in 3 points?',
+        'What motivates you on a daily basis?',
+        'How did you reduce processing time by 35 to 40%?',
+        'What role does automation play in your work?'
       ];
       function hideSuggestions() {
         if (chatSuggestions) chatSuggestions.classList.add('is-hidden');
@@ -931,23 +931,23 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20) }),
+          body: JSON.stringify({ message: text.trim(), history: chatHistory.slice(-20), lang: 'en' }),
           cache: 'no-store'
         })
         .then(function(res) {
           return res.json().catch(function() { return {}; }).then(function(data) {
-            if (!res.ok) throw new Error(data && data.error ? data.error : 'Erreur serveur');
+            if (!res.ok) throw new Error(data && data.error ? data.error : 'Server error');
             return data;
           });
         })
         .then(function(data) {
-          var reply = data.reply || 'Je ne peux pas répondre pour le moment.';
+          var reply = data.reply || 'I am unable to respond at the moment.';
           appendMessage('assistant', reply);
           chatHistory.push({ role: 'user', content: text.trim() }, { role: 'assistant', content: reply });
           if (chatStatus) chatStatus.innerHTML = '';
         })
         .catch(function(err) {
-          if (chatStatus) chatStatus.textContent = err && err.message ? err.message : "Une erreur est survenue.";
+          if (chatStatus) chatStatus.textContent = err && err.message ? err.message : "An error occurred.";
         })
         .finally(function() {
           if (chatInput) chatInput.disabled = false;
@@ -956,7 +956,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         });
       }
 
-      if (suggestionCv) suggestionCv.addEventListener('click', function() { sendMessage('Résume-moi ton CV'); });
+      if (suggestionCv) suggestionCv.addEventListener('click', function() { sendMessage('Summarize your CV'); });
       if (suggestionRandom) suggestionRandom.addEventListener('click', function() {
         var q = randomCvQuestions[Math.floor(Math.random() * randomCvQuestions.length)];
         sendMessage(q);
@@ -1034,7 +1034,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
           var message = fd.get('message') || '';
           contactFeedback.hidden = false;
           contactFeedback.className = 'contact-feedback';
-          contactFeedback.textContent = 'Envoi en cours…';
+          contactFeedback.textContent = 'Sending…';
           fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1043,16 +1043,16 @@ import LanguagePicker from '../components/LanguagePicker.astro';
           .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
           .then(function(r) {
             if (r.ok) {
-              contactFeedback.textContent = 'Message envoyé. Je vous répondrai rapidement.';
+              contactFeedback.textContent = "Message sent. I'll get back to you shortly.";
               contactFeedback.classList.add('is-success');
               contactForm.reset();
             } else {
-              contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'Une erreur est survenue.';
+              contactFeedback.textContent = r.data && r.data.error ? r.data.error : 'An error occurred.';
               contactFeedback.classList.add('is-error');
             }
           })
           .catch(function() {
-            contactFeedback.textContent = 'Une erreur est survenue.';
+            contactFeedback.textContent = 'An error occurred.';
             contactFeedback.classList.add('is-error');
           });
         });

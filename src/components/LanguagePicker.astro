@@ -1,0 +1,107 @@
+---
+const currentPath = Astro.url.pathname;
+const currentLang = Astro.currentLocale || 'fr';
+
+// Construire les URLs pour chaque langue
+function getLocalizedPath(locale: string) {
+  if (locale === 'fr') {
+    // La locale par défaut (fr) n'a pas de préfixe
+    return currentPath.replace(/^\/(en|de)/, '') || '/';
+  }
+  // Pour EN et DE, ajouter le préfixe
+  const pathWithoutLocale = currentPath.replace(/^\/(en|de)/, '') || '/';
+  return `/${locale}${pathWithoutLocale}`;
+}
+
+const languages = [
+  { code: 'fr', label: 'FR', fullName: 'Français' },
+  { code: 'en', label: 'EN', fullName: 'English' },
+  { code: 'de', label: 'DE', fullName: 'Deutsch' },
+];
+---
+
+<div class="language-picker">
+  {languages.map(({ code, label, fullName }) => (
+    <a 
+      href={getLocalizedPath(code)} 
+      class={`lang-link ${currentLang === code ? 'active' : ''}`}
+      aria-label={`Switch to ${fullName}`}
+      title={fullName}
+    >
+      {label}
+    </a>
+  ))}
+</div>
+
+<style>
+  .language-picker {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .lang-link {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle, #5a5a62);
+    transition: all 0.3s ease;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .lang-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 1px;
+    background: var(--color-accent, #c8a96e);
+    transition: transform 0.3s ease;
+  }
+
+  .lang-link:hover {
+    color: var(--color-white, #ffffff);
+  }
+
+  .lang-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .lang-link.active {
+    color: var(--color-accent, #c8a96e);
+  }
+
+  .lang-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  /* Séparateurs entre les langues */
+  .lang-link:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background: var(--color-border, rgba(255,255,255,0.08));
+  }
+
+  @media (max-width: 640px) {
+    .language-picker {
+      gap: 4px;
+      padding: 0 4px;
+    }
+
+    .lang-link {
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+  }
+</style>
