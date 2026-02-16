@@ -5,6 +5,7 @@
  * Style : inspiré Bugatti — luxe, plein écran, typographie forte, animations fluides
  */
 import LanguagePicker from '../components/LanguagePicker.astro';
+import LinkedInButton from '../components/LinkedInButton.astro';
 ---
 
 <!doctype html>
@@ -38,6 +39,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       <a href="#hero" class="nav-logo">CORENTIN BOISSELIER</a>
       <div class="nav-right">
         <LanguagePicker />
+        <LinkedInButton />
         <button type="button" class="nav-contact-btn" id="nav-contact-btn">CONTACT</button>
       </div>
     </nav>
@@ -1191,7 +1193,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
       .nav-right {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 16px;
       }
       .nav-contact-btn {
         background: none;
@@ -1210,7 +1212,7 @@ import LanguagePicker from '../components/LanguagePicker.astro';
         .nav { padding: 0 20px; height: 60px; }
         .nav-logo { font-size: 11px; letter-spacing: 0.15em; }
         .nav-menu-text { display: none; }
-        .nav-right { gap: 12px; }
+        .nav-right { gap: 8px; }
       }
 
       /* ===== MENU OVERLAY ===== */
